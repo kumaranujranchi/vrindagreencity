@@ -1626,14 +1626,14 @@ body.search-visible {
 .ooh-image {
     position: relative;
     overflow: hidden;
-    border-radius: 10px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    border-radius: 15px;
     transition: all 0.3s ease;
+    display: block;
+    cursor: pointer;
 }
 
 .ooh-image:hover {
     transform: translateY(-10px);
-    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
 }
 
 .ooh-image img {
@@ -1641,11 +1641,13 @@ body.search-visible {
     height: 300px;
     object-fit: cover;
     display: block;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
     transition: all 0.3s ease;
 }
 
 .ooh-image:hover img {
-    transform: scale(1.05);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
 }
 
 @media (max-width: 991px) {
@@ -3363,12 +3365,14 @@ body.search-visible {
 }
 .formula-list li {
 	font-weight: 500;
-	font-size: 20px;
+	font-size: 18px;
 	color: #fff;
 	letter-spacing: 0.02em;
-	display: flex;
-	margin: 0 0 20px;
-	line-height: 1.5;
+	display: block;
+	margin: 0 0 25px;
+	line-height: 1.6;
+	position: relative;
+	padding-left: 30px;
 }
 .formula-list li::before {
 	content: "";
@@ -3379,9 +3383,18 @@ body.search-visible {
 	background-repeat: no-repeat;
 	background-size: contain;
 	background-position: center;
-	flex: 0 0 20px;
-	margin-right: 10px;
-	margin-top: 6px;
+	position: absolute;
+	left: 0;
+	top: 2px;
+}
+.formula-list li strong {
+	display: block;
+	font-size: 22px;
+	font-weight: 700;
+	margin-bottom: 8px;
+	color: #FEE431;
+	letter-spacing: 0.03em;
+	line-height: 1.3;
 }
 .formula-list li:last-child {
 	margin-bottom: 0;
@@ -4860,6 +4873,15 @@ body.search-visible {
 .footer-insta-item a {
 	display: block;
 	position: relative;
+	width: 258px;
+	height: 258px;
+	overflow: hidden;
+}
+.footer-insta-item a img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	object-position: center;
 }
 .footer-insta-item a::before {
 	content: "";
@@ -4939,6 +4961,9 @@ body.search-visible {
 }
 .footer-logo {
 	margin: 0 0 30px;
+}
+.footer-logo img {
+	border-radius: 15px;
 }
 .footer-widget .footer-text {
 	width: 75%;
@@ -6221,5 +6246,230 @@ body.search-visible {
 .confidential-content span {
     display: block;
     font-size: 14px;
-    color: #c7c7c7;
+    color: rgba(255, 255, 255, .7);
+}
+
+/* ===== Inventory Section Styles ===== */
+.inventory-area {
+    position: relative;
+}
+
+.inventory-advanced-filters {
+    animation: fadeIn 0.5s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.filter-label {
+    display: block;
+    font-weight: 600;
+    color: #222;
+    margin-bottom: 10px;
+    font-size: 14px;
+}
+
+.filter-select {
+    width: 100%;
+    padding: 12px 15px;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    font-size: 14px;
+    color: #222;
+    background: #fff;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.filter-select:focus {
+    outline: none;
+    border-color: #0D9B4D;
+    box-shadow: 0 0 0 3px rgba(13, 155, 77, 0.1);
+}
+
+.filter-select:hover {
+    border-color: #0D9B4D;
+}
+
+.inventory-filters {
+    margin-bottom: 40px;
+}
+
+.filter-btn {
+    background: #fff;
+    border: 2px solid #0D9B4D;
+    color: #0D9B4D;
+    padding: 10px 30px;
+    margin: 5px;
+    border-radius: 25px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 14px;
+}
+
+.filter-btn:hover,
+.filter-btn.active {
+    background: #0D9B4D;
+    color: #fff;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(13, 155, 77, 0.3);
+}
+
+.plot-card {
+    background: #fff;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+    padding: 25px;
+    margin-bottom: 30px;
+    transition: all 0.3s ease;
+    border-top: 4px solid #0D9B4D;
+    height: 100%;
+}
+
+.plot-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+}
+
+.plot-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    padding-bottom: 15px;
+    border-bottom: 2px solid #f0f0f0;
+}
+
+.plot-number {
+    font-size: 24px;
+    font-weight: 700;
+    color: #222;
+}
+
+.plot-status {
+    padding: 6px 15px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.status-available {
+    background: #d4edda;
+    color: #155724;
+}
+
+.status-booked {
+    background: #f8d7da;
+    color: #721c24;
+}
+
+.status-reserved {
+    background: #fff3cd;
+    color: #856404;
+}
+
+.plot-details {
+    margin-bottom: 15px;
+}
+
+.plot-detail-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 8px 0;
+    border-bottom: 1px solid #f5f5f5;
+}
+
+.plot-detail-label {
+    color: #777;
+    font-weight: 500;
+    font-size: 14px;
+}
+
+.plot-detail-value {
+    color: #222;
+    font-weight: 600;
+    font-size: 14px;
+}
+
+.plot-direction {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.direction-icon {
+    width: 20px;
+    height: 20px;
+    background: #0D9B4D;
+    color: #fff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 10px;
+}
+
+.plot-actions {
+    margin-top: 20px;
+}
+
+.plot-btn {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 14px;
+}
+
+.btn-inquire {
+    background: #0D9B4D;
+    color: #fff;
+}
+
+.btn-inquire:hover {
+    background: #0a7a3d;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(13, 155, 77, 0.3);
+}
+
+.btn-booked {
+    background: #e0e0e0;
+    color: #999;
+    cursor: not-allowed;
+}
+
+.spinner-border {
+    display: inline-block;
+    width: 3rem;
+    height: 3rem;
+    vertical-align: text-bottom;
+    border: 0.25em solid currentColor;
+    border-right-color: transparent;
+    border-radius: 50%;
+    animation: spinner-border 0.75s linear infinite;
+}
+
+@keyframes spinner-border {
+    to { transform: rotate(360deg); }
+}
+
+/* Responsive */
+@media (max-width: 767px) {
+    .plot-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+    
+    .filter-btn {
+        padding: 8px 20px;
+        font-size: 12px;
+    }
 }

@@ -1,0 +1,7 @@
+# Exclude large video files
+assets/Video/
+*.MP4
+*.mp4
+
+# System files
+.DS_Store

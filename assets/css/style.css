@@ -6499,22 +6499,45 @@ body.search-visible {
     /* Fix zoom and left alignment issue */
     * {
         max-width: 100%;
+        box-sizing: border-box;
     }
-    
+
     html, body {
         overflow-x: hidden !important;
         width: 100% !important;
         position: relative !important;
+        margin: 0 !important;
+        padding: 0 !important;
     }
-    
+
     /* Smooth scrolling optimization */
     * {
         -webkit-overflow-scrolling: touch;
     }
-    
+
     body {
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
+        scroll-behavior: smooth;
+    }
+
+    /* Prevent text selection issues on mobile */
+    * {
+        -webkit-touch-callout: none;
+        -webkit-user-select: none;
+        -khtml-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+    }
+
+    /* Allow text selection on specific elements */
+    input, textarea, .btn, a {
+        -webkit-user-select: text;
+        -khtml-user-select: text;
+        -moz-user-select: text;
+        -ms-user-select: text;
+        user-select: text;
     }
     
     .plot-header {

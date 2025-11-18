@@ -1,0 +1,116 @@
+/* Mobile-Specific Optimizations */
+/* This file contains critical mobile fixes for Vrinda Green City website */
+
+/* Prevent zoom and content shift issues */
+@media (max-width: 767px) {
+    /* Force proper viewport handling */
+    html {
+        -webkit-text-size-adjust: 100%;
+        -ms-text-size-adjust: 100%;
+    }
+
+    /* Fix for iOS Safari zoom bounce */
+    body {
+        position: fixed;
+        width: 100%;
+        height: 100%;
+        overflow: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    /* Ensure all containers respect viewport */
+    .container, .container-fluid {
+        padding-left: 15px !important;
+        padding-right: 15px !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+    }
+
+    /* Fix video containers for mobile */
+    .banner-video-wrapper,
+    .features-img,
+    .gallery-video-wrapper,
+    .formula-img {
+        position: relative !important;
+        overflow: hidden !important;
+        border-radius: 10px !important;
+    }
+
+    /* Optimize video iframes for mobile */
+    .banner-video-wrapper iframe,
+    .features-img iframe,
+    .gallery-video-wrapper iframe,
+    .formula-img iframe {
+        position: absolute !important;
+        top: 50% !important;
+        left: 50% !important;
+        transform: translate(-50%, -50%) !important;
+        border: none !important;
+        border-radius: 10px !important;
+    }
+
+    /* PDF viewer mobile optimization */
+    .pdf-viewer-container {
+        -webkit-overflow-scrolling: touch !important;
+        touch-action: pan-y !important;
+    }
+
+    .pdf-viewer-container iframe {
+        pointer-events: auto !important;
+        touch-action: manipulation !important;
+    }
+
+    /* Improve touch targets */
+    button, .btn, a, input, select, textarea {
+        min-height: 44px !important;
+        min-width: 44px !important;
+    }
+
+    /* Fix navigation on mobile */
+    .mobile-menu-visible {
+        overflow: hidden !important;
+    }
+
+    /* Ensure proper spacing */
+    section, .section-padding {
+        padding-top: 60px !important;
+        padding-bottom: 60px !important;
+    }
+}
+
+/* Extra small devices (phones < 576px) */
+@media (max-width: 575px) {
+    /* Reduce video heights for very small screens */
+    .banner-video-wrapper,
+    .gallery-video-wrapper,
+    .formula-img {
+        height: 200px !important;
+    }
+
+    .features-img {
+        height: 180px !important;
+    }
+
+    /* Smaller PDF viewer */
+    .pdf-viewer-container {
+        max-height: 400px !important;
+    }
+
+    .pdf-viewer-container iframe {
+        height: 400px !important;
+    }
+}
+
+/* Landscape orientation fixes */
+@media (max-width: 767px) and (orientation: landscape) {
+    /* Adjust video heights for landscape */
+    .banner-video-wrapper,
+    .gallery-video-wrapper,
+    .formula-img {
+        height: 200px !important;
+    }
+
+    .features-img {
+        height: 180px !important;
+    }
+}

@@ -5,7 +5,7 @@
 if (window.innerWidth <= 767) {
 	// Add CSS for smooth scrolling
 	document.documentElement.style.scrollBehavior = 'smooth';
-	
+
 	// Optimize touch scrolling
 	var supportsPassive = false;
 	try {
@@ -17,10 +17,32 @@ if (window.innerWidth <= 767) {
 		window.addEventListener("testPassive", null, opts);
 		window.removeEventListener("testPassive", null, opts);
 	} catch (e) {}
-	
+
 	// Add passive event listeners for better scroll performance
 	document.addEventListener('touchstart', function(){}, supportsPassive ? { passive: true } : false);
 	document.addEventListener('touchmove', function(){}, supportsPassive ? { passive: true } : false);
+
+	// Prevent zoom on double tap
+	var lastTouchEnd = 0;
+	document.addEventListener('touchend', function(event) {
+		var now = (new Date()).getTime();
+		if (now - lastTouchEnd <= 300) {
+			event.preventDefault();
+		}
+		lastTouchEnd = now;
+	}, false);
+
+	// Fix for iOS Safari viewport height issues
+	function setVH() {
+		var vh = window.innerHeight * 0.01;
+		document.documentElement.style.setProperty('--vh', vh + 'px');
+	}
+
+	setVH();
+	window.addEventListener('resize', setVH);
+	window.addEventListener('orientationchange', function() {
+		setTimeout(setVH, 100);
+	});
 }
 
 /*=============================================

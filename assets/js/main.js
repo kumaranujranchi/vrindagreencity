@@ -1,6 +1,28 @@
 (function ($) {
 	"use strict";
 
+// Mobile smooth scrolling optimization
+if (window.innerWidth <= 767) {
+	// Add CSS for smooth scrolling
+	document.documentElement.style.scrollBehavior = 'smooth';
+	
+	// Optimize touch scrolling
+	var supportsPassive = false;
+	try {
+		var opts = Object.defineProperty({}, 'passive', {
+			get: function() {
+				supportsPassive = true;
+			}
+		});
+		window.addEventListener("testPassive", null, opts);
+		window.removeEventListener("testPassive", null, opts);
+	} catch (e) {}
+	
+	// Add passive event listeners for better scroll performance
+	document.addEventListener('touchstart', function(){}, supportsPassive ? { passive: true } : false);
+	document.addEventListener('touchmove', function(){}, supportsPassive ? { passive: true } : false);
+}
+
 /*=============================================
 	=    		 Preloader			      =
 =============================================*/

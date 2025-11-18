@@ -6496,6 +6496,27 @@ body.search-visible {
 
 /* Mobile Devices (up to 767px) */
 @media (max-width: 767px) {
+    /* Fix zoom and left alignment issue */
+    * {
+        max-width: 100%;
+    }
+    
+    html, body {
+        overflow-x: hidden !important;
+        width: 100% !important;
+        position: relative !important;
+    }
+    
+    /* Smooth scrolling optimization */
+    * {
+        -webkit-overflow-scrolling: touch;
+    }
+    
+    body {
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+    }
+    
     .plot-header {
         flex-direction: column;
         align-items: flex-start;
@@ -6507,66 +6528,98 @@ body.search-visible {
         font-size: 12px;
     }
     
-    /* Hero Section Video - Increased iframe scale to reduce black bars */
+    /* Hero Section Video - Better aspect ratio for mobile */
     .banner-video-wrapper {
-        height: 300px !important;
+        height: 280px !important;
         width: 100% !important;
+        margin: 0 auto !important;
+        border-radius: 10px !important;
     }
     
     .banner-video-wrapper iframe {
-        width: 200% !important;
-        height: 200% !important;
+        width: 177.78% !important;
+        height: 177.78% !important;
+        object-fit: cover !important;
     }
     
-    /* Amenities Video - Increased iframe scale */
+    /* Amenities Video - Better scaling */
     .features-img {
         width: 100% !important;
         max-width: 100% !important;
-        height: 250px !important;
+        height: 240px !important;
         margin-right: 0 !important;
-        margin-bottom: 30px;
+        margin-bottom: 30px !important;
+        margin-left: 0 !important;
+        border-radius: 10px !important;
     }
     
     .features-img iframe {
-        width: 200% !important;
-        height: 200% !important;
+        width: 177.78% !important;
+        height: 177.78% !important;
+        object-fit: cover !important;
     }
     
-    /* Development Gallery Video - Increased iframe scale */
+    /* Development Gallery Video - Better aspect */
     .gallery-video-wrapper {
-        height: 300px !important;
+        height: 280px !important;
         width: 100% !important;
+        margin: 0 auto !important;
+        border-radius: 10px !important;
     }
     
     .gallery-video-wrapper iframe {
-        width: 200% !important;
-        height: 200% !important;
+        width: 177.78% !important;
+        height: 177.78% !important;
+        object-fit: cover !important;
     }
     
-    /* Location Advantage Video - Increased iframe scale */
+    /* Location Advantage Video - Better scaling */
     .formula-img {
         width: 100% !important;
-        height: 300px !important;
-        margin: 0 !important;
+        height: 280px !important;
+        margin: 0 auto 30px !important;
+        border-radius: 10px !important;
     }
     
     .formula-img iframe {
-        width: 200% !important;
-        height: 200% !important;
+        width: 177.78% !important;
+        height: 177.78% !important;
+        object-fit: cover !important;
     }
     
-    /* Prevent horizontal scroll */
-    body {
-        overflow-x: hidden !important;
-    }
-    
+    /* Fix container and row spacing */
     .container {
         overflow-x: hidden !important;
+        padding-left: 15px !important;
+        padding-right: 15px !important;
+        width: 100% !important;
+        max-width: 100% !important;
     }
     
     .row {
         margin-left: 0 !important;
         margin-right: 0 !important;
+        width: 100% !important;
+    }
+    
+    [class*="col-"] {
+        padding-left: 15px !important;
+        padding-right: 15px !important;
+    }
+    
+    /* PDF Viewer optimization */
+    .paroller-img {
+        height: 400px !important;
+        overflow: auto !important;
+        -webkit-overflow-scrolling: touch !important;
+    }
+    
+    .paroller-img iframe,
+    .paroller-img embed,
+    .paroller-img object {
+        width: 100% !important;
+        height: 100% !important;
+        border: none !important;
     }
     
     /* Location Cards */
@@ -6577,10 +6630,25 @@ body.search-visible {
     .formula-list li {
         font-size: 14px !important;
         padding-left: 25px !important;
+        margin-bottom: 8px !important;
     }
     
     .formula-list li strong {
         font-size: 16px !important;
+        display: block !important;
+        margin-bottom: 3px !important;
+    }
+    
+    /* Improve touch targets */
+    a, button, .btn {
+        min-height: 44px !important;
+        min-width: 44px !important;
+    }
+    
+    /* Fix images */
+    img {
+        max-width: 100% !important;
+        height: auto !important;
     }
 }
 
@@ -6588,25 +6656,44 @@ body.search-visible {
 @media (max-width: 576px) {
     /* Extra small devices - Further optimized */
     .banner-video-wrapper {
-        height: 250px !important;
+        height: 220px !important;
     }
     
     .banner-video-wrapper iframe {
-        width: 250% !important;
-        height: 250% !important;
+        width: 200% !important;
+        height: 200% !important;
     }
     
-    .features-img,
-    .gallery-video-wrapper,
-    .formula-img {
+    .features-img {
         height: 200px !important;
     }
     
-    .features-img iframe,
-    .gallery-video-wrapper iframe,
+    .features-img iframe {
+        width: 200% !important;
+        height: 200% !important;
+    }
+    
+    .gallery-video-wrapper {
+        height: 220px !important;
+    }
+    
+    .gallery-video-wrapper iframe {
+        width: 200% !important;
+        height: 200% !important;
+    }
+    
+    .formula-img {
+        height: 220px !important;
+    }
+    
     .formula-img iframe {
-        width: 250% !important;
-        height: 250% !important;
+        width: 200% !important;
+        height: 200% !important;
+    }
+    
+    /* PDF Viewer for small screens */
+    .paroller-img {
+        height: 300px !important;
     }
     
     /* Footer Instagram Carousel */

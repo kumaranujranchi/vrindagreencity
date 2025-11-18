@@ -33,12 +33,20 @@ $(window).scroll(function () {
 		if (sectionOffset <= scrollbarLocation) {
 			$(this).parent().addClass('active');
 			$(this).parent().siblings().removeClass('active');
+			// Update URL without page reload using History API
+			var sectionId = $(this).attr('href').replace('#', '');
+			if (sectionId && sectionId !== 'home') {
+				history.replaceState(null, null, '/' + sectionId);
+			} else {
+				history.replaceState(null, null, '/');
+			}
 		}
 	});
 });
 //jQuery for page scrolling feature - requires jQuery Easing plugin
 $(function () {
-	$('a.section-link[href*="#"]:not([href="#"])').on('click', function () {
+	$('a.section-link[href*="#"]:not([href="#"])').on('click', function (e) {
+		e.preventDefault();
 		if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
 			var target = $(this.hash);
 			target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
@@ -46,7 +54,30 @@ $(function () {
 				$('html, body').animate({
 					scrollTop: (target.offset().top - 80)
 				}, 1200, "easeInOutExpo");
+				
+				// Update URL using History API for clean URLs
+				var sectionId = this.hash.replace('#', '');
+				if (sectionId && sectionId !== 'home') {
+					history.pushState(null, null, '/' + sectionId);
+				} else {
+					history.pushState(null, null, '/');
+				}
 				return false;
+			}
+		}
+	});
+	
+	// Handle direct URL access (e.g., vrindagreencity.com/pricing)
+	$(window).on('load', function() {
+		var path = window.location.pathname.replace(/^\//, '').replace(/\/$/, '');
+		if (path && path !== 'index.html') {
+			var target = $('#' + path);
+			if (target.length) {
+				setTimeout(function() {
+					$('html, body').animate({
+						scrollTop: (target.offset().top - 80)
+					}, 1200, "easeInOutExpo");
+				}, 100);
 			}
 		}
 	});

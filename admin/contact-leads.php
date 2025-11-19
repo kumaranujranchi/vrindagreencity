@@ -120,7 +120,17 @@ closeDBConnection($conn);
                                     <td><?php echo htmlspecialchars($lead['email']); ?></td>
                                     <td><?php echo htmlspecialchars($lead['phone'] ?? 'N/A'); ?></td>
                                     <td><?php echo htmlspecialchars($lead['subject'] ?? 'N/A'); ?></td>
-                                    <td style="max-width: 300px;"><?php echo htmlspecialchars(substr($lead['message'], 0, 100)) . (strlen($lead['message']) > 100 ? '...' : ''); ?></td>
+                                    <td style="max-width: 250px;">
+                                        <?php 
+                                        $message = $lead['message'];
+                                        if (strlen($message) > 50) {
+                                            echo htmlspecialchars(substr($message, 0, 50)) . '... ';
+                                            echo '<a href="view-lead.php?id=' . $lead['id'] . '" style="color:#0D9B4D; font-weight:600;">Read More</a>';
+                                        } else {
+                                            echo htmlspecialchars($message);
+                                        }
+                                        ?>
+                                    </td>
                                     <td>
                                         <form method="POST" style="display: inline;">
                                             <input type="hidden" name="lead_id" value="<?php echo $lead['id']; ?>">

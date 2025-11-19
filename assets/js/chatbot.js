@@ -188,34 +188,39 @@
               setTimeout(() => {
                 removeTyping();
                 addBotMessage(
-                  "We offer premium residential plots in Bihta with clear titles and modern amenities. How can I help you today?",
-                  true,
-                  [
-                    "View Plots",
-                    "Book Site Visit",
-                    "Get Price Info",
-                    "Talk to Agent",
-                  ]
+                  "We offer premium residential plots in Bihta with clear titles and modern amenities."
                 );
-                conversation.step++;
+                setTimeout(() => {
+                  showTyping();
+                  setTimeout(() => {
+                    removeTyping();
+                    addBotMessage("May I know your name?");
+                    conversation.step++;
+                  }, 800);
+                }, 500);
               }, 1000);
             }, 500);
           }, 1000);
         }, 500);
         break;
 
-      case 1: // Interest selection
-        conversation.userData.subject = userInput;
+      case 1: // Name
+        conversation.userData.name = userInput;
         setTimeout(() => {
           showTyping();
           setTimeout(() => {
             removeTyping();
-            addBotMessage("Great! I'd love to help you with that. 😊");
+            addBotMessage(`Nice to meet you, ${userInput}! 🙂`);
             setTimeout(() => {
               showTyping();
               setTimeout(() => {
                 removeTyping();
-                addBotMessage("May I know your name?");
+                addBotMessage(`${userInput}, how can I help you today?`, true, [
+                  "View Plots",
+                  "Book Site Visit",
+                  "Get Price Info",
+                  "Talk to Agent",
+                ]);
                 conversation.step++;
               }, 800);
             }, 500);
@@ -223,13 +228,15 @@
         }, 500);
         break;
 
-      case 2: // Name
-        conversation.userData.name = userInput;
+      case 2: // Interest selection
+        conversation.userData.subject = userInput;
         setTimeout(() => {
           showTyping();
           setTimeout(() => {
             removeTyping();
-            addBotMessage(`Nice to meet you, ${userInput}! 🙂`);
+            addBotMessage(
+              `Great! I'd love to help you with that, ${conversation.userData.name}. 😊`
+            );
             setTimeout(() => {
               showTyping();
               setTimeout(() => {
@@ -281,7 +288,7 @@
           setTimeout(() => {
             removeTyping();
             addBotMessage(
-              "Perfect! Is there anything specific you'd like to know or any message you'd like to share?"
+              `Perfect, ${conversation.userData.name}! Is there anything specific you'd like to know or any message you'd like to share?`
             );
             conversation.step++;
           }, 1000);
@@ -294,7 +301,7 @@
           showTyping();
           setTimeout(() => {
             removeTyping();
-            addBotMessage("Thank you for providing all the details! 🎉");
+            addBotMessage(`Thank you for providing all the details, ${conversation.userData.name}! 🎉`);
             setTimeout(() => {
               showTyping();
               setTimeout(() => {

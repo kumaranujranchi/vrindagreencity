@@ -206,16 +206,17 @@
 
       case 1: // Name
         conversation.userData.name = userInput;
+        const userName = userInput;
         setTimeout(() => {
           showTyping();
           setTimeout(() => {
             removeTyping();
-            addBotMessage(`Nice to meet you, ${userInput}! 🙂`);
+            addBotMessage("Nice to meet you, " + userName + "! 🙂");
             setTimeout(() => {
               showTyping();
               setTimeout(() => {
                 removeTyping();
-                addBotMessage(`${userInput}, how can I help you today?`, true, [
+                addBotMessage(userName + ", how can I help you today?", true, [
                   "View Plots",
                   "Book Site Visit",
                   "Get Price Info",
@@ -235,7 +236,9 @@
           setTimeout(() => {
             removeTyping();
             addBotMessage(
-              `Great! I'd love to help you with that, ${conversation.userData.name}. 😊`
+              "Great! I'd love to help you with that, " +
+                conversation.userData.name +
+                ". 😊"
             );
             setTimeout(() => {
               showTyping();
@@ -288,7 +291,7 @@
           setTimeout(() => {
             removeTyping();
             addBotMessage(
-              `Perfect, ${conversation.userData.name}! Is there anything specific you'd like to know or any message you'd like to share?`
+              "Perfect, " + conversation.userData.name + "! Is there anything specific you'd like to know or any message you'd like to share?"
             );
             conversation.step++;
           }, 1000);
@@ -301,7 +304,9 @@
           showTyping();
           setTimeout(() => {
             removeTyping();
-            addBotMessage(`Thank you for providing all the details, ${conversation.userData.name}! 🎉`);
+            addBotMessage(
+              "Thank you for providing all the details, " + conversation.userData.name + "! 🎉"
+            );
             setTimeout(() => {
               showTyping();
               setTimeout(() => {

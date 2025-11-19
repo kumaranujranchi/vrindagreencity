@@ -3,6 +3,9 @@
  *  CONFIGURE EVERYTHING HERE
  */
 
+// Include database configuration
+require_once '../admin/config.php';
+
 // an email address that will be in the From field of the email.
 $from = 'Demo contact form';
 
@@ -14,7 +17,7 @@ $subject = 'New message from contact form';
 
 // form field names and their translations.
 // array variable name => Text to appear in the email
-$fields = array('name' => 'Name', 'email' => 'Email', 'message' => 'Message');
+$fields = array('name' => 'Name', 'email' => 'Email', 'phone' => 'Phone', 'subject' => 'Subject', 'message' => 'Message');
 
 // message that will be displayed when everything is OK :)
 $okMessage = 'Contact form successfully submitted. Thank you, I will get back to you soon!';
@@ -33,6 +36,31 @@ try
 {
 
     if(count($_POST) == 0) throw new \Exception('Form is empty');
+
+    // Get form data
+    $name = sanitize($_POST['name'] ?? '');
+    $email = sanitize($_POST['email'] ?? '');
+    $phone = sanitize($_POST['phone'] ?? '');
+    $form_subject = sanitize($_POST['subject'] ?? '');
+    $message = sanitize($_POST['message'] ?? '');
+
+    // Validate required fields
+    if (empty($name) || empty($email) || empty($message)) {
+        throw new \Exception('Please fill all required fields');
+    }
+
+    // Save to database
+    try {
+        $conn = getDBConnection();
+        $stmt = $conn->prepare("INSERT INTO contact_leads (name, email, phone, subject, message) VALUES (?, ?, ?, ?, ?)");
+        $stmt->bind_param("sssss", $name, $email, $phone, $form_subject, $message);
+        $stmt->execute();
+        $stmt->close();
+        closeDBConnection($conn);
+    } catch (Exception $db_error) {
+        // Log error but continue to send email
+        error_log("Database error: " . $db_error->getMessage());
+    }
 
     $emailText = "You have a new message from your contact form\n=============================\n";
 

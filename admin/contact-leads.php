@@ -60,6 +60,7 @@ closeDBConnection($conn);
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact Leads - Vrinda Green City Admin</title>
+    <link rel="shortcut icon" type="image/x-icon" href="https://imagizer.imageshack.com/img923/9404/A1ADwj.png">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>

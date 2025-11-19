@@ -24,7 +24,7 @@
                 <div class="lead-popup-content">
                     <button class="lead-popup-close" id="lead-popup-close">&times;</button>
                     <div class="lead-popup-header">
-                        <h2>🏡 Get Exclusive Offers!</h2>
+                        <h2>🏡 GET EXCLUSIVE OFFERS!</h2>
                         <p>Fill the form below and get special discounts on plots</p>
                     </div>
                     <div class="lead-popup-body">

@@ -318,10 +318,8 @@
     
     // Global function for inquire button
     window.inquirePlot = function(plotNo) {
-        const phone = '917280008102';
-        const message = `Hi, I'm interested in Plot ${plotNo} at Vrinda Green City`;
-        const whatsappUrl = `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
-        window.open(whatsappUrl, '_blank');
+        // Redirect to contact page with plot information
+        window.location.href = `contact.html?plot=${plotNo}`;
     };
     
 })(jQuery);

@@ -562,6 +562,21 @@
     <!-- Newsletter Subscription Script -->
     <script>
         $(document).ready(function () {
+            // Check if plot parameter exists in URL
+            const urlParams = new URLSearchParams(window.location.search);
+            const plotNo = urlParams.get('plot');
+            
+            if (plotNo) {
+                // Pre-fill subject and message for plot inquiry
+                $('#subject').val('Plot Booking');
+                $('#message').val(`I am interested in Plot ${plotNo} at Vrinda Green City. Please provide more details.`);
+                
+                // Scroll to contact form
+                $('html, body').animate({
+                    scrollTop: $('.contact-form-area').offset().top - 100
+                }, 1000);
+            }
+            
             $('#newsletter-form').on('submit', function (e) {
                 e.preventDefault();
 

@@ -1,2 +1,8 @@
-# Deny access to this directory
+# Allow access to admin panel
+
+# Security: Deny access to sensitive files only
+
+<FilesMatch "^(config\.php)$">
+Order allow,deny
 Deny from all
+</FilesMatch>

@@ -22,6 +22,7 @@
     <link rel="stylesheet" href="assets/css/default.css">
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="assets/css/responsive.css">
+    <link rel="stylesheet" href="assets/css/popup-form.css">
 </head>
 
 <body>
@@ -560,22 +561,22 @@
 
     <!-- Newsletter Subscription Script -->
     <script>
-        $(document).ready(function() {
-            $('#newsletter-form').on('submit', function(e) {
+        $(document).ready(function () {
+            $('#newsletter-form').on('submit', function (e) {
                 e.preventDefault();
-                
+
                 var email = $(this).find('input[name="email"]').val();
                 var messageDiv = $('#newsletter-message');
-                
+
                 $.ajax({
                     url: 'inc/newsletter.php',
                     type: 'POST',
                     data: { email: email },
                     dataType: 'json',
-                    beforeSend: function() {
+                    beforeSend: function () {
                         messageDiv.html('<span style="color: #FFD700;">Subscribing...</span>');
                     },
-                    success: function(response) {
+                    success: function (response) {
                         if (response.success) {
                             messageDiv.html('<span style="color: #4CAF50;">✓ ' + response.message + '</span>');
                             $('#newsletter-form')[0].reset();
@@ -583,13 +584,16 @@
                             messageDiv.html('<span style="color: #FF6B6B;">✗ ' + response.message + '</span>');
                         }
                     },
-                    error: function() {
+                    error: function () {
                         messageDiv.html('<span style="color: #FF6B6B;">✗ Something went wrong. Please try again.</span>');
                     }
                 });
             });
         });
     </script>
+
+    <!-- Popup Lead Form Script -->
+    <script src="assets/js/popup-form.js"></script>
 </body>
 
 </html>

@@ -3,15 +3,18 @@
 ## 📋 What Has Been Created
 
 ### ✅ Complete Admin Panel System
+
 A full-featured PHP admin panel to manage all leads from your Vrinda Green City website.
 
 ## 🗂️ Files Created
 
 ### Database & Configuration
+
 1. **database.sql** - SQL file to create all required tables
 2. **admin/config.php** - Database configuration file
 
 ### Admin Panel Pages
+
 3. **admin/login.php** - Admin login page
 4. **admin/logout.php** - Logout handler
 5. **admin/index.php** - Dashboard with statistics
@@ -25,17 +28,21 @@ A full-featured PHP admin panel to manage all leads from your Vrinda Green City 
 13. **admin/.htaccess** - Security configuration
 
 ### Documentation
+
 14. **ADMIN_SETUP_GUIDE.md** - Complete setup instructions
 
 ### Updated Files
+
 15. **inc/contact.php** - Updated to save leads to database
 
 ## 🔧 Setup Instructions
 
 ### Step 1: Upload Files
+
 Upload all the `admin/` folder files to your server.
 
 ### Step 2: Import Database
+
 1. Login to **cPanel** → **phpMyAdmin**
 2. Select database: `u743570205_vrindagreen`
 3. Click **Import** tab
@@ -43,6 +50,7 @@ Upload all the `admin/` folder files to your server.
 5. Click **Go**
 
 ### Step 3: Access Admin Panel
+
 Visit: `https://vrindagreencity.com/admin/login.php`
 
 ## 🔑 Default Login Credentials
@@ -62,6 +70,7 @@ Visit: `https://vrindagreencity.com/admin/login.php`
 ## ✨ Features
 
 ### Dashboard
+
 - Total leads count
 - New leads count
 - Property inquiries count
@@ -69,6 +78,7 @@ Visit: `https://vrindagreencity.com/admin/login.php`
 - Recent leads overview
 
 ### Contact Leads Management
+
 - View all contact form submissions
 - Filter by status (New, Contacted, Closed)
 - Update lead status
@@ -77,12 +87,14 @@ Visit: `https://vrindagreencity.com/admin/login.php`
 - Auto-save from website contact form
 
 ### Property Inquiries
+
 - View all property inquiries
 - Filter by status
 - Update inquiry status
 - Delete inquiries
 
 ### Newsletter Subscribers
+
 - View all subscribers
 - Filter by status
 - Export to CSV
@@ -94,11 +106,12 @@ Visit: `https://vrindagreencity.com/admin/login.php`
 ✅ SQL injection protection with prepared statements  
 ✅ XSS protection with sanitization  
 ✅ Session-based authentication  
-✅ Login required for all admin pages  
+✅ Login required for all admin pages
 
 ## 🎨 Admin Panel Design
 
 Modern, responsive design with:
+
 - Clean white interface
 - Green color theme matching your brand
 - Mobile-friendly responsive layout
@@ -110,6 +123,7 @@ Modern, responsive design with:
 ## 📱 Mobile Responsive
 
 The admin panel works perfectly on:
+
 - Desktop computers
 - Tablets
 - Mobile phones
@@ -126,6 +140,7 @@ The admin panel works perfectly on:
 ## 💡 How Contact Form Works Now
 
 When someone submits the contact form on your website:
+
 1. Data is saved to the database ✅
 2. Email is sent to you ✅
 3. You can view/manage it in admin panel ✅
@@ -133,6 +148,7 @@ When someone submits the contact form on your website:
 ## 📧 Admin User for Testing
 
 **Created Admin Account:**
+
 - Username: `admin`
 - Password: `Admin@123`
 - Email: `admin@vrindagreencity.com`
@@ -140,14 +156,17 @@ When someone submits the contact form on your website:
 ## 🛠️ Troubleshooting
 
 **Can't login?**
+
 - Make sure you imported database.sql
 - Check database credentials in admin/config.php
 
 **Database error?**
+
 - Verify database name, username, password
 - Make sure MySQL is running
 
 **Contact form not saving?**
+
 - Check inc/contact.php has been updated
 - Verify database connection
 

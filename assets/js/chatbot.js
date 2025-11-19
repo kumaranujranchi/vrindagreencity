@@ -291,7 +291,9 @@
           setTimeout(() => {
             removeTyping();
             addBotMessage(
-              "Perfect, " + conversation.userData.name + "! Is there anything specific you'd like to know or any message you'd like to share?"
+              "Perfect, " +
+                conversation.userData.name +
+                "! Is there anything specific you'd like to know or any message you'd like to share?"
             );
             conversation.step++;
           }, 1000);
@@ -305,7 +307,9 @@
           setTimeout(() => {
             removeTyping();
             addBotMessage(
-              "Thank you for providing all the details, " + conversation.userData.name + "! 🎉"
+              "Thank you for providing all the details, " +
+                conversation.userData.name +
+                "! 🎉"
             );
             setTimeout(() => {
               showTyping();

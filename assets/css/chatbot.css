@@ -401,10 +401,17 @@
 
 /* Mobile Responsive */
 @media (max-width: 576px) {
+  .chatbot-widget {
+    position: fixed;
+    right: 10px !important;
+    left: auto !important;
+  }
+
   .chatbot-window {
     width: calc(100vw - 20px);
     height: calc(100vh - 100px);
     right: 10px;
+    left: 10px;
     bottom: 80px;
   }
 
@@ -416,13 +423,6 @@
   }
 
   .chatbot-tooltip {
-    right: auto;
-    left: -10px;
-    bottom: 65px;
-  }
-
-  .chatbot-tooltip::after {
-    right: auto;
-    left: 20px;
+    display: none !important;
   }
 }

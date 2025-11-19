@@ -1036,14 +1036,7 @@
     margin: 10px 0 0;
   }
   .scroll-top {
-    right: 15px;
-    width: 35px;
-    height: 35px;
-    line-height: 35px;
-    font-size: 14px;
-  }
-  .scroll-top.open {
-    bottom: 15px;
+    display: none !important;
   }
   .copyright-text {
     text-align: center;

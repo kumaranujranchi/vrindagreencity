@@ -370,6 +370,7 @@
     );
 
     // Log the data being sent
+    console.log("=== CHATBOT LEAD SUBMISSION ===");
     console.log("Submitting lead data:", {
       name: conversation.userData.name,
       email: conversation.userData.email,
@@ -377,17 +378,19 @@
       subject: conversation.userData.subject,
       message: conversation.userData.message
     });
+    console.log("Sending to: /inc/contact.php");
 
     fetch("/inc/contact.php", {
       method: "POST",
       body: formData,
     })
       .then((response) => {
+        console.log("Response status:", response.status);
         if (!response.ok) {
-          throw new Error("Network response was not ok");
+          throw new Error("Network response was not ok: " + response.status);
         }
         return response.text().then(text => {
-          console.log("Server response:", text);
+          console.log("Raw server response:", text);
           try {
             return JSON.parse(text);
           } catch (e) {
@@ -399,13 +402,15 @@
       .then((data) => {
         console.log("Parsed response:", data);
         if (data.type === 'success') {
-            console.log("Lead submitted successfully:", data);
+            console.log("✅ Lead submitted successfully!");
+            console.log("Response message:", data.message);
         } else {
-            console.error("Server reported error:", data.message);
+            console.error("❌ Server reported error:", data.message);
         }
       })
       .catch((error) => {
-        console.error("Error submitting lead:", error);
+        console.error("❌ Error submitting lead:", error);
+        console.error("Please check network tab for details");
       });
   }
 

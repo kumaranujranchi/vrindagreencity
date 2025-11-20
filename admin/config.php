@@ -1,7 +1,7 @@
 <?php
 // Database configuration
 define('DB_HOST', 'localhost');
-define('DB_USER', 'u743570205_vindagreen');
+define('DB_USER', 'u743570205_vrindagreen');
 define('DB_PASS', 'Anuj@2025@2026');
 define('DB_NAME', 'u743570205_vrindagreen');
 

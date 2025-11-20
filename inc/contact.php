@@ -29,13 +29,15 @@ $errorMessage = 'There was an error while submitting the form. Please try again 
  *  LET'S DO THE SENDING
  */
 
-// if you are not debugging and don't need error reporting, turn this off by error_reporting(0);
+// Enable error logging
 error_reporting(E_ALL & ~E_NOTICE);
+ini_set('log_errors', 1);
+ini_set('error_log', '../admin/contact_form_errors.log');
 
-try
-{
+try {
 
-    if(count($_POST) == 0) throw new \Exception('Form is empty');
+    if (count($_POST) == 0)
+        throw new \Exception('Form is empty');
 
     // Get form data
     $name = sanitize($_POST['name'] ?? '');
@@ -54,12 +56,21 @@ try
         $conn = getDBConnection();
         $stmt = $conn->prepare("INSERT INTO contact_leads (name, email, phone, subject, message) VALUES (?, ?, ?, ?, ?)");
         $stmt->bind_param("sssss", $name, $email, $phone, $form_subject, $message);
-        $stmt->execute();
+        
+        if (!$stmt->execute()) {
+            error_log("SQL Error: " . $stmt->error);
+            throw new Exception('Failed to save lead to database');
+        }
+        
+        $lead_id = $conn->insert_id;
+        error_log("Lead saved successfully with ID: " . $lead_id);
+        
         $stmt->close();
         closeDBConnection($conn);
     } catch (Exception $db_error) {
-        // Log error but continue to send email
+        // Log error and throw exception to be caught by outer catch block
         error_log("Database error: " . $db_error->getMessage());
+        throw new Exception('Database error occurred. Please try again later.');
     }
 
     $emailText = "You have a new message from your contact form\n=============================\n";
@@ -72,7 +83,8 @@ try
     }
 
     // All the neccessary headers for the email.
-    $headers = array('Content-Type: text/plain; charset="UTF-8";',
+    $headers = array(
+        'Content-Type: text/plain; charset="UTF-8";',
         'From: ' . $from,
         'Reply-To: ' . $from,
         'Return-Path: ' . $from,
@@ -82,22 +94,11 @@ try
     mail($sendTo, $subject, $emailText, implode("\n", $headers));
 
     $responseArray = array('type' => 'success', 'message' => $okMessage);
-}
-catch (\Exception $e)
-{
+} catch (\Exception $e) {
     $responseArray = array('type' => 'danger', 'message' => $errorMessage);
 }
 
 
-// if requested by AJAX request return JSON response
-if (!empty($_SERVER['HTTP_X_REQUESTED_WITH']) && strtolower($_SERVER['HTTP_X_REQUESTED_WITH']) == 'xmlhttprequest') {
-    $encoded = json_encode($responseArray);
-
-    header('Content-Type: application/json');
-
-    echo $encoded;
-}
-// else just display the message
-else {
-    echo $responseArray['message'];
-}
+// Always return JSON response for better compatibility with chatbot
+header('Content-Type: application/json');
+echo json_encode($responseArray);

@@ -369,13 +369,40 @@
       conversation.userData.message || "Inquiry via chatbot"
     );
 
-    fetch("inc/contact.php", {
+    // Log the data being sent
+    console.log("Submitting lead data:", {
+      name: conversation.userData.name,
+      email: conversation.userData.email,
+      phone: conversation.userData.phone,
+      subject: conversation.userData.subject,
+      message: conversation.userData.message
+    });
+
+    fetch("/inc/contact.php", {
       method: "POST",
       body: formData,
     })
-      .then((response) => response.json())
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error("Network response was not ok");
+        }
+        return response.text().then(text => {
+          console.log("Server response:", text);
+          try {
+            return JSON.parse(text);
+          } catch (e) {
+            console.error("Failed to parse JSON:", text);
+            throw new Error("Server returned non-JSON response: " + text);
+          }
+        });
+      })
       .then((data) => {
-        console.log("Lead submitted successfully:", data);
+        console.log("Parsed response:", data);
+        if (data.type === 'success') {
+            console.log("Lead submitted successfully:", data);
+        } else {
+            console.error("Server reported error:", data.message);
+        }
       })
       .catch((error) => {
         console.error("Error submitting lead:", error);

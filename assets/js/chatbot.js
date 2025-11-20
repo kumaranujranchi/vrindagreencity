@@ -1,8 +1,8 @@
-// Chatbot Widget v2.0 - Fixed Lead Submission
+// Chatbot Widget v3.0 - Ultra Simple Direct DB Insert
 (function () {
   "use strict";
 
-  console.log("🤖 Chatbot v2.0 loaded - Using endpoint: /inc/chatbot-lead.php");
+  console.log("🤖 Chatbot v3.0 loaded - Using SIMPLE endpoint: /inc/simple-chatbot.php");
 
   // Chatbot conversation flow
   const conversation = {
@@ -383,7 +383,7 @@
     });
     
     // Use dedicated chatbot endpoint
-    const apiPath = window.location.origin + "/inc/chatbot-lead.php";
+    const apiPath = window.location.origin + "/inc/simple-chatbot.php";
     console.log("Sending POST request to:", apiPath);
 
     fetch(apiPath, {

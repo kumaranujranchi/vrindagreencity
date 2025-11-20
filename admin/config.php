@@ -1,9 +1,11 @@
 <?php
 // Database configuration for Hostinger
-// Note: Hostinger uses 'localhost' as DB_HOST
+// IMPORTANT: Check these credentials in your Hostinger hPanel → MySQL Databases
+// If you get "Access denied" error, verify password in Hostinger
+
 define('DB_HOST', 'localhost');
 define('DB_USER', 'u743570205_vrindagreen');
-define('DB_PASS', 'Anuj@2025@2026');
+define('DB_PASS', 'Anuj@2025@2026');  // ⚠️ UPDATE THIS if password is different in Hostinger
 define('DB_NAME', 'u743570205_vrindagreen');
 
 // Create database connection

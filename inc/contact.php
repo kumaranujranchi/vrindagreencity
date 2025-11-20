@@ -30,9 +30,15 @@ $errorMessage = 'There was an error while submitting the form. Please try again 
  */
 
 // Enable error logging
-error_reporting(E_ALL & ~E_NOTICE);
+error_reporting(E_ALL);
+ini_set('display_errors', 0);
 ini_set('log_errors', 1);
 ini_set('error_log', '../admin/contact_form_errors.log');
+
+// Log all incoming requests
+error_log("=== NEW CONTACT FORM SUBMISSION ===");
+error_log("POST data: " . print_r($_POST, true));
+error_log("Request method: " . $_SERVER['REQUEST_METHOD']);
 
 try {
 
@@ -45,11 +51,17 @@ try {
     $phone = sanitize($_POST['phone'] ?? '');
     $form_subject = sanitize($_POST['subject'] ?? '');
     $message = sanitize($_POST['message'] ?? '');
+    
+    // Log sanitized data
+    error_log("Sanitized data - Name: $name, Email: $email, Phone: $phone, Subject: $form_subject");
 
     // Validate required fields
     if (empty($name) || empty($email) || empty($message)) {
+        error_log("Validation failed - Missing required fields");
         throw new \Exception('Please fill all required fields');
     }
+    
+    error_log("Validation passed - Attempting database insert...");
 
     // Save to database
     try {
@@ -94,7 +106,10 @@ try {
     mail($sendTo, $subject, $emailText, implode("\n", $headers));
 
     $responseArray = array('type' => 'success', 'message' => $okMessage);
+    error_log("Success response prepared - Lead ID: " . ($lead_id ?? 'unknown'));
 } catch (\Exception $e) {
+    error_log("ERROR CAUGHT: " . $e->getMessage());
+    error_log("Stack trace: " . $e->getTraceAsString());
     $responseArray = array('type' => 'danger', 'message' => $errorMessage);
 }
 

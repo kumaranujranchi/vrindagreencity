@@ -359,6 +359,8 @@
 
   // Submit lead to backend
   function submitLead() {
+    console.log("=== CHATBOT LEAD SUBMISSION STARTED ===");
+    
     const formData = new FormData();
     formData.append("name", conversation.userData.name);
     formData.append("email", conversation.userData.email);
@@ -370,22 +372,27 @@
     );
 
     // Log the data being sent
-    console.log("=== CHATBOT LEAD SUBMISSION ===");
-    console.log("Submitting lead data:", {
+    console.log("Lead data to submit:", {
       name: conversation.userData.name,
       email: conversation.userData.email,
       phone: conversation.userData.phone,
       subject: conversation.userData.subject,
       message: conversation.userData.message
     });
-    console.log("Sending to: /inc/contact.php");
+    
+    // Try different path formats
+    const apiPath = window.location.origin + "/inc/contact.php";
+    console.log("Sending POST request to:", apiPath);
 
-    fetch("/inc/contact.php", {
+    fetch(apiPath, {
       method: "POST",
       body: formData,
     })
       .then((response) => {
+        console.log("Response received!");
         console.log("Response status:", response.status);
+        console.log("Response OK:", response.ok);
+        
         if (!response.ok) {
           throw new Error("Network response was not ok: " + response.status);
         }
@@ -402,14 +409,16 @@
       .then((data) => {
         console.log("Parsed response:", data);
         if (data.type === 'success') {
-            console.log("✅ Lead submitted successfully!");
+            console.log("✅ ✅ ✅ Lead submitted successfully! ✅ ✅ ✅");
             console.log("Response message:", data.message);
         } else {
             console.error("❌ Server reported error:", data.message);
         }
       })
       .catch((error) => {
-        console.error("❌ Error submitting lead:", error);
+        console.error("❌ ❌ ❌ Error submitting lead ❌ ❌ ❌");
+        console.error("Error details:", error);
+        console.error("Error message:", error.message);
         console.error("Please check network tab for details");
       });
   }

@@ -1,5 +1,6 @@
 <?php
-// Database configuration
+// Database configuration for Hostinger
+// Note: Hostinger uses 'localhost' as DB_HOST
 define('DB_HOST', 'localhost');
 define('DB_USER', 'u743570205_vrindagreen');
 define('DB_PASS', 'Anuj@2025@2026');

@@ -11,16 +11,30 @@ define('DB_NAME', 'u743570205_vrindagreen');
 // Create database connection
 function getDBConnection() {
     try {
+        // Enable error reporting for debugging
+        mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
+        
         $conn = new mysqli(DB_HOST, DB_USER, DB_PASS, DB_NAME);
         
         if ($conn->connect_error) {
+            error_log("MySQL Connection Error: " . $conn->connect_error);
             throw new Exception("Connection failed: " . $conn->connect_error);
         }
         
         $conn->set_charset("utf8mb4");
         return $conn;
     } catch (Exception $e) {
-        die("Database connection error: " . $e->getMessage());
+        // Log detailed error
+        error_log("Database connection failed - Host: " . DB_HOST . ", User: " . DB_USER . ", DB: " . DB_NAME);
+        error_log("Error: " . $e->getMessage());
+        
+        // Show user-friendly error
+        die("Database connection error: " . $e->getMessage() . 
+            "<br><br>Please check:<br>" .
+            "1. Database user has access to database<br>" .
+            "2. Password is correct<br>" .
+            "3. Database exists<br>" .
+            "4. User has ALL PRIVILEGES on database");
     }
 }
 

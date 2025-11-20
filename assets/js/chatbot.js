@@ -1,6 +1,8 @@
-// Chatbot Widget
+// Chatbot Widget v2.0 - Fixed Lead Submission
 (function () {
   "use strict";
+
+  console.log("🤖 Chatbot v2.0 loaded - Using endpoint: /inc/chatbot-lead.php");
 
   // Chatbot conversation flow
   const conversation = {

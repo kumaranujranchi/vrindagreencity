@@ -380,8 +380,8 @@
       message: conversation.userData.message
     });
     
-    // Try different path formats
-    const apiPath = window.location.origin + "/inc/contact.php";
+    // Use dedicated chatbot endpoint
+    const apiPath = window.location.origin + "/inc/chatbot-lead.php";
     console.log("Sending POST request to:", apiPath);
 
     fetch(apiPath, {
@@ -393,9 +393,6 @@
         console.log("Response status:", response.status);
         console.log("Response OK:", response.ok);
         
-        if (!response.ok) {
-          throw new Error("Network response was not ok: " + response.status);
-        }
         return response.text().then(text => {
           console.log("Raw server response:", text);
           try {
@@ -408,18 +405,23 @@
       })
       .then((data) => {
         console.log("Parsed response:", data);
+        
         if (data.type === 'success') {
-            console.log("✅ ✅ ✅ Lead submitted successfully! ✅ ✅ ✅");
+            console.log("✅ ✅ ✅ LEAD SUBMITTED SUCCESSFULLY! ✅ ✅ ✅");
+            console.log("Lead ID:", data.lead_id);
             console.log("Response message:", data.message);
+            console.log("Saved data:", data.data);
         } else {
             console.error("❌ Server reported error:", data.message);
+            if (data.error) {
+                console.error("Error details:", data.error);
+            }
         }
       })
       .catch((error) => {
         console.error("❌ ❌ ❌ Error submitting lead ❌ ❌ ❌");
         console.error("Error details:", error);
         console.error("Error message:", error.message);
-        console.error("Please check network tab for details");
       });
   }
 

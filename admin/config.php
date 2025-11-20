@@ -4,9 +4,9 @@
 // If you get "Access denied" error, verify password in Hostinger
 
 define('DB_HOST', 'localhost');
-define('DB_USER', 'u743570205_vrindagreen');
-define('DB_PASS', 'Anuj@2025@2026');  // ⚠️ UPDATE THIS if password is different in Hostinger
-define('DB_NAME', 'u743570205_vrindagreen');
+define('DB_USER', 'u743570205_vindagreen');  // Fixed: removed 'r' from vrindagreen
+define('DB_PASS', 'Anuj@2025@2026');
+define('DB_NAME', 'u743570205_vrindagreen');  // Database name remains same
 
 // Create database connection
 function getDBConnection() {

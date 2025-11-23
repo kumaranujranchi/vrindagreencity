@@ -134,15 +134,8 @@
       directionSelect.append(`<option value="all">All Direction</option>`);
     }
 
-    // Area options will be populated based on selected direction
-    // So we don't populate all areas initially
-
-    // If a direction is already selected (e.g., 'all' selected before CSV loaded), update area options
-    if (currentFilters.direction) {
-      // Ensure the directionSelect reflects currentFilters.direction
-      directionSelect.val(currentFilters.direction);
-      updateAreaOptions(currentFilters.direction);
-    }
+    // Populate area options with all areas by default
+    updateAreaOptions('all');
   }
 
   function updateAreaOptions(selectedDirection) {

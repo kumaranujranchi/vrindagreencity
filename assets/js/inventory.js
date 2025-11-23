@@ -176,6 +176,21 @@
   }
 
   function displayPlots() {
+    // Only show plots if a direction or area filter is selected
+    if (currentFilters.direction === "" && currentFilters.area === "") {
+      $("#emptyState").show();
+      $("#inventoryGrid").empty();
+      $("#emptyState").html(`
+        <div class="text-center" style="padding: 60px 0;">
+          <i class="fas fa-search" style="font-size: 80px; color: #ccc; margin-bottom: 20px;"></i>
+          <h4>Please select a direction or area to view available plots</h4>
+          <p style="color: #777;">Use the filters above to find plots that match your requirements</p>
+        </div>
+      `);
+      updateResultCount(0, plotsData.length);
+      return;
+    }
+
     const $grid = $("#inventoryGrid");
     $grid.empty();
 

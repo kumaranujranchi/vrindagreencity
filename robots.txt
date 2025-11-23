@@ -28,6 +28,7 @@ Allow: *.ico
 
 # Sitemap
 Sitemap: https://vrindagreencity.com/sitemap.xml
+Sitemap: https://www.vrindagreencity.com/sitemap.xml
 
 # Crawl delay (optional)
 Crawl-delay: 1

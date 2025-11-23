@@ -129,8 +129,10 @@
         );
       }
     });
-    // Add a special 'All Direction' option at the bottom
-    directionSelect.append(`<option value="all">All Direction</option>`);
+    // Add a special 'All Direction' option at the bottom (avoid duplicates)
+    if (directionSelect.find('option[value="all"]').length === 0) {
+      directionSelect.append(`<option value="all">All Direction</option>`);
+    }
 
     // Area options will be populated based on selected direction
     // So we don't populate all areas initially
@@ -163,8 +165,10 @@
         areaSelect.append(`<option value="${area}">${area}</option>`);
       }
     });
-    // Add a special 'All Area' option at the bottom
-    areaSelect.append(`<option value="all">All Area</option>`);
+    // Add a special 'All Area' option at the bottom (avoid duplicates)
+    if (areaSelect.find('option[value="all"]').length === 0) {
+      areaSelect.append(`<option value="all">All Area</option>`);
+    }
 
     // Reset area selection
     areaSelect.prop("selectedIndex", 0);

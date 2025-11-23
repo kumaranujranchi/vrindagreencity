@@ -129,6 +129,8 @@
         );
       }
     });
+    // Add a special 'All Direction' option at the bottom
+    directionSelect.append(`<option value="all">All Direction</option>`);
 
     // Area options will be populated based on selected direction
     // So we don't populate all areas initially
@@ -150,7 +152,7 @@
     const availableAreas = [
       ...new Set(
         plotsData
-          .filter((plot) => plot.direction === selectedDirection)
+          .filter((plot) => selectedDirection === 'all' ? true : plot.direction === selectedDirection)
           .map((plot) => plot.area)
       ),
     ].sort();
@@ -161,6 +163,8 @@
         areaSelect.append(`<option value="${area}">${area}</option>`);
       }
     });
+    // Add a special 'All Area' option at the bottom
+    areaSelect.append(`<option value="all">All Area</option>`);
 
     // Reset area selection
     areaSelect.prop("selectedIndex", 0);
@@ -180,20 +184,18 @@
         return false;
       }
 
-      // Filter by direction (required - no "all" option)
-      if (!currentFilters.direction || currentFilters.direction === "") {
-        return false; // Don't show plots if no direction selected
-      }
-      if (plot.direction !== currentFilters.direction) {
-        return false;
+      // Filter by direction (if the filter is not empty and not set to 'all')
+      if (currentFilters.direction && currentFilters.direction !== "" && currentFilters.direction !== "all") {
+        if (plot.direction !== currentFilters.direction) {
+          return false;
+        }
       }
 
-      // Filter by area (required - no "all" option)
-      if (!currentFilters.area || currentFilters.area === "") {
-        return false; // Don't show plots if no area selected
-      }
-      if (plot.area !== currentFilters.area) {
-        return false;
+      // Filter by area (if the filter is not empty and not set to 'all')
+      if (currentFilters.area && currentFilters.area !== "" && currentFilters.area !== "all") {
+        if (plot.area !== currentFilters.area) {
+          return false;
+        }
       }
 
       return true;

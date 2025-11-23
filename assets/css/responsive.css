@@ -1315,6 +1315,46 @@
   }
 }
 
+/* Fix for embedded iframe/video in formula area on tablet and mobile to avoid top/bottom black bars */
+@media (max-width: 991.98px) {
+  .formula-img {
+    /* Use a responsive 16:9 aspect-box and let iframe cover it */
+    position: relative !important;
+    width: 100% !important;
+    height: auto !important;
+    aspect-ratio: 16/9 !important;
+    padding-top: 0 !important; /* remove any existing inline padding */
+    overflow: hidden !important;
+    border-radius: 15px !important;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.25) !important;
+  }
+
+  .formula-img iframe {
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    transform: none !important; /* override existing centering transforms */
+    border: none !important;
+    border-radius: 12px !important; /* keep rounded corners */
+    background: transparent !important;
+  }
+}
+
+/* Also make sure on extra small devices the iframe covers full width without extra letterbox */
+@media (max-width: 575.98px) {
+  .formula-img {
+    aspect-ratio: 16/9 !important;
+    border-radius: 12px !important;
+    max-height: none !important;
+  }
+  .formula-img iframe {
+    width: 100% !important;
+    height: 100% !important;
+  }
+}
+
 /* Pricing table: reduce font-size & padding on extra small devices to avoid horizontal scroll */
 @media (max-width: 575.98px) {
   /* Target the pricing section specifically */

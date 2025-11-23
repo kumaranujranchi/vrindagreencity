@@ -1315,6 +1315,43 @@
   }
 }
 
+/* Pricing table: reduce font-size & padding on extra small devices to avoid horizontal scroll */
+@media (max-width: 575.98px) {
+  /* Target the pricing section specifically */
+  #pricing .table-responsive table,
+  #pricing .table-responsive table thead,
+  #pricing .table-responsive table tbody {
+    width: 100%;
+    min-width: 0 !important;
+  }
+
+  /* Smaller text */
+  #pricing .table-responsive table th,
+  #pricing .table-responsive table td {
+    font-size: 12px !important;
+    padding: 8px 6px !important;
+    line-height: 1.2 !important;
+    white-space: normal !important; /* allow wrapping */
+    word-break: break-word !important;
+  }
+
+  /* Slightly reduce the plan heading size */
+  #pricing h3 {
+    font-size: 18px !important;
+    padding: 10px 12px !important;
+  }
+
+  /* Reduce subtext inside pricing box */
+  #pricing p, #pricing .sub-title, #pricing .title {
+    font-size: 14px !important;
+  }
+
+  /* Ensure the table responsive wrapper doesn't force horizontal scroll unless necessary */
+  #pricing .table-responsive {
+    overflow-x: auto; /* fallback */
+  }
+}
+
 /* Small devices (landscape phones, 576px and up) */
 @media only screen and (min-width: 576px) and (max-width: 767px) {
   .custom-container {

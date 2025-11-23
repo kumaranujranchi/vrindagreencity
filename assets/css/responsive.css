@@ -916,7 +916,7 @@
     padding: 45px 0 0;
   }
   .brand-area {
-    padding: 80px 0 85px;
+    padding: 50px 0 55px;
   }
   .brand-item {
     min-height: 80px;
@@ -929,7 +929,7 @@
     max-height: 60px;
   }
   .news-area {
-    padding: 80px 0;
+    padding: 50px 0;
   }
   .news-card {
     margin-bottom: 30px;
@@ -1221,7 +1221,7 @@
 
   /* New Home css */
   .tg-banner-area.banner-bg {
-    padding: 110px 0 210px;
+    padding: 60px 0 80px;
   }
   .tg-banner-img img {
     margin: 0 auto;
@@ -1260,13 +1260,40 @@
     font-size: 38px;
   }
   .tg-video-bg {
-    padding: 120px 0 120px;
+    padding: 60px 0 60px;
   }
   .tg-video-bg::before {
     height: 90px;
   }
   .tg-shop-content .title {
     font-size: 24px;
+  }
+  .tg-supplement-area {
+    padding: 50px 0 60px;
+  }
+  .blog-post-area {
+    padding: 60px 0 70px;
+  }
+  .breadcrumb-bg {
+    padding: 80px 0 90px !important;
+  }
+  .features-products {
+    padding: 60px 0 70px;
+  }
+  .home-shop-area {
+    padding: 0 0 60px;
+  }
+  .fact-area {
+    padding: 60px 0 0;
+  }
+  .ingredients-area {
+    padding: 50px 0 70px;
+  }
+  .formula-bg {
+    padding: 60px 0 70px;
+  }
+  .pricing-area {
+    padding: 60px 0 50px;
   }
   .tg-testimonial-item {
     display: block;

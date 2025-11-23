@@ -181,8 +181,22 @@
     padding: 115px 0 90px;
   }
   .testimonial-bg {
-    padding: 115px 0 120px;
-    background-image: none !important;
+    padding: 80px 0 80px;
+    background-image: url('https://imagizer.imageshack.com/img922/3263/BtzoOh.png') !important;
+    background-size: cover !important;
+    background-position: center !important;
+    background-repeat: no-repeat !important;
+    /* fallback for image load failure */
+    background-color: #0d9b4d;
+  }
+  .testimonial-overlay {
+    background: linear-gradient(135deg, rgba(13, 155, 77, 0.85), rgba(45, 80, 22, 0.9)) !important;
+    z-index: 1 !important;
+    opacity: 0.95 !important;
+  }
+  .testimonial-active {
+    display: block !important;
+    z-index: 2;
   }
   .blog-post-area {
     padding: 115px 0 120px;

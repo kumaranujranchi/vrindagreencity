@@ -198,6 +198,9 @@
     display: block !important;
     z-index: 2;
   }
+  .testimonial-area {
+    display: none !important;
+  }
   .blog-post-area {
     padding: 115px 0 120px;
   }

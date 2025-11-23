@@ -182,6 +182,7 @@
   }
   .testimonial-bg {
     padding: 115px 0 120px;
+    background-image: none !important;
   }
   .blog-post-area {
     padding: 115px 0 120px;

@@ -1557,3 +1557,18 @@
     transform: translate(-50%, -50%) !important;
   }
 }
+
+/* Fix for banner and gallery video wrappers on mobile */
+@media (max-width: 767.98px) {
+  .banner-video-wrapper,
+  .gallery-video-wrapper {
+    height: 400px !important;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .banner-video-wrapper,
+  .gallery-video-wrapper {
+    height: 250px !important;
+  }
+}

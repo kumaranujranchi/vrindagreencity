@@ -10,9 +10,9 @@
             <h1>Vrinda Green City</h1>
         </div>
 
-        <nav class="nav">
+        <nav class="nav" role="navigation" aria-label="Admin navigation">
             <a href="index.php"
-                class="nav-link <?php echo basename($_SERVER['PHP_SELF']) == 'index.php' ? 'active' : ''; ?>">
+                class="nav-link <?php echo basename($_SERVER['PHP_SELF']) == 'index.php' ? 'active' : ''; ?>" title="Dashboard" aria-label="Dashboard">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                     stroke-linecap="round" stroke-linejoin="round">
                     <rect x="3" y="3" width="7" height="7"></rect>
@@ -20,7 +20,7 @@
                     <rect x="14" y="14" width="7" height="7"></rect>
                     <rect x="3" y="14" width="7" height="7"></rect>
                 </svg>
-                <span>Dashboard</span>
+                <span class="nav-label">Dashboard</span>
             </a>
             <a href="contact-leads.php"
                 class="nav-link <?php echo basename($_SERVER['PHP_SELF']) == 'contact-leads.php' ? 'active' : ''; ?>">
@@ -29,7 +29,7 @@
                     <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
                     <polyline points="22,6 12,13 2,6"></polyline>
                 </svg>
-                <span>Leads</span>
+                <span class="nav-label">Leads</span>
             </a>
             <a href="property-inquiries.php"
                 class="nav-link <?php echo basename($_SERVER['PHP_SELF']) == 'property-inquiries.php' ? 'active' : ''; ?>">
@@ -38,7 +38,7 @@
                     <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
                     <polyline points="9 22 9 12 15 12 15 22"></polyline>
                 </svg>
-                <span>Properties</span>
+                <span class="nav-label">Properties</span>
             </a>
             <a href="subscribers.php"
                 class="nav-link <?php echo basename($_SERVER['PHP_SELF']) == 'subscribers.php' ? 'active' : ''; ?>">
@@ -47,7 +47,7 @@
                     <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
                     <polyline points="22,6 12,13 2,6"></polyline>
                 </svg>
-                <span>Subscribers</span>
+                <span class="nav-label">Subscribers</span>
             </a>
             <a href="test-chatbot-leads.php"
                 class="nav-link <?php echo basename($_SERVER['PHP_SELF']) == 'test-chatbot-leads.php' ? 'active' : ''; ?>">
@@ -55,7 +55,7 @@
                     stroke-linecap="round" stroke-linejoin="round">
                     <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
                 </svg>
-                <span>Chatbot</span>
+                <span class="nav-label">Chatbot</span>
             </a>
             <a href="logout.php" class="nav-link logout">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
@@ -64,7 +64,7 @@
                     <polyline points="16 17 21 12 16 7"></polyline>
                     <line x1="21" y1="12" x2="9" y2="12"></line>
                 </svg>
-                <span>Logout</span>
+                <span class="nav-label">Logout</span>
             </a>
         </nav>
 

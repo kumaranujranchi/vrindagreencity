@@ -135,8 +135,8 @@ closeDBConnection($conn);
                         <div class="card-title">Recent Contact Leads</div>
                         <a href="contact-leads.php" class="btn btn-primary btn-sm">View All</a>
                     </div>
-                    <div class="table-responsive">
-                        <table>
+                    <div class="table-responsive" id="leadsTableWrapper">
+                        <table id="leadsTable">
                             <thead>
                                 <tr>
                                     <th>ID</th>
@@ -252,3 +252,40 @@ closeDBConnection($conn);
 </body>
 
 </html>
+
+<script>
+    // Small UX improvement: show a quick skeleton for the leads table for 400ms to avoid 'flat' load effect
+    (function(){
+        try{
+            var wrapper = document.getElementById('leadsTableWrapper');
+            var table = document.getElementById('leadsTable');
+            if(!wrapper || !table) return;
+
+            // Create skeleton rows only if table has content (to avoid replacing empty state)
+            var tbody = table.querySelector('tbody');
+            if(!tbody) return;
+
+            // Clone current content and hide it
+            var realContent = tbody.innerHTML;
+            var skeletonRows = '';
+            for(var i=0;i<3;i++){
+                skeletonRows += '<tr>' +
+                    '<td><div class="skeleton" style="height:14px;width:40px;border-radius:6px;"></div></td>' +
+                    '<td><div class="skeleton" style="height:14px;width:120px;border-radius:6px;"></div></td>' +
+                    '<td><div class="skeleton" style="height:14px;width:160px;border-radius:6px;"></div></td>' +
+                    '<td><div class="skeleton" style="height:14px;width:100px;border-radius:6px;"></div></td>' +
+                    '<td><div class="skeleton" style="height:14px;width:80px;border-radius:6px;"></div></td>' +
+                    '<td><div class="skeleton" style="height:14px;width:90px;border-radius:6px;"></div></td>' +
+                '</tr>';
+            }
+
+            tbody.setAttribute('data-original', '1');
+            tbody.innerHTML = skeletonRows;
+
+            // Replace with real content after short delay
+            setTimeout(function(){
+                tbody.innerHTML = realContent;
+            }, 400);
+        }catch(e){ console && console.warn(e); }
+    })();
+</script>

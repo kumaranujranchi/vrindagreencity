@@ -288,4 +288,15 @@ closeDBConnection($conn);
             }, 400);
         }catch(e){ console && console.warn(e); }
     })();
+
+    // Sidebar toggle functionality
+    (function(){
+        var sidebarToggle = document.getElementById('sidebarToggle');
+        var sidebar = document.getElementById('sidebar');
+        if(!sidebarToggle || !sidebar) return;
+
+        sidebarToggle.addEventListener('click', function(){
+            sidebar.classList.toggle('collapsed');
+        });
+    })();
 </script>

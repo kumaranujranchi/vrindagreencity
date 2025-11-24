@@ -94,7 +94,7 @@ closeDBConnection($conn);
                 <a href="export-subscribers.php" class="btn btn-primary">Export CSV</a>
             </div>
             <div class="table-responsive">
-                <table>
+                <table id="subscribersTable">
                     <thead>
                         <tr>
                             <th>ID</th>
@@ -138,3 +138,45 @@ closeDBConnection($conn);
     </div>
 </body>
 </html>
+
+<script>
+    // Sidebar toggle functionality
+    (function(){
+        var sidebarToggle = document.getElementById('sidebarToggle');
+        var sidebar = document.getElementById('sidebar');
+        if(!sidebarToggle || !sidebar) return;
+
+        sidebarToggle.addEventListener('click', function(){
+            sidebar.classList.toggle('collapsed');
+        });
+    })();
+
+    // Skeleton loading for subscribers table
+    (function(){
+        try{
+            var table = document.getElementById('subscribersTable');
+            if(!table) return;
+
+            var tbody = table.querySelector('tbody');
+            if(!tbody || tbody.querySelector('.text-center')) return;
+
+            var realContent = tbody.innerHTML;
+            var skeletonRows = '';
+            for(var i=0;i<5;i++){
+                skeletonRows += '<tr>' +
+                    '<td><div class="skeleton" style="height:14px;width:30px;border-radius:6px;"></div></td>' +
+                    '<td><div class="skeleton" style="height:14px;width:180px;border-radius:6px;"></div></td>' +
+                    '<td><div class="skeleton" style="height:14px;width:80px;border-radius:6px;"></div></td>' +
+                    '<td><div class="skeleton" style="height:14px;width:100px;border-radius:6px;"></div></td>' +
+                    '<td><div class="skeleton" style="height:14px;width:60px;border-radius:6px;"></div></td>' +
+                '</tr>';
+            }
+
+            tbody.innerHTML = skeletonRows;
+
+            setTimeout(function(){
+                tbody.innerHTML = realContent;
+            }, 400);
+        }catch(e){ console && console.warn(e); }
+    })();
+</script>

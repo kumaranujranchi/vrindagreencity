@@ -95,7 +95,7 @@ closeDBConnection($conn);
                 <h2>All Property Inquiries (<?php echo count($inquiries); ?>)</h2>
             </div>
             <div class="table-responsive">
-                <table>
+                <table id="inquiriesTable">
                     <thead>
                         <tr>
                             <th>ID</th>
@@ -151,3 +151,50 @@ closeDBConnection($conn);
     </div>
 </body>
 </html>
+
+<script>
+    // Sidebar toggle functionality
+    (function(){
+        var sidebarToggle = document.getElementById('sidebarToggle');
+        var sidebar = document.getElementById('sidebar');
+        if(!sidebarToggle || !sidebar) return;
+
+        sidebarToggle.addEventListener('click', function(){
+            sidebar.classList.toggle('collapsed');
+        });
+    })();
+
+    // Skeleton loading for inquiries table
+    (function(){
+        try{
+            var table = document.getElementById('inquiriesTable');
+            if(!table) return;
+
+            var tbody = table.querySelector('tbody');
+            if(!tbody || tbody.querySelector('.text-center')) return;
+
+            var realContent = tbody.innerHTML;
+            var skeletonRows = '';
+            for(var i=0;i<5;i++){
+                skeletonRows += '<tr>' +
+                    '<td><div class="skeleton" style="height:14px;width:30px;border-radius:6px;"></div></td>' +
+                    '<td><div class="skeleton" style="height:14px;width:100px;border-radius:6px;"></div></td>' +
+                    '<td><div class="skeleton" style="height:14px;width:140px;border-radius:6px;"></div></td>' +
+                    '<td><div class="skeleton" style="height:14px;width:90px;border-radius:6px;"></div></td>' +
+                    '<td><div class="skeleton" style="height:14px;width:100px;border-radius:6px;"></div></td>' +
+                    '<td><div class="skeleton" style="height:14px;width:80px;border-radius:6px;"></div></td>' +
+                    '<td><div class="skeleton" style="height:14px;width:120px;border-radius:6px;"></div></td>' +
+                    '<td><div class="skeleton" style="height:14px;width:70px;border-radius:6px;"></div></td>' +
+                    '<td><div class="skeleton" style="height:14px;width:100px;border-radius:6px;"></div></td>' +
+                    '<td><div class="skeleton" style="height:14px;width:60px;border-radius:6px;"></div></td>' +
+                '</tr>';
+            }
+
+            tbody.innerHTML = skeletonRows;
+
+            setTimeout(function(){
+                tbody.innerHTML = realContent;
+            }, 400);
+        }catch(e){ console && console.warn(e); }
+    })();
+</script>

@@ -1,150 +1,420 @@
-<!-- Push Notification Subscription Widget -->
-<div id="push-notification-widget" class="push-widget">
-  <div class="push-widget-content">
-    <div class="push-icon">
-      <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none"
-        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-        <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path>
-        <path d="M13.73 21a2 2 0 0 1-3.46 0"></path>
-      </svg>
-    </div>
-    <div class="push-text">
-      <h3>Stay Updated!</h3>
-      <p id="push-status-text">🔕 Get notified about latest updates</p>
-    </div>
-    <div class="push-actions">
-      <button id="push-subscribe-btn" class="push-btn push-btn-primary">
-        Subscribe
-      </button>
-      <button id="push-unsubscribe-btn" class="push-btn push-btn-secondary" style="display: none;">
-        Unsubscribe
-      </button>
-    </div>
-  </div>
-  <div id="push-message" class="push-message" style="display: none;"></div>
-</div>
-
+<?php
+// Check if user is already subscribed (via localStorage)
+?>
 <style>
-  .push-widget {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    border-radius: 12px;
-    padding: 25px;
-    color: white;
-    margin: 20px 0;
-    box-shadow: 0 10px 30px rgba(102, 126, 234, 0.3);
+  /* Floating Notification Bell Widget */
+  .push-notification-bell {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    z-index: 9999;
   }
 
-  .push-widget-content {
+  .notification-bell-trigger {
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(135deg, #0D9B4D 0%, #0a7a3d 100%);
+    border-radius: 50%;
     display: flex;
     align-items: center;
-    gap: 20px;
-    flex-wrap: wrap;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 4px 20px rgba(13, 155, 77, 0.4);
+    transition: all 0.3s ease;
+    border: 3px solid #fff;
+    position: relative;
   }
 
-  .push-icon {
-    background: rgba(255, 255, 255, 0.2);
+  .notification-bell-trigger:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 30px rgba(13, 155, 77, 0.6);
+  }
+
+  .notification-bell-trigger.subscribed {
+    background: linear-gradient(135deg, #FAA432 0%, #e89420 100%);
+    box-shadow: 0 4px 20px rgba(250, 164, 50, 0.4);
+  }
+
+  .notification-bell-trigger.subscribed:hover {
+    box-shadow: 0 6px 30px rgba(250, 164, 50, 0.6);
+  }
+
+  .bell-icon {
+    width: 28px;
+    height: 28px;
+    fill: #fff;
+  }
+
+  .bell-badge {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    background: #ff4444;
+    color: #fff;
+    width: 20px;
+    height: 20px;
     border-radius: 50%;
-    padding: 15px;
+    font-size: 12px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: pulse 2s infinite;
+  }
+
+  .bell-check {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    background: #fff;
+    color: #0D9B4D;
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    font-size: 14px;
+    font-weight: bold;
     display: flex;
     align-items: center;
     justify-content: center;
   }
 
-  .push-icon svg {
-    color: white;
+  @keyframes pulse {
+
+    0%,
+    100% {
+      transform: scale(1);
+    }
+
+    50% {
+      transform: scale(1.2);
+    }
   }
 
-  .push-text {
-    flex: 1;
-    min-width: 200px;
-  }
-
-  .push-text h3 {
-    margin: 0 0 8px 0;
-    font-size: 20px;
-    font-weight: 700;
-  }
-
-  .push-text p {
-    margin: 0;
-    font-size: 14px;
-    opacity: 0.95;
-  }
-
-  .push-actions {
-    display: flex;
-    gap: 10px;
-  }
-
-  .push-btn {
-    padding: 12px 24px;
-    border: none;
-    border-radius: 8px;
-    font-size: 14px;
-    font-weight: 600;
-    cursor: pointer;
+  .notification-popup {
+    position: absolute;
+    bottom: 80px;
+    right: 0;
+    width: 340px;
+    background: #fff;
+    border-radius: 15px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(20px);
     transition: all 0.3s ease;
   }
 
-  .push-btn-primary {
-    background: white;
-    color: #667eea;
+  .notification-popup.active {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
   }
 
-  .push-btn-primary:hover {
-    background: #f0f0f0;
-    transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  .popup-header {
+    background: linear-gradient(135deg, #0D9B4D 0%, #0a7a3d 100%);
+    color: #fff;
+    padding: 20px;
+    border-radius: 15px 15px 0 0;
+    display: flex;
+    align-items: center;
+    gap: 12px;
   }
 
-  .push-btn-secondary {
-    background: transparent;
-    color: white;
-    border: 2px solid rgba(255, 255, 255, 0.5);
+  .popup-header svg {
+    width: 24px;
+    height: 24px;
+    fill: #fff;
   }
 
-  .push-btn-secondary:hover {
-    background: rgba(255, 255, 255, 0.1);
-    border-color: white;
+  .popup-header h3 {
+    margin: 0;
+    font-size: 18px;
+    font-weight: 600;
   }
 
-  .push-message {
-    margin-top: 15px;
-    padding: 12px;
-    border-radius: 6px;
+  .popup-body {
+    padding: 25px;
+  }
+
+  .popup-message {
+    color: #555;
     font-size: 14px;
+    line-height: 1.6;
+    margin-bottom: 20px;
   }
 
-  .push-message.success {
-    background: rgba(76, 175, 80, 0.2);
-    border: 1px solid rgba(76, 175, 80, 0.5);
+  .subscribe-button {
+    width: 100%;
+    background: linear-gradient(135deg, #0D9B4D 0%, #0a7a3d 100%);
+    color: #fff;
+    border: none;
+    padding: 14px 24px;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
   }
 
-  .push-message.error {
-    background: rgba(244, 67, 54, 0.2);
-    border: 1px solid rgba(244, 67, 54, 0.5);
+  .subscribe-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(13, 155, 77, 0.3);
   }
 
-  .push-widget.subscribed {
-    background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+  .subscribe-button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+  }
+
+  .unsubscribe-button {
+    background: linear-gradient(135deg, #6c757d 0%, #5a6268 100%);
+    margin-top: 10px;
+  }
+
+  .unsubscribe-button:hover {
+    box-shadow: 0 4px 15px rgba(108, 117, 125, 0.3);
+  }
+
+  .subscribed-message {
+    background: #e8f5e9;
+    border-left: 4px solid #0D9B4D;
+    padding: 15px;
+    border-radius: 8px;
+    color: #2e7d32;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .popup-close {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: rgba(255, 255, 255, 0.2);
+    border: none;
+    color: #fff;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
+  }
+
+  .popup-close:hover {
+    background: rgba(255, 255, 255, 0.3);
+    transform: rotate(90deg);
+  }
+
+  .loading-spinner {
+    width: 20px;
+    height: 20px;
+    border: 3px solid rgba(255, 255, 255, 0.3);
+    border-top-color: #fff;
+    border-radius: 50%;
+    animation: spin 0.8s linear infinite;
+  }
+
+  @keyframes spin {
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
+  /* Tooltip */
+  .bell-tooltip {
+    position: absolute;
+    bottom: 100%;
+    right: 0;
+    background: #333;
+    color: #fff;
+    padding: 8px 12px;
+    border-radius: 6px;
+    font-size: 13px;
+    white-space: nowrap;
+    margin-bottom: 10px;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+  }
+
+  .notification-bell-trigger:hover .bell-tooltip {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .bell-tooltip::after {
+    content: '';
+    position: absolute;
+    top: 100%;
+    right: 20px;
+    border: 6px solid transparent;
+    border-top-color: #333;
   }
 
   @media (max-width: 768px) {
-    .push-widget-content {
-      flex-direction: column;
-      text-align: center;
+    .notification-popup {
+      width: 90vw;
+      max-width: 340px;
+      right: 50%;
+      transform: translateX(50%) translateY(20px);
     }
 
-    .push-actions {
-      width: 100%;
-      justify-content: center;
+    .notification-popup.active {
+      transform: translateX(50%) translateY(0);
     }
 
-    .push-btn {
-      flex: 1;
+    .push-notification-bell {
+      bottom: 20px;
+      right: 20px;
+    }
+
+    .notification-bell-trigger {
+      width: 55px;
+      height: 55px;
     }
   }
 </style>
 
-<!-- Include the push notification script -->
-<script src="/assets/js/push-notifications.js"></script>
+<div class="push-notification-bell">
+  <div class="notification-bell-trigger" id="bellTrigger">
+    <svg class="bell-icon" viewBox="0 0 24 24">
+      <path
+        d="M12 22c1.1 0 2-.9 2-2h-4c0 1.1.89 2 2 2zm6-6v-5c0-3.07-1.64-5.64-4.5-6.32V4c0-.83-.67-1.5-1.5-1.5s-1.5.67-1.5 1.5v.68C7.63 5.36 6 7.92 6 11v5l-2 2v1h16v-1l-2-2z" />
+    </svg>
+    <span class="bell-badge" id="bellBadge" style="display: none;">!</span>
+    <span class="bell-check" id="bellCheck" style="display: none;">✓</span>
+    <div class="bell-tooltip">Get Notifications</div>
+  </div>
+
+  <div class="notification-popup" id="notificationPopup">
+    <div class="popup-header">
+      <svg viewBox="0 0 24 24">
+        <path
+          d="M12 22c1.1 0 2-.9 2-2h-4c0 1.1.89 2 2 2zm6-6v-5c0-3.07-1.64-5.64-4.5-6.32V4c0-.83-.67-1.5-1.5-1.5s-1.5.67-1.5 1.5v.68C7.63 5.36 6 7.92 6 11v5l-2 2v1h16v-1l-2-2z" />
+      </svg>
+      <h3>Stay Updated!</h3>
+      <button class="popup-close" id="popupClose">×</button>
+    </div>
+    <div class="popup-body">
+      <div id="notificationContent">
+        <p class="popup-message">
+          📢 Get instant updates about new property listings, price changes, and exclusive offers at Vrinda Green City!
+        </p>
+        <button class="subscribe-button" id="subscribeBtn">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+            <path
+              d="M12 22c1.1 0 2-.9 2-2h-4c0 1.1.89 2 2 2zm6-6v-5c0-3.07-1.64-5.64-4.5-6.32V4c0-.83-.67-1.5-1.5-1.5s-1.5.67-1.5 1.5v.68C7.63 5.36 6 7.92 6 11v5l-2 2v1h16v-1l-2-2z" />
+          </svg>
+          <span>Enable Notifications</span>
+        </button>
+        <button class="subscribe-button unsubscribe-button" id="unsubscribeBtn" style="display: none;">
+          Unsubscribe
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const bellTrigger = document.getElementById('bellTrigger');
+    const notificationPopup = document.getElementById('notificationPopup');
+    const popupClose = document.getElementById('popupClose');
+    const subscribeBtn = document.getElementById('subscribeBtn');
+    const unsubscribeBtn = document.getElementById('unsubscribeBtn');
+    const bellBadge = document.getElementById('bellBadge');
+    const bellCheck = document.getElementById('bellCheck');
+
+    // Check subscription status
+    function checkSubscriptionStatus() {
+      if ('serviceWorker' in navigator && 'PushManager' in window) {
+        navigator.serviceWorker.ready.then(function (registration) {
+          registration.pushManager.getSubscription().then(function (subscription) {
+            if (subscription) {
+              updateUIForSubscribed();
+            } else {
+              updateUIForUnsubscribed();
+            }
+          });
+        });
+      }
+    }
+
+    function updateUIForSubscribed() {
+      bellTrigger.classList.add('subscribed');
+      bellBadge.style.display = 'none';
+      bellCheck.style.display = 'flex';
+      subscribeBtn.style.display = 'none';
+      unsubscribeBtn.style.display = 'flex';
+      document.getElementById('notificationContent').innerHTML = `
+            <div class="subscribed-message">
+                ✓ You're subscribed to notifications!
+            </div>
+        `;
+    }
+
+    function updateUIForUnsubscribed() {
+      bellTrigger.classList.remove('subscribed');
+      bellBadge.style.display = 'flex';
+      bellCheck.style.display = 'none';
+      subscribeBtn.style.display = 'flex';
+      unsubscribeBtn.style.display = 'none';
+    }
+
+    // Toggle popup
+    bellTrigger.addEventListener('click', function () {
+      notificationPopup.classList.toggle('active');
+    });
+
+    popupClose.addEventListener('click', function (e) {
+      e.stopPropagation();
+      notificationPopup.classList.remove('active');
+    });
+
+    // Close popup when clicking outside
+    document.addEventListener('click', function (e) {
+      if (!bellTrigger.contains(e.target) && !notificationPopup.contains(e.target)) {
+        notificationPopup.classList.remove('active');
+      }
+    });
+
+    // Subscribe button click - will be handled by push-notifications.js
+    subscribeBtn.addEventListener('click', function () {
+      subscribeBtn.disabled = true;
+      subscribeBtn.innerHTML = '<div class="loading-spinner"></div><span>Subscribing...</span>';
+
+      // Trigger the global subscribe function from push-notifications.js
+      if (window.subscribeToPushNotifications) {
+        window.subscribeToPushNotifications();
+      }
+    });
+
+    // Unsubscribe button click
+    unsubscribeBtn.addEventListener('click', function () {
+      if (window.unsubscribeFromPushNotifications) {
+        window.unsubscribeFromPushNotifications();
+      }
+    });
+
+    // Initial check
+    checkSubscriptionStatus();
+
+    // Listen for subscription changes from push-notifications.js
+    window.addEventListener('pushSubscriptionChanged', function (e) {
+      if (e.detail.subscribed) {
+        updateUIForSubscribed();
+      } else {
+        updateUIForUnsubscribed();
+      }
+    });
+  });
+</script>

@@ -228,6 +228,7 @@ class PushNotificationManager {
     }
 }
 
+
 // Initialize when DOM is ready
 if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', () => {
@@ -236,3 +237,28 @@ if (document.readyState === 'loading') {
 } else {
     window.pushManager = new PushNotificationManager();
 }
+
+// Global functions for the bell widget
+window.subscribeToPushNotifications = function() {
+    if (window.pushManager) {
+        window.pushManager.subscribe();
+    }
+};
+
+window.unsubscribeFromPushNotifications = function() {
+    if (window.pushManager) {
+        window.pushManager.unsubscribe();
+    }
+};
+
+// Dispatch custom events for widget
+const originalUpdateUI = PushNotificationManager.prototype.updateUI;
+PushNotificationManager.prototype.updateUI = function() {
+    if (originalUpdateUI) {
+        originalUpdateUI.call(this);
+    }
+    window.dispatchEvent(new CustomEvent('pushSubscriptionChanged', {
+        detail: { subscribed: this.isSubscribed }
+    }));
+};
+

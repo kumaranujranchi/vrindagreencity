@@ -440,11 +440,6 @@
                 </div>
             </section>
             <!-- features-area-end -->
-            <!-- Push Notification Widget -->
-            <div class="container" style="margin-top: 30px; margin-bottom: 30px;">
-                <?php include 'inc/push-notification-widget.php'; ?>
-            </div>
-            <!-- Push Notification Widget End -->
 
             <!-- features-product -->
             <!-- plotting-map-area -->
@@ -2444,6 +2439,8 @@
 
     <!-- Push Notifications Script -->
     <script src='assets/js/push-notifications.js'></script>
-</body>
+
+
+<?php include 'inc/push-notification-widget.php'; ?></body>
 
 </html>

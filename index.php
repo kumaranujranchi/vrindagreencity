@@ -428,6 +428,12 @@
         </section>
         <!-- features-area-end -->
 
+        <!-- Push Notification Widget -->
+        <div class="container" style="margin-top: 30px; margin-bottom: 30px;">
+            <?php include 'inc/push-notification-widget.php'; ?>
+        </div>
+        <!-- Push Notification Widget End -->
+
         <!-- features-product -->
         <!-- plotting-map-area -->
         <section id="paroller" class="plotting-map-area" style="padding: 100px 0; background: #f9f9f9;">

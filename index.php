@@ -306,231 +306,243 @@
                     <div class="brand-item">
                         <img src="https://imagizer.imageshack.com/img922/7303/4OFk1r.png" alt="Bank Partner 5"
                             loading="lazy">
-                        <div class="features-img wow featuresRollOut" data-wow-delay=".3s"
-                            style="margin-right: 0; overflow: hidden; border-radius: 15px; position: relative; width: 120%; max-width: 120%; height: 450px; box-shadow: 0 15px 50px rgba(0,0,0,0.25);">
-                            <iframe loading="lazy"
-                                src="https://www.youtube.com/embed/Zu3OgDYRu8o?autoplay=1&mute=1&loop=1&playlist=Zu3OgDYRu8o&controls=0&showinfo=0&rel=0&modestbranding=1"
-                                frameborder="0" allow="autoplay; encrypted-media" allowfullscreen
-                                style="position: absolute; top: 50%; left: 50%; width: 150%; height: 150%; transform: translate(-50%, -50%); border: none;">
-                            </iframe>
-                        </div>
-                    </div>
-                    <div class="col-xxl-6 col-lg-7">
-                        <div class="features-items-wrap">
-                            <div class="row justify-content-center">
-                                <div class="col-md-6 col-sm-8">
-                                    <div class="features-item">
-                                        <div class="features-icon">
-                                            <i class="flaticon-tape-measure"></i>
-                                        </div>
-                                        <div class="features-content">
-                                            <h4 class="title amenity-title" data-en="Central Drainage System"
-                                                data-hi="सेंट्रल ड्रेनेज सिस्टम">Central Drainage System</h4>
-                                            <p class="amenity-desc"
-                                                data-en="Well-planned central drainage system ensuring clean surroundings and hassle-free living."
-                                                data-hi="सुव्यवस्थित सेंट्रल ड्रेनेज सिस्टम, जो कॉलोनी को स्वच्छ और परेशानी-मुक्त बनाए रखता है।">
-                                                Well-planned central drainage system ensuring clean surroundings and
-                                                hassle-free living.</p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-6 col-sm-8">
-                                    <div class="features-item">
-                                        <div class="features-icon">
-                                            <i class="flaticon-test"></i>
-                                        </div>
-                                        <div class="features-content">
-                                            <h4 class="title amenity-title" data-en="CCTV Security"
-                                                data-hi="CCTV सुरक्षा">CCTV Security</h4>
-                                            <p class="amenity-desc"
-                                                data-en="High-definition CCTV surveillance across key points for complete safety and peace of mind."
-                                                data-hi="कॉलोनी के प्रमुख स्थानों पर हाई-डेफिनिशन CCTV निगरानी, आपकी पूरी सुरक्षा और चैन के लिए।">
-                                                High-definition CCTV surveillance across key points for complete
-                                                safety
-                                                and peace of mind.</p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-6 col-sm-8">
-                                    <div class="features-item">
-                                        <div class="features-icon">
-                                            <i class="flaticon-weight"></i>
-                                        </div>
-                                        <div class="features-content">
-                                            <h4 class="title amenity-title" data-en="24/7 Security Guards"
-                                                data-hi="24/7 सिक्योरिटी गार्ड्स">24/7 Security Guards</h4>
-                                            <p class="amenity-desc"
-                                                data-en="Trained security guards available round the clock to protect residents and visitors."
-                                                data-hi="24/7 प्रशिक्षित सिक्योरिटी गार्ड्स—हमेशा आपकी सुरक्षा के लिए तैनात।">
-                                                Trained security guards available round the clock to protect
-                                                residents
-                                                and visitors.</p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-6 col-sm-8">
-                                    <div class="features-item">
-                                        <div class="features-icon">
-                                            <i class="flaticon-abs"></i>
-                                        </div>
-                                        <div class="features-content">
-                                            <h4 class="title amenity-title" data-en="Complete Outside Boundary Wall"
-                                                data-hi="पूर्ण बाहरी बाउंड्री वॉल">Complete Outside Boundary Wall
-                                            </h4>
-                                            <p class="amenity-desc"
-                                                data-en="A sturdy, full-perimeter boundary wall that ensures privacy, safety, and a protected township environment."
-                                                data-hi="मजबूत और पूर्ण परिधि वाली बाउंड्री वॉल, जो प्राइवेसी और सुरक्षा का भरोसा देती है।">
-                                                A sturdy, full-perimeter boundary wall that ensures privacy, safety,
-                                                and
-                                                a protected township environment.</p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-6 col-sm-8">
-                                    <div class="features-item">
-                                        <div class="features-icon">
-                                            <i class="flaticon-tape-measure"></i>
-                                        </div>
-                                        <div class="features-content">
-                                            <h4 class="title amenity-title" data-en="Internal Roads"
-                                                data-hi="आंतरिक सड़कें">Internal Roads</h4>
-                                            <p class="amenity-desc"
-                                                data-en="Wide, well-constructed internal roads designed for smooth movement and easy navigation inside the township."
-                                                data-hi="चौड़ी और मजबूत आंतरिक सड़कें—आरामदायक सफर और बेहतर कनेक्टिविटी के लिए।">
-                                                Wide, well-constructed internal roads designed for smooth movement
-                                                and
-                                                easy navigation inside the township.</p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-6 col-sm-8">
-                                    <div class="features-item">
-                                        <div class="features-icon">
-                                            <i class="flaticon-abs"></i>
-                                        </div>
-                                        <div class="features-content">
-                                            <h4 class="title amenity-title" data-en="Park Area" data-hi="पार्क क्षेत्र">
-                                                Park Area</h4>
-                                            <p class="amenity-desc"
-                                                data-en="Green, peaceful park space for morning walks, relaxation, and a healthy outdoor lifestyle."
-                                                data-hi="हरियाली से भरपूर शांत पार्क—सुबह की सैर, आराम और स्वस्थ जीवनशैली के लिए आदर्श।">
-                                                Green, peaceful park space for morning walks, relaxation, and a
-                                                healthy
-                                                outdoor lifestyle.</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
                     </div>
                 </div>
             </div>
-        </section>
-        <!-- features-area-end -->
+            </div>
+            </div>
+            <!-- brand-area-end -->
 
-        <!-- Push Notification Widget -->
-        <div class="container" style="margin-top: 30px; margin-bottom: 30px;">
-            <?php include 'inc/push-notification-widget.php'; ?>
-        </div>
-        <!-- Push Notification Widget End -->
-
-        <!-- features-product -->
-        <!-- plotting-map-area -->
-        <section id="paroller" class="plotting-map-area" style="padding: 100px 0; background: #f9f9f9;">
-            <div class="container-fluid" style="padding: 0 30px;">
-                <div class="row justify-content-center">
-                    <div class="col-xl-10 col-lg-12">
-                        <div class="section-title text-center mb-60">
-                            <p class="sub-title" style="color: #FAA432;">.. Your Future Home ..</p>
-                            <h2 class="title" style="color: #222222;">Interactive Plotting Map</h2>
-                            <p style="color: #777777; margin-top: 15px;">Explore our detailed plotting map with zoom
-                                and
-                                download options</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="row justify-content-center">
-                    <div class="col-lg-12">
-                        <div class="plotting-map-viewer"
-                            style="background: #fff; border-radius: 15px; box-shadow: 0 10px 40px rgba(0,0,0,0.1); padding: 20px; position: relative;">
-                            <!-- PDF Controls -->
-                            <div class="pdf-controls"
-                                style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; flex-wrap: wrap; gap: 10px;">
-                                <div class="zoom-controls" style="display: flex; gap: 10px; align-items: center;">
-                                    <button onclick="zoomOut()"
-                                        style="background: #0D9B4D; color: white; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer; font-weight: 600;">
-                                        <i class="fas fa-search-minus"></i> Zoom Out
-                                    </button>
-                                    <span id="zoomLevel" style="font-weight: 600; color: #222222;">100%</span>
-                                    <button onclick="zoomIn()"
-                                        style="background: #0D9B4D; color: white; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer; font-weight: 600;">
-                                        <i class="fas fa-search-plus"></i> Zoom In
-                                    </button>
-                                </div>
-                                <div class="download-control">
-                                    <a href="assets/Plotting Map/Vrinda Green City_Final_Layout.pdf" download
-                                        class="btn"
-                                        style="background: #FAA432; color: white; padding: 10px 25px; border-radius: 5px; text-decoration: none; font-weight: 600;">
-                                        <i class="fas fa-download"></i> Download PDF
-                                    </a>
-                                </div>
-                            </div>
-
-                            <!-- PDF Viewer Container -->
-                            <div class="pdf-viewer-container"
-                                style="border: 2px solid #e0e0e0; border-radius: 10px; overflow: auto; background: #f5f5f5; max-height: 800px; position: relative; -webkit-overflow-scrolling: touch;">
-                                <iframe id="pdfViewer"
-                                    src="assets/Plotting Map/Vrinda Green City_Final_Layout.pdf#toolbar=1&navpanes=0&scrollbar=1&view=FitH"
-                                    style="width: 100%; height: 800px; border: none; display: block; transform-origin: top left; transition: transform 0.3s ease;"
-                                    frameborder="0" loading="lazy">
+            <!-- features-area -->
+            <section id="features" class="features-area features-bg" data-background="assets/img/bg/features_bg.jpg">
+                <div class="container">
+                    <div class="row align-items-center">
+                        <div class="col-xxl-6 col-lg-5 order-0 order-lg-2">
+                            <div class="features-img wow featuresRollOut" data-wow-delay=".3s"
+                                style="margin-right: 0; overflow: hidden; border-radius: 15px; position: relative; width: 120%; max-width: 120%; height: 450px; box-shadow: 0 15px 50px rgba(0,0,0,0.25);">
+                                <iframe loading="lazy"
+                                    src="https://www.youtube.com/embed/Zu3OgDYRu8o?autoplay=1&mute=1&loop=1&playlist=Zu3OgDYRu8o&controls=0&showinfo=0&rel=0&modestbranding=1"
+                                    frameborder="0" allow="autoplay; encrypted-media" allowfullscreen
+                                    style="position: absolute; top: 50%; left: 50%; width: 150%; height: 150%; transform: translate(-50%, -50%); border: none;">
                                 </iframe>
                             </div>
-
-                            <!-- Alternative: Image fallback for mobile -->
-                            <div class="mobile-viewer d-md-none" style="margin-top: 20px;">
-                                <p style="text-align: center; color: #777777; margin-bottom: 15px;">
-                                    <i class="fas fa-info-circle"></i> For better viewing experience on mobile,
-                                    please
-                                    download the PDF
-                                </p>
+                        </div>
+                        <div class="col-xxl-6 col-lg-7">
+                            <div class="features-items-wrap">
+                                <div class="row justify-content-center">
+                                    <div class="col-md-6 col-sm-8">
+                                        <div class="features-item">
+                                            <div class="features-icon">
+                                                <i class="flaticon-tape-measure"></i>
+                                            </div>
+                                            <div class="features-content">
+                                                <h4 class="title amenity-title" data-en="Central Drainage System"
+                                                    data-hi="सेंट्रल ड्रेनेज सिस्टम">Central Drainage System</h4>
+                                                <p class="amenity-desc"
+                                                    data-en="Well-planned central drainage system ensuring clean surroundings and hassle-free living."
+                                                    data-hi="सुव्यवस्थित सेंट्रल ड्रेनेज सिस्टम, जो कॉलोनी को स्वच्छ और परेशानी-मुक्त बनाए रखता है।">
+                                                    Well-planned central drainage system ensuring clean surroundings and
+                                                    hassle-free living.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 col-sm-8">
+                                        <div class="features-item">
+                                            <div class="features-icon">
+                                                <i class="flaticon-test"></i>
+                                            </div>
+                                            <div class="features-content">
+                                                <h4 class="title amenity-title" data-en="CCTV Security"
+                                                    data-hi="CCTV सुरक्षा">CCTV Security</h4>
+                                                <p class="amenity-desc"
+                                                    data-en="High-definition CCTV surveillance across key points for complete safety and peace of mind."
+                                                    data-hi="कॉलोनी के प्रमुख स्थानों पर हाई-डेफिनिशन CCTV निगरानी, आपकी पूरी सुरक्षा और चैन के लिए।">
+                                                    High-definition CCTV surveillance across key points for complete
+                                                    safety
+                                                    and peace of mind.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 col-sm-8">
+                                        <div class="features-item">
+                                            <div class="features-icon">
+                                                <i class="flaticon-weight"></i>
+                                            </div>
+                                            <div class="features-content">
+                                                <h4 class="title amenity-title" data-en="24/7 Security Guards"
+                                                    data-hi="24/7 सिक्योरिटी गार्ड्स">24/7 Security Guards</h4>
+                                                <p class="amenity-desc"
+                                                    data-en="Trained security guards available round the clock to protect residents and visitors."
+                                                    data-hi="24/7 प्रशिक्षित सिक्योरिटी गार्ड्स—हमेशा आपकी सुरक्षा के लिए तैनात।">
+                                                    Trained security guards available round the clock to protect
+                                                    residents
+                                                    and visitors.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 col-sm-8">
+                                        <div class="features-item">
+                                            <div class="features-icon">
+                                                <i class="flaticon-abs"></i>
+                                            </div>
+                                            <div class="features-content">
+                                                <h4 class="title amenity-title" data-en="Complete Outside Boundary Wall"
+                                                    data-hi="पूर्ण बाहरी बाउंड्री वॉल">Complete Outside Boundary Wall
+                                                </h4>
+                                                <p class="amenity-desc"
+                                                    data-en="A sturdy, full-perimeter boundary wall that ensures privacy, safety, and a protected township environment."
+                                                    data-hi="मजबूत और पूर्ण परिधि वाली बाउंड्री वॉल, जो प्राइवेसी और सुरक्षा का भरोसा देती है।">
+                                                    A sturdy, full-perimeter boundary wall that ensures privacy, safety,
+                                                    and
+                                                    a protected township environment.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 col-sm-8">
+                                        <div class="features-item">
+                                            <div class="features-icon">
+                                                <i class="flaticon-tape-measure"></i>
+                                            </div>
+                                            <div class="features-content">
+                                                <h4 class="title amenity-title" data-en="Internal Roads"
+                                                    data-hi="आंतरिक सड़कें">Internal Roads</h4>
+                                                <p class="amenity-desc"
+                                                    data-en="Wide, well-constructed internal roads designed for smooth movement and easy navigation inside the township."
+                                                    data-hi="चौड़ी और मजबूत आंतरिक सड़कें—आरामदायक सफर और बेहतर कनेक्टिविटी के लिए।">
+                                                    Wide, well-constructed internal roads designed for smooth movement
+                                                    and
+                                                    easy navigation inside the township.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 col-sm-8">
+                                        <div class="features-item">
+                                            <div class="features-icon">
+                                                <i class="flaticon-abs"></i>
+                                            </div>
+                                            <div class="features-content">
+                                                <h4 class="title amenity-title" data-en="Park Area"
+                                                    data-hi="पार्क क्षेत्र">
+                                                    Park Area</h4>
+                                                <p class="amenity-desc"
+                                                    data-en="Green, peaceful park space for morning walks, relaxation, and a healthy outdoor lifestyle."
+                                                    data-hi="हरियाली से भरपूर शांत पार्क—सुबह की सैर, आराम और स्वस्थ जीवनशैली के लिए आदर्श।">
+                                                    Green, peaceful park space for morning walks, relaxation, and a
+                                                    healthy
+                                                    outdoor lifestyle.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
+            </section>
+            <!-- features-area-end -->
+            <!-- Push Notification Widget -->
+            <div class="container" style="margin-top: 30px; margin-bottom: 30px;">
+                <?php include 'inc/push-notification-widget.php'; ?>
             </div>
-        </section>
-        <!-- plotting-map-area-end -->
+            <!-- Push Notification Widget End -->
 
-        <script>
-            let currentZoom = 1;
+            <!-- features-product -->
+            <!-- plotting-map-area -->
+            <section id="paroller" class="plotting-map-area" style="padding: 100px 0; background: #f9f9f9;">
+                <div class="container-fluid" style="padding: 0 30px;">
+                    <div class="row justify-content-center">
+                        <div class="col-xl-10 col-lg-12">
+                            <div class="section-title text-center mb-60">
+                                <p class="sub-title" style="color: #FAA432;">.. Your Future Home ..</p>
+                                <h2 class="title" style="color: #222222;">Interactive Plotting Map</h2>
+                                <p style="color: #777777; margin-top: 15px;">Explore our detailed plotting map with zoom
+                                    and
+                                    download options</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row justify-content-center">
+                        <div class="col-lg-12">
+                            <div class="plotting-map-viewer"
+                                style="background: #fff; border-radius: 15px; box-shadow: 0 10px 40px rgba(0,0,0,0.1); padding: 20px; position: relative;">
+                                <!-- PDF Controls -->
+                                <div class="pdf-controls"
+                                    style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; flex-wrap: wrap; gap: 10px;">
+                                    <div class="zoom-controls" style="display: flex; gap: 10px; align-items: center;">
+                                        <button onclick="zoomOut()"
+                                            style="background: #0D9B4D; color: white; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer; font-weight: 600;">
+                                            <i class="fas fa-search-minus"></i> Zoom Out
+                                        </button>
+                                        <span id="zoomLevel" style="font-weight: 600; color: #222222;">100%</span>
+                                        <button onclick="zoomIn()"
+                                            style="background: #0D9B4D; color: white; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer; font-weight: 600;">
+                                            <i class="fas fa-search-plus"></i> Zoom In
+                                        </button>
+                                    </div>
+                                    <div class="download-control">
+                                        <a href="assets/Plotting Map/Vrinda Green City_Final_Layout.pdf" download
+                                            class="btn"
+                                            style="background: #FAA432; color: white; padding: 10px 25px; border-radius: 5px; text-decoration: none; font-weight: 600;">
+                                            <i class="fas fa-download"></i> Download PDF
+                                        </a>
+                                    </div>
+                                </div>
 
-            function zoomIn() {
-                currentZoom += 0.25;
-                if (currentZoom > 3) currentZoom = 3;
-                applyZoom();
-            }
+                                <!-- PDF Viewer Container -->
+                                <div class="pdf-viewer-container"
+                                    style="border: 2px solid #e0e0e0; border-radius: 10px; overflow: auto; background: #f5f5f5; max-height: 800px; position: relative; -webkit-overflow-scrolling: touch;">
+                                    <iframe id="pdfViewer"
+                                        src="assets/Plotting Map/Vrinda Green City_Final_Layout.pdf#toolbar=1&navpanes=0&scrollbar=1&view=FitH"
+                                        style="width: 100%; height: 800px; border: none; display: block; transform-origin: top left; transition: transform 0.3s ease;"
+                                        frameborder="0" loading="lazy">
+                                    </iframe>
+                                </div>
 
-            function zoomOut() {
-                currentZoom -= 0.25;
-                if (currentZoom < 0.5) currentZoom = 0.5;
-                applyZoom();
-            }
+                                <!-- Alternative: Image fallback for mobile -->
+                                <div class="mobile-viewer d-md-none" style="margin-top: 20px;">
+                                    <p style="text-align: center; color: #777777; margin-bottom: 15px;">
+                                        <i class="fas fa-info-circle"></i> For better viewing experience on mobile,
+                                        please
+                                        download the PDF
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- plotting-map-area-end -->
 
-            function applyZoom() {
-                const iframe = document.getElementById('pdfViewer');
-                iframe.style.transform = `scale(${currentZoom})`;
-                iframe.style.width = `${100 / currentZoom}%`;
-                iframe.style.height = `${700 / currentZoom}px`;
-                document.getElementById('zoomLevel').textContent = Math.round(currentZoom * 100) + '%';
-            }
-        </script>
-        </div>
-        </div>
-        <div class="fp-circle one"></div>
-        <div class="fp-circle two"></div>
-        <div class="fp-circle three"></div>
-        <div class="fp-circle four"></div>
-        <div class="fp-circle five"></div>
+            <script>
+                let currentZoom = 1;
+
+                function zoomIn() {
+                    currentZoom += 0.25;
+                    if (currentZoom > 3) currentZoom = 3;
+                    applyZoom();
+                }
+
+                function zoomOut() {
+                    currentZoom -= 0.25;
+                    if (currentZoom < 0.5) currentZoom = 0.5;
+                    applyZoom();
+                }
+
+                function applyZoom() {
+                    const iframe = document.getElementById('pdfViewer');
+                    iframe.style.transform = `scale(${currentZoom})`;
+                    iframe.style.width = `${100 / currentZoom}%`;
+                    iframe.style.height = `${700 / currentZoom}px`;
+                    document.getElementById('zoomLevel').textContent = Math.round(currentZoom * 100) + '%';
+                }
+            </script>
+            </div>
+            </div>
+            <div class="fp-circle one"></div>
+            <div class="fp-circle two"></div>
+            <div class="fp-circle three"></div>
+            <div class="fp-circle four"></div>
+            <div class="fp-circle five"></div>
         </section>
         <!-- features-product-end -->
 
@@ -881,93 +893,102 @@
                                         growth prospects</span>
                                 </div>
                             </div>
-                            <div class="col-xl-6 col-lg-8">
-                                <div class="section-title text-center mb-60">
-                                    <p class="sub-title inventory-subtitle" data-en=".. Available Plots .."
-                                        data-hi=".. उपलब्ध प्लॉट ..">.. Available Plots ..</p>
-                                    <h2 class="title inventory-title" data-en="Plot Inventory"
-                                        data-hi="प्लॉट इन्वेंटरी">Plot
-                                        Inventory</h2>
-                                    <p class="inventory-desc" data-en="Filter and find your perfect plot"
-                                        data-hi="अपना परफेक्ट प्लॉट खोजें">Filter and find your perfect plot</p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Advanced Filter Controls -->
-                        <div class="row mb-5">
-                            <div class="col-lg-12">
-                                <div class="inventory-advanced-filters"
-                                    style="background: #f9f9f9; padding: 30px; border-radius: 15px; box-shadow: 0 5px 20px rgba(0,0,0,0.08);">
-                                    <div class="row">
-                                        <!-- Direction Filter -->
-                                        <div class="col-lg-4 col-md-6 mb-3">
-                                            <label class="filter-label" for="directionFilter">Direction</label>
-                                            <select id="directionFilter" class="filter-select">
-                                                <option value="" disabled selected>Select Direction</option>
-                                                <!-- Options will be populated dynamically -->
-                                                <option value="all">All Direction</option>
-                                            </select>
-                                        </div>
-
-                                        <!-- Area Filter -->
-                                        <div class="col-lg-4 col-md-6 mb-3">
-                                            <label class="filter-label" for="areaFilter">Area</label>
-                                            <select id="areaFilter" class="filter-select">
-                                                <option value="" disabled selected>Select Area</option>
-                                                <!-- Options will be populated dynamically -->
-                                                <option value="all">All Area</option>
-                                            </select>
-                                        </div>
-
-                                        <!-- Status Filter -->
-                                        <div class="col-lg-4 col-md-6 mb-3">
-                                            <label class="filter-label" for="statusFilter">Status</label>
-                                            <select id="statusFilter" class="filter-select">
-                                                <option value="all">All Status</option>
-                                                <option value="Available">Available</option>
-                                                <option value="Booked">Booked</option>
-                                                <option value="Reserved">Reserved</option>
-                                            </select>
-                                        </div>
-                                    </div>
-
-                                    <div class="row mt-3">
-                                        <div class="col-lg-12 text-center">
-                                            <button id="resetFilters" class="btn"
-                                                style="background: #FAA432; color: #fff; padding: 10px 30px; border-radius: 25px; font-weight: 600;">
-                                                <i class="fas fa-redo"></i> <span data-en="Reset Filters"
-                                                    data-hi="फ़िल्टर रीसेट करें">Reset Filters</span>
-                                            </button>
-                                            <span id="resultCount"
-                                                style="margin-left: 20px; font-weight: 600; color: #0D9B4D;"></span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Loading Spinner -->
-                        <div id="inventoryLoading" class="text-center mb-4">
-                            <div class="spinner-border" style="color: #0D9B4D; width: 3rem; height: 3rem;"
-                                role="status">
-                                <span class="sr-only">Loading...</span>
-                            </div>
-                            <p class="mt-3" style="color: #777;">Loading inventory data...</p>
-                        </div>
-
-                        <!-- Inventory Grid -->
-                        <div class="row" id="inventoryGrid">
-                            <!-- Plot cards will be inserted here dynamically -->
-                        </div>
-
-                        <!-- Empty State -->
-                        <div id="emptyState" class="text-center" style="display: none; padding: 60px 0;">
-                            <i class="fas fa-search" style="font-size: 80px; color: #ccc; margin-bottom: 20px;"></i>
-                            <h4>No plots found</h4>
-                            <p style="color: #777;">Try adjusting your filters to see more results</p>
                         </div>
                     </div>
+                </div>
+            </div>
+        </section>
+        <!-- fact-area-end -->
+
+        <!-- inventory-area -->
+        <section id="inventory" class="inventory-area" style="padding: 100px 0; background: #fff;">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-xl-6 col-lg-8">
+                        <div class="section-title text-center mb-60">
+                            <p class="sub-title inventory-subtitle" data-en=".. Available Plots .."
+                                data-hi=".. उपलब्ध प्लॉट ..">.. Available Plots ..</p>
+                            <h2 class="title inventory-title" data-en="Plot Inventory" data-hi="प्लॉट इन्वेंटरी">Plot
+                                Inventory</h2>
+                            <p class="inventory-desc" data-en="Filter and find your perfect plot"
+                                data-hi="अपना परफेक्ट प्लॉट खोजें">Filter and find your perfect plot</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Advanced Filter Controls -->
+                <div class="row mb-5">
+                    <div class="col-lg-12">
+                        <div class="inventory-advanced-filters"
+                            style="background: #f9f9f9; padding: 30px; border-radius: 15px; box-shadow: 0 5px 20px rgba(0,0,0,0.08);">
+                            <div class="row">
+                                <!-- Direction Filter -->
+                                <div class="col-lg-4 col-md-6 mb-3">
+                                    <label class="filter-label" for="directionFilter">Direction</label>
+                                    <select id="directionFilter" class="filter-select">
+                                        <option value="" disabled selected>Select Direction</option>
+                                        <!-- Options will be populated dynamically -->
+                                        <option value="all">All Direction</option>
+                                    </select>
+                                </div>
+
+                                <!-- Area Filter -->
+                                <div class="col-lg-4 col-md-6 mb-3">
+                                    <label class="filter-label" for="areaFilter">Area</label>
+                                    <select id="areaFilter" class="filter-select">
+                                        <option value="" disabled selected>Select Area</option>
+                                        <!-- Options will be populated dynamically -->
+                                        <option value="all">All Area</option>
+                                    </select>
+                                </div>
+
+                                <!-- Status Filter -->
+                                <div class="col-lg-4 col-md-6 mb-3">
+                                    <label class="filter-label" for="statusFilter">Status</label>
+                                    <select id="statusFilter" class="filter-select">
+                                        <option value="all">All Status</option>
+                                        <option value="Available">Available</option>
+                                        <option value="Booked">Booked</option>
+                                        <option value="Reserved">Reserved</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="row mt-3">
+                                <div class="col-lg-12 text-center">
+                                    <button id="resetFilters" class="btn"
+                                        style="background: #FAA432; color: #fff; padding: 10px 30px; border-radius: 25px; font-weight: 600;">
+                                        <i class="fas fa-redo"></i> <span data-en="Reset Filters"
+                                            data-hi="फ़िल्टर रीसेट करें">Reset Filters</span>
+                                    </button>
+                                    <span id="resultCount"
+                                        style="margin-left: 20px; font-weight: 600; color: #0D9B4D;"></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Loading Spinner -->
+                <div id="inventoryLoading" class="text-center mb-4">
+                    <div class="spinner-border" style="color: #0D9B4D; width: 3rem; height: 3rem;" role="status">
+                        <span class="sr-only">Loading...</span>
+                    </div>
+                    <p class="mt-3" style="color: #777;">Loading inventory data...</p>
+                </div>
+
+                <!-- Inventory Grid -->
+                <div class="row" id="inventoryGrid">
+                    <!-- Plot cards will be inserted here dynamically -->
+                </div>
+
+                <!-- Empty State -->
+                <div id="emptyState" class="text-center" style="display: none; padding: 60px 0;">
+                    <i class="fas fa-search" style="font-size: 80px; color: #ccc; margin-bottom: 20px;"></i>
+                    <h4>No plots found</h4>
+                    <p style="color: #777;">Try adjusting your filters to see more results</p>
+                </div>
+            </div>
         </section>
         <!-- inventory-area-end -->
 
@@ -2420,6 +2441,7 @@
 
     <!-- Chatbot Widget Script -->
     <script src="assets/js/chatbot.js?v=3.0"></script>
+
     <!-- Push Notifications Script -->
     <script src='assets/js/push-notifications.js'></script>
 </body>

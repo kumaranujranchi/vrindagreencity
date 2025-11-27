@@ -257,19 +257,7 @@
                 <div class="row">
                     <div class="col-12">
                         <div class="banner-video-wrapper text-center"
-                            style="overflow: hidden; border-radius: 10px; position: relative; width: 100%; height: 600px;">
-                            <!-- YouTube Video -->
-                            <iframe class="hero-video" loading="lazy"
-                                src="https://www.youtube.com/embed/eA9wyv7vtpY?autoplay=1&mute=1&loop=1&playlist=eA9wyv7vtpY&controls=0&showinfo=0&rel=0&modestbranding=1"
-                                frameborder="0" allow="autoplay; encrypted-media" allowfullscreen
-                                style="position: absolute; top: 50%; left: 50%; width: 150%; height: 150%; transform: translate(-50%, -50%); border: none;">
-                            <div class="row align-items-center">
-                        <div class="col-xxl-6 col-lg-5 order-0 order-lg-2">
-                            <div class="features-img wow featuresRollOut" data-wow-delay=".3s"
-                                style="margin-right: 0; overflow: hidden; border-radius: 15px; position: relative; width: 120%; max-width: 120%; height: 450px; box-shadow: 0 15px 50px rgba(0,0,0,0.25);">
-                                <iframe loading="lazy"
-                                    src="https://www.youtube.com/embed/Zu3OgDYRu8o?autoplay=1&mute=1&loop=1&playlist=Zu3OgDYRu8o&controls=0&showinfo=0&rel=0&modestbranding=1"
-                                    frameborder="0" allow="autoplay; encrypted-media" allowfullscreen
+                            frameborder="0" allow="autoplay; encrypted-media" allowfullscreen
                                     style="position: absolute; top: 50%; left: 50%; width: 150%; height: 150%; transform: translate(-50%, -50%); border: none;">
                                 </iframe>
                             </div>

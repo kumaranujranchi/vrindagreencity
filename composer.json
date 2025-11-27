@@ -1,0 +1,12 @@
+{
+    "name": "vrindagreencity/push-notifications",
+    "description": "Push notification service for Vrinda Green City website",
+    "require": {
+        "minishlink/web-push": "^8.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "VrindaGreenCity\\": "admin/"
+        }
+    }
+}

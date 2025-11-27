@@ -89,6 +89,15 @@
             </svg>
             <span class="nav-label">Chatbot</span>
         </a>
+        <a href="push-notifications.php"
+            class="nav-link <?php echo basename($_SERVER['PHP_SELF']) == 'push-notifications.php' || basename($_SERVER['PHP_SELF']) == 'push-subscribers.php' ? 'active' : ''; ?>">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-linecap="round" stroke-linejoin="round">
+                <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path>
+                <path d="M13.73 21a2 2 0 0 1-3.46 0"></path>
+            </svg>
+            <span class="nav-label">Push Notifications</span>
+        </a>
         <a href="logout.php" class="nav-link logout">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                 stroke-linecap="round" stroke-linejoin="round">

@@ -365,17 +365,16 @@
         <!-- features-area-end -->
 
             <!-- banking-partner-area -->
-            <section id="banking-partner" class="banking-partner-area features-bg" style="padding: 60px 0; background: #fff;">
+            <section id="banking-partner" class="banking-partner-area features-bg" style="padding: 30px 0 20px 0; background: #fff;">
                 <div class="container">
                     <div class="row justify-content-center">
                         <div class="col-xl-6 col-lg-8">
-                            <div class="section-title text-center mb-40">
-                                <p class="sub-title key-features-subtitle" style="color: #FAA432;">.. Banking Partner ..</p>
-                                <h2 class="title key-features-title" style="color: #222;">BANKING PARTNER</h2>
+                            <div class="section-title text-center mb-2">
+                                <p class="sub-title key-features-subtitle" style="color: #FAA432; margin-bottom: 0;">.. Banking Partner ..</p>
                             </div>
                         </div>
                     </div>
-                    <div class="row justify-content-center align-items-center">
+                    <div class="row justify-content-center align-items-center" style="margin-top: 10px; margin-bottom: 0;">
                         <div class="col-6 col-sm-4 col-md-2 mb-4 mb-md-0 text-center">
                             <img src="https://imagizer.imageshack.com/img923/5628/nnIWNw.png" alt="Bank Partner 1" class="img-fluid" style="max-height: 60px; object-fit: contain;">
                         </div>

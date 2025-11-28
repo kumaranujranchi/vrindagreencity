@@ -132,7 +132,7 @@
                                 <div class="navbar-wrap main-menu d-none d-xl-flex">
                                     <ul class="navigation">
                                         <li class="active"><a href="#home" class="section-link">Home</a></li>
-                                        <li><a href="#features" class="section-link">amenities</a></li>
+                                        <li><a href="#amenities" class="section-link">amenities</a></li>
                                         <li><a href="#paroller" class="section-link">Plotting Map</a></li>
                                         <li><a href="#inventory" class="section-link">Inventory</a></li>
                                         <li><a href="#pricing" class="section-link">Pricing</a></li>
@@ -243,130 +243,81 @@
     <main class="main-area fix">
 
         <!-- banner-area -->
-        <section class="banner-area">
+        <!-- amenities-area (redesigned using key-features-area layout) -->
+        <section id="amenities" class="key-features-area features-bg" data-background="assets/img/bg/features_bg.jpg">
             <div class="container">
                 <div class="row justify-content-center">
-                    <div class="col-xxl-8 col-xl-7 col-lg-8 col-md-10">
-                        <div class="banner-content text-center">
-                            <p class="banner-caption">A calm, nature-forward residential enclave</p>
-                            <h1 class="title">Clear-title residential plots in the heart of Bihta</h1>
-                            <a href="contact.php" class="btn btn-two">Book Site Visit</a>
+                    <div class="col-xl-6 col-lg-8">
+                        <div class="section-title text-center mb-60">
+                            <p class="sub-title key-features-subtitle" data-en=".. Amenities .." data-hi=".. सुविधाएं ..">.. Amenities ..</p>
+                            <h2 class="title key-features-title" data-en="AMENITIES" data-hi="सुविधाएं">AMENITIES</h2>
                         </div>
                     </div>
                 </div>
-                <div class="row">
-                    <div class="col-12">
-                        <div class="banner-video-wrapper text-center" frameborder="0" allow="autoplay; encrypted-media"
-                            allowfullscreen
-                            style="position: absolute; top: 50%; left: 50%; width: 150%; height: 150%; transform: translate(-50%, -50%); border: none;">
-                            </iframe>
+                <div class="row justify-content-center">
+                    <div class="col-lg-4 col-md-6 col-sm-9">
+                        <div class="key-feature-item wow fadeInUp" data-wow-delay=".2s">
+                            <div class="key-feature-icon">
+                                <i class="flaticon-tape-measure"></i>
+                            </div>
+                            <div class="key-feature-content">
+                                <h4 class="title amenity-title" data-en="Central Drainage System" data-hi="सेंट्रल ड्रेनेज सिस्टम">Central Drainage System</h4>
+                                <p class="amenity-desc" data-en="Well-planned central drainage system ensuring clean surroundings and hassle-free living." data-hi="सुव्यवस्थित सेंट्रल ड्रेनेज सिस्टम, जो कॉलोनी को स्वच्छ और परेशानी-मुक्त बनाए रखता है।">Well-planned central drainage system ensuring clean surroundings and hassle-free living.</p>
+                            </div>
                         </div>
                     </div>
-                    <div class="col-xxl-6 col-lg-7">
-                        <div class="features-items-wrap">
-                            <div class="row justify-content-center">
-                                <div class="col-md-6 col-sm-8">
-                                    <div class="features-item">
-                                        <div class="features-icon">
-                                            <i class="flaticon-tape-measure"></i>
-                                        </div>
-                                        <div class="features-content">
-                                            <h4 class="title amenity-title" data-en="Central Drainage System"
-                                                data-hi="सेंट्रल ड्रेनेज सिस्टम">Central Drainage System</h4>
-                                            <p class="amenity-desc"
-                                                data-en="Well-planned central drainage system ensuring clean surroundings and hassle-free living."
-                                                data-hi="सुव्यवस्थित सेंट्रल ड्रेनेज सिस्टम, जो कॉलोनी को स्वच्छ और परेशानी-मुक्त बनाए रखता है।">
-                                                Well-planned central drainage system ensuring clean surroundings and
-                                                hassle-free living.</p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-6 col-sm-8">
-                                    <div class="features-item">
-                                        <div class="features-icon">
-                                            <i class="flaticon-test"></i>
-                                        </div>
-                                        <div class="features-content">
-                                            <h4 class="title amenity-title" data-en="CCTV Security"
-                                                data-hi="CCTV सुरक्षा">CCTV Security</h4>
-                                            <p class="amenity-desc"
-                                                data-en="High-definition CCTV surveillance across key points for complete safety and peace of mind."
-                                                data-hi="कॉलोनी के प्रमुख स्थानों पर हाई-डेफिनिशन CCTV निगरानी, आपकी पूरी सुरक्षा और चैन के लिए।">
-                                                High-definition CCTV surveillance across key points for complete
-                                                safety
-                                                and peace of mind.</p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-6 col-sm-8">
-                                    <div class="features-item">
-                                        <div class="features-icon">
-                                            <i class="flaticon-weight"></i>
-                                        </div>
-                                        <div class="features-content">
-                                            <h4 class="title amenity-title" data-en="24/7 Security Guards"
-                                                data-hi="24/7 सिक्योरिटी गार्ड्स">24/7 Security Guards</h4>
-                                            <p class="amenity-desc"
-                                                data-en="Trained security guards available round the clock to protect residents and visitors."
-                                                data-hi="24/7 प्रशिक्षित सिक्योरिटी गार्ड्स—हमेशा आपकी सुरक्षा के लिए तैनात।">
-                                                Trained security guards available round the clock to protect
-                                                residents
-                                                and visitors.</p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-6 col-sm-8">
-                                    <div class="features-item">
-                                        <div class="features-icon">
-                                            <i class="flaticon-abs"></i>
-                                        </div>
-                                        <div class="features-content">
-                                            <h4 class="title amenity-title" data-en="Complete Outside Boundary Wall"
-                                                data-hi="पूर्ण बाहरी बाउंड्री वॉल">Complete Outside Boundary Wall
-                                            </h4>
-                                            <p class="amenity-desc"
-                                                data-en="A sturdy, full-perimeter boundary wall that ensures privacy, safety, and a protected township environment."
-                                                data-hi="मजबूत और पूर्ण परिधि वाली बाउंड्री वॉल, जो प्राइवेसी और सुरक्षा का भरोसा देती है।">
-                                                A sturdy, full-perimeter boundary wall that ensures privacy, safety,
-                                                and
-                                                a protected township environment.</p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-6 col-sm-8">
-                                    <div class="features-item">
-                                        <div class="features-icon">
-                                            <i class="flaticon-tape-measure"></i>
-                                        </div>
-                                        <div class="features-content">
-                                            <h4 class="title amenity-title" data-en="Internal Roads"
-                                                data-hi="आंतरिक सड़कें">Internal Roads</h4>
-                                            <p class="amenity-desc"
-                                                data-en="Wide, well-constructed internal roads designed for smooth movement and easy navigation inside the township."
-                                                data-hi="चौड़ी और मजबूत आंतरिक सड़कें—आरामदायक सफर और बेहतर कनेक्टिविटी के लिए।">
-                                                Wide, well-constructed internal roads designed for smooth movement
-                                                and
-                                                easy navigation inside the township.</p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-6 col-sm-8">
-                                    <div class="features-item">
-                                        <div class="features-icon">
-                                            <i class="flaticon-abs"></i>
-                                        </div>
-                                        <div class="features-content">
-                                            <h4 class="title amenity-title" data-en="Park Area" data-hi="पार्क क्षेत्र">
-                                                Park Area</h4>
-                                            <p class="amenity-desc"
-                                                data-en="Green, peaceful park space for morning walks, relaxation, and a healthy outdoor lifestyle."
-                                                data-hi="हरियाली से भरपूर शांत पार्क—सुबह की सैर, आराम और स्वस्थ जीवनशैली के लिए आदर्श।">
-                                                Green, peaceful park space for morning walks, relaxation, and a
-                                                healthy
-                                                outdoor lifestyle.</p>
-                                        </div>
-                                    </div>
-                                </div>
+                    <div class="col-lg-4 col-md-6 col-sm-9">
+                        <div class="key-feature-item wow fadeInUp" data-wow-delay=".3s">
+                            <div class="key-feature-icon">
+                                <i class="flaticon-test"></i>
+                            </div>
+                            <div class="key-feature-content">
+                                <h4 class="title amenity-title" data-en="CCTV Security" data-hi="CCTV सुरक्षा">CCTV Security</h4>
+                                <p class="amenity-desc" data-en="High-definition CCTV surveillance across key points for complete safety and peace of mind." data-hi="कॉलोनी के प्रमुख स्थानों पर हाई-डेफिनिशन CCTV निगरानी, आपकी पूरी सुरक्षा और चैन के लिए।">High-definition CCTV surveillance across key points for complete safety and peace of mind.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 col-sm-9">
+                        <div class="key-feature-item wow fadeInUp" data-wow-delay=".4s">
+                            <div class="key-feature-icon">
+                                <i class="flaticon-weight"></i>
+                            </div>
+                            <div class="key-feature-content">
+                                <h4 class="title amenity-title" data-en="24/7 Security Guards" data-hi="24/7 सिक्योरिटी गार्ड्स">24/7 Security Guards</h4>
+                                <p class="amenity-desc" data-en="Trained security guards available round the clock to protect residents and visitors." data-hi="24/7 प्रशिक्षित सिक्योरिटी गार्ड्स—हमेशा आपकी सुरक्षा के लिए तैनात।">Trained security guards available round the clock to protect residents and visitors.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 col-sm-9">
+                        <div class="key-feature-item wow fadeInUp" data-wow-delay=".5s">
+                            <div class="key-feature-icon">
+                                <i class="flaticon-abs"></i>
+                            </div>
+                            <div class="key-feature-content">
+                                <h4 class="title amenity-title" data-en="Complete Outside Boundary Wall" data-hi="पूर्ण बाहरी बाउंड्री वॉल">Complete Outside Boundary Wall</h4>
+                                <p class="amenity-desc" data-en="A sturdy, full-perimeter boundary wall that ensures privacy, safety, and a protected township environment." data-hi="मजबूत और पूर्ण परिधि वाली बाउंड्री वॉल, जो प्राइवेसी और सुरक्षा का भरोसा देती है।">A sturdy, full-perimeter boundary wall that ensures privacy, safety, and a protected township environment.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 col-sm-9">
+                        <div class="key-feature-item wow fadeInUp" data-wow-delay=".6s">
+                            <div class="key-feature-icon">
+                                <i class="flaticon-tape-measure"></i>
+                            </div>
+                            <div class="key-feature-content">
+                                <h4 class="title amenity-title" data-en="Internal Roads" data-hi="आंतरिक सड़कें">Internal Roads</h4>
+                                <p class="amenity-desc" data-en="Wide, well-constructed internal roads designed for smooth movement and easy navigation inside the township." data-hi="चौड़ी और मजबूत आंतरिक सड़कें—आरामदायक सफर और बेहतर कनेक्टिविटी के लिए।">Wide, well-constructed internal roads designed for smooth movement and easy navigation inside the township.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 col-sm-9">
+                        <div class="key-feature-item wow fadeInUp" data-wow-delay=".7s">
+                            <div class="key-feature-icon">
+                                <i class="flaticon-abs"></i>
+                            </div>
+                            <div class="key-feature-content">
+                                <h4 class="title amenity-title" data-en="Park Area" data-hi="पार्क क्षेत्र">Park Area</h4>
+                                <p class="amenity-desc" data-en="Green, peaceful park space for morning walks, relaxation, and a healthy outdoor lifestyle." data-hi="हरियाली से भरपूर शांत पार्क—सुबह की सैर, आराम और स्वस्थ जीवनशैली के लिए आदर्श।">Green, peaceful park space for morning walks, relaxation, and a healthy outdoor lifestyle.</p>
                             </div>
                         </div>
                     </div>

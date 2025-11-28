@@ -2102,61 +2102,6 @@
     <!-- Inventory Google Sheets Integration -->
     <script src="assets/js/inventory.js"></script>
 
-    <!-- Fix for Brand Slider -->
-    <script>
-        $(document).ready(function () {
-            // Reinitialize brand slider to ensure visibility
-            setTimeout(function () {
-                if ($('.brand-active').length && !$('.brand-active').hasClass('slick-initialized')) {
-                    $('.brand-active').slick({
-                        dots: false,
-                        infinite: true,
-                        speed: 5000,
-                        autoplay: true,
-                        autoplaySpeed: 0,
-                        cssEase: 'linear',
-                        arrows: false,
-                        slidesToShow: 5,
-                        slidesToScroll: 1,
-                        rtl: true,
-                        pauseOnHover: false,
-                        responsive: [
-                            {
-                                breakpoint: 1200,
-                                settings: {
-                                    slidesToShow: 4,
-                                    slidesToScroll: 1,
-                                    infinite: true,
-                                }
-                            },
-                            {
-                                breakpoint: 992,
-                                settings: {
-                                    slidesToShow: 3,
-                                    slidesToScroll: 1
-                                }
-                            },
-                            {
-                                breakpoint: 767,
-                                settings: {
-                                    slidesToShow: 2,
-                                    slidesToScroll: 1
-                                }
-                            },
-                            {
-                                breakpoint: 575,
-                                settings: {
-                                    slidesToShow: 1,
-                                    slidesToScroll: 1
-                                }
-                            }
-                        ]
-                    });
-                }
-            }, 500);
-        });
-    </script>
-
     <!-- Language Toggle Script -->
     <script>
         $(document).ready(function () {
@@ -2192,9 +2137,6 @@
                 $('.banner-caption').text('एक शांत, प्रकृति-केंद्रित आवासीय परिसर');
                 $('.banner-content .title').text('बिहटा के मध्य में स्पष्ट-शीर्षक आवासीय प्लॉट');
                 $('.banner-content .btn').text('साइट विज़िट बुक करें');
-
-                // Brand
-                $('.brand-title .title').text('बैंकिंग साझेदार');
 
                 // Video placeholder
                 $('.video-content p').text('वीडियो यहां एम्बेड किया जाएगा');
@@ -2267,9 +2209,6 @@
                 $('.banner-caption').text('A calm, nature-forward residential enclave');
                 $('.banner-content .title').text('Clear-title residential plots in the heart of Bihta');
                 $('.banner-content .btn').text('Book Site Visit');
-
-                // Brand
-                $('.brand-title .title').text('Banking partner');
 
                 // Video placeholder
                 $('.video-content p').text('Video will be embedded here');

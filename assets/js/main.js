@@ -269,57 +269,6 @@ function mainSlider() {
 
 
 /*=============================================
-	=    		Brand Active		      =
-=============================================*/
-$('.brand-active').slick({
-	dots: false,
-	infinite: true,
-	speed: 5000,
-	autoplay: true,
-	autoplaySpeed: 0,
-	cssEase: 'linear',
-	arrows: false,
-	slidesToShow: 5,
-	slidesToScroll: 1,
-	rtl: true,
-	pauseOnHover: false,
-	responsive: [
-		{
-			breakpoint: 1200,
-			settings: {
-				slidesToShow: 4,
-				slidesToScroll: 1,
-				infinite: true,
-			}
-		},
-		{
-			breakpoint: 992,
-			settings: {
-				slidesToShow: 3,
-				slidesToScroll: 1
-			}
-		},
-		{
-			breakpoint: 767,
-			settings: {
-				slidesToShow: 2,
-				slidesToScroll: 1,
-				arrows: false,
-			}
-		},
-		{
-			breakpoint: 575,
-			settings: {
-				slidesToShow: 1,
-				slidesToScroll: 1,
-				arrows: false,
-			}
-		},
-	]
-});
-
-
-/*=============================================
 	=    		Accordion Active		      =
 =============================================*/
 $(function () {

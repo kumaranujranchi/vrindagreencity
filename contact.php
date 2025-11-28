@@ -230,7 +230,7 @@
                                     <i class="far fa-map"></i>
                                 </div>
                                 <div class="contact-content">
-                                    <h5 class="title">Office Address</h5>
+                                    <h5 class="title">Project Address</h5>
                                     <p class="contact-desc">Mauja – Barah, Patut, Near Shivam Vidya Mandir, Bihta, Bihar</p>
                                 </div>
                             </div>

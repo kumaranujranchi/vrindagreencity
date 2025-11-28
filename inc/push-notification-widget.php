@@ -6,7 +6,7 @@
   .push-notification-bell {
     position: fixed;
     bottom: 30px;
-    right: 30px;
+    left: 30px;
     z-index: 9999;
   }
 
@@ -274,7 +274,7 @@
 
     .push-notification-bell {
       bottom: 20px;
-      right: 20px;
+      left: 20px;
     }
 
     .notification-bell-trigger {

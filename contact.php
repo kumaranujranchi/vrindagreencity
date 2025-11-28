@@ -76,6 +76,7 @@
 
     <!-- header-area -->
     <header id="home">
+        <div id="header-top-fixed"></div>
         <div id="sticky-header" class="menu-area transparent-header">
             <div class="container custom-container">
                 <div class="row">

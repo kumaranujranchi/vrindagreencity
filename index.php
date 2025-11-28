@@ -267,9 +267,7 @@
                                 </iframe>
                             </div>
 
-                            <div class="video-content" style="margin-top:12px; text-align:center; color:#777;">
-                                <p>Video will be embedded here</p>
-                            </div>
+                            <!-- Removed video-content placeholder below video -->
 
                             <div class="hero-video-cta">
                                 <a href="contact.php" class="btn">Site Vist</a>

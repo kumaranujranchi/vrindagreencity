@@ -259,8 +259,12 @@
                         </style>
 
                         <div class="hero-video-wrapper">
-                            <div class="hero-video-embed" aria-hidden="false">
-                                <iframe src="https://www.youtube.com/embed/eA9wyv7vtpY?rel=0" title="Vrinda Green City - Intro" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            <div class="hero-video-embed" aria-hidden="false" style="overflow: hidden; border-radius: 15px; position: relative; width: 100%; height: 480px; box-shadow: 0 10px 40px rgba(0,0,0,0.4);">
+                                <iframe loading="lazy"
+                                    src="https://www.youtube.com/embed/eA9wyv7vtpY?autoplay=1&mute=1&loop=1&playlist=eA9wyv7vtpY&controls=0&showinfo=0&rel=0&modestbranding=1"
+                                    frameborder="0" allow="autoplay; encrypted-media" allowfullscreen
+                                    style="position: absolute; top: 50%; left: 50%; width: 150%; height: 150%; transform: translate(-50%, -50%); border: none;">
+                                </iframe>
                             </div>
 
                             <div class="video-content" style="margin-top:12px; text-align:center; color:#777;">

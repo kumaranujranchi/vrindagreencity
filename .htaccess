@@ -19,6 +19,13 @@ DirectoryIndex index.php index.html
 # </IfModule>
 RewriteEngine On
 
+# Disable caching for PHP files to get fresh content
+<IfModule mod_headers.c>
+    Header always set Cache-Control "no-cache, no-store, must-revalidate, max-age=0"
+    Header always set Pragma "no-cache"
+    Header always set Expires "0"
+</IfModule>
+
 # Redirect www to non-www (ensures sitemap & site are on canonical domain)
 RewriteCond %{HTTP_HOST} ^www\.(.+)$ [NC]
 RewriteRule ^ https://%1%{REQUEST_URI} [R=301,L]
@@ -27,13 +34,13 @@ RewriteRule ^ https://%1%{REQUEST_URI} [R=301,L]
 RewriteCond %{THE_REQUEST} /index\.html [NC]
 RewriteRule ^(.*)index\.html$ /$1 [R=301,L,NC]
 
-# Handle clean URLs - route all requests to index.html
+# Handle clean URLs - route all requests to index.php (not index.html)
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteCond %{REQUEST_URI} !^/contact\.html$
 RewriteCond %{REQUEST_URI} !^/assets/
 RewriteCond %{REQUEST_URI} !\.(css|js|jpg|jpeg|png|gif|ico|svg|webp|woff|woff2|ttf|eot)$
-RewriteRule ^(.*)$ /index.html [L]
+RewriteRule ^(.*)$ /index.php [L]
 
 # Force HTTPS (optional, recommended for production)
 # RewriteCond %{HTTPS} off

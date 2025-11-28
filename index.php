@@ -259,6 +259,10 @@
                         </style>
 
                         <div class="hero-video-wrapper">
+                            <div class="hero-video-heading" style="text-align:center; margin-bottom:28px;">
+                                <h1 style="font-family:'Oswald',sans-serif;font-size:3.2rem;font-weight:500;line-height:1.1;color:#FAA432;margin-bottom:10px;">A calm, nature-forward<br>residential enclave</h1>
+                                <div style="font-size:1.25rem;color:#FAA432;opacity:0.85;">Clear-title residential plots in the heart of Bihta</div>
+                            </div>
                             <div class="hero-video-embed" aria-hidden="false" style="overflow: hidden; border-radius: 15px; position: relative; width: 100%; height: 480px; box-shadow: 0 10px 40px rgba(0,0,0,0.4);">
                                 <iframe loading="lazy"
                                     src="https://www.youtube.com/embed/eA9wyv7vtpY?autoplay=1&mute=1&loop=1&playlist=eA9wyv7vtpY&controls=0&showinfo=0&rel=0&modestbranding=1"

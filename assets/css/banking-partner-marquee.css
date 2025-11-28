@@ -4,6 +4,7 @@
   background: linear-gradient(180deg, #ffffff 0%, #f7fff7 100%);
   border-top: 6px solid rgba(13, 155, 77, 0.06);
 }
+/* end */
 .banking-partner-title {
   color: #222;
   font-size: 2rem;
@@ -57,18 +58,36 @@
     grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
     gap: 14px;
   }
-  .banking-partner-logo { height: 60px; max-width: 160px; padding: 8px; }
+  .banking-partner-logo {
+    height: 60px;
+    max-width: 160px;
+    padding: 8px;
+  }
 }
 @media (max-width: 767px) {
-  .banking-partner-track { grid-template-columns: repeat(auto-fit, minmax(80px, 1fr)); gap: 12px; }
-  .banking-partner-logo { height: 44px; max-width: 100px; padding: 5px; }
+  .banking-partner-track {
+    grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+    gap: 12px;
+  }
+  .banking-partner-logo {
+    height: 44px;
+    max-width: 100px;
+    padding: 5px;
+  }
+  .banking-partner-area {
+    padding: 35px 0 22px 0;
+  }
 }
 @media (max-width: 480px) {
   /* Force all logos into a single row on narrow screens by shrinking items and padding */
-  .banking-partner-track { grid-template-columns: repeat(5, minmax(40px, 1fr)); gap: 8px; justify-items: center; }
-  .banking-partner-logo { height: 36px; max-width: 80px; padding: 4px; }
-}
-  .banking-partner-area {
-    padding: 35px 0 22px 0;
+  .banking-partner-track {
+    grid-template-columns: repeat(5, minmax(40px, 1fr));
+    gap: 8px;
+    justify-items: center;
+  }
+  .banking-partner-logo {
+    height: 36px;
+    max-width: 80px;
+    padding: 4px;
   }
 }

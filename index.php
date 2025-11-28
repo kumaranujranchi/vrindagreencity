@@ -58,7 +58,7 @@
         "latitude": "25.5585",
         "longitude": "84.8667"
       },
-      "telephone": "+91-XXXXXXXXXX",
+      "telephone": "+91 9200800600",
       "email": "info@vrindagreencity.com",
       "sameAs": [
         "https://www.facebook.com/vrindagreencity",

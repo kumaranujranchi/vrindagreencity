@@ -1314,19 +1314,9 @@
         <section class="banking-partner-area">
             <div class="container">
                 <div class="banking-partner-title">Banking Partner</div>
+                <div class="banking-partner-subtitle">We partner with leading banks to provide you quick and easy financing</div>
                 <div class="banking-partner-marquee">
                     <div class="banking-partner-track">
-                        <img src="https://imagizer.imageshack.com/img923/5628/nnIWNw.png" alt="SBI"
-                            class="banking-partner-logo" />
-                        <img src="https://imagizer.imageshack.com/img924/9968/vIlVWk.png" alt="HDFC"
-                            class="banking-partner-logo" />
-                        <img src="https://imagizer.imageshack.com/img924/350/TK8aPL.png" alt="Axis"
-                            class="banking-partner-logo" />
-                        <img src="https://imagizer.imageshack.com/img924/8052/DQSFpk.png" alt="Bank of Baroda"
-                            class="banking-partner-logo" />
-                        <img src="https://imagizer.imageshack.com/img922/7303/4OFk1r.png" alt="Indian Bank"
-                            class="banking-partner-logo" />
-                        <!-- Repeat for smooth infinite scroll -->
                         <img src="https://imagizer.imageshack.com/img923/5628/nnIWNw.png" alt="SBI"
                             class="banking-partner-logo" />
                         <img src="https://imagizer.imageshack.com/img924/9968/vIlVWk.png" alt="HDFC"

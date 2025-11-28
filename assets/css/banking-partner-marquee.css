@@ -1,51 +1,66 @@
 /* Banking Partner Marquee Styles */
 .banking-partner-area {
-    padding: 40px 0 30px 0;
-    background: #fff;
+  padding: 48px 0 36px 0;
+  background: linear-gradient(180deg, #ffffff 0%, #f7fff7 100%);
+  border-top: 6px solid rgba(13, 155, 77, 0.06);
 }
 .banking-partner-title {
-    color: #222;
-    font-size: 2rem;
-    font-weight: 700;
-    text-align: center;
-    margin-bottom: 20px;
-    letter-spacing: 1px;
+  color: #222;
+  font-size: 2rem;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 20px;
+  letter-spacing: 1px;
+}
+.banking-partner-subtitle {
+  color: #5c6b58;
+  text-align: center;
+  margin-bottom: 18px;
+  font-size: 14px;
 }
 .banking-partner-marquee {
-    overflow: hidden;
-    position: relative;
-    width: 100%;
-    height: 80px;
-    background: transparent;
-    display: flex;
-    align-items: center;
+  position: relative;
+  width: 100%;
+  background: transparent;
 }
 .banking-partner-track {
-    display: flex;
-    width: max-content;
-    animation: banking-partner-scroll 18s linear infinite;
-    align-items: center;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 20px 30px;
+  align-items: center;
+  justify-items: center;
+  padding: 10px 20px;
 }
 .banking-partner-logo {
-    height: 60px;
-    width: 120px;
-    margin: 0 30px;
-    object-fit: contain;
-    filter: grayscale(0%);
-    background: transparent;
-    transition: filter 0.3s;
+  height: 60px;
+  width: auto;
+  max-width: 160px;
+  margin: 0;
+  object-fit: contain;
+  filter: grayscale(0%);
+  background: transparent;
+  transition: transform 0.25s ease, filter 0.25s ease, box-shadow 0.25s ease;
+  padding: 8px;
+  border-radius: 8px;
 }
-@keyframes banking-partner-scroll {
-    0% { transform: translateX(0); }
-    100% { transform: translateX(-50%); }
+.banking-partner-logo:hover {
+  transform: translateY(-6px) scale(1.03);
+  filter: grayscale(0%);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
 }
+/* removed animation keyframes - static grid layout */
+/* duplicate rules removed (kept above) */
 @media (max-width: 767px) {
-    .banking-partner-logo {
-        height: 40px;
-        width: 80px;
-        margin: 0 15px;
-    }
-    .banking-partner-area {
-        padding: 30px 0 20px 0;
-    }
+  .banking-partner-track {
+    grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+    gap: 12px;
+  }
+  .banking-partner-logo {
+    height: 44px;
+    max-width: 120px;
+    padding: 6px;
+  }
+  .banking-partner-area {
+    padding: 35px 0 22px 0;
+  }
 }

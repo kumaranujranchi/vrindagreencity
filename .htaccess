@@ -1,3 +1,22 @@
+DirectoryIndex index.php index.html
+
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    # Prevent directory listing
+    Options -Indexes
+    # Ensure existing files are served normally
+    RewriteCond %{REQUEST_FILENAME} -f
+    RewriteRule ^ - [L]
+</IfModule>
+
+# If you later want to force redirect all requests to index.php (SPA-like),
+# uncomment the following block and adjust as needed.
+# <IfModule mod_rewrite.c>
+#     RewriteEngine On
+#     RewriteCond %{REQUEST_FILENAME} !-f
+#     RewriteCond %{REQUEST_FILENAME} !-d
+#     RewriteRule ^ index.php [L]
+# </IfModule>
 RewriteEngine On
 
 # Redirect www to non-www (ensures sitemap & site are on canonical domain)

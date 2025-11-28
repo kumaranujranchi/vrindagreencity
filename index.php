@@ -1313,8 +1313,10 @@
         <link rel="stylesheet" href="assets/css/banking-partner-marquee.css">
         <section class="banking-partner-area">
             <div class="container">
-                <div class="banking-partner-title">Banking Partner</div>
-                <div class="banking-partner-subtitle">We partner with leading banks to provide you quick and easy financing</div>
+                <div class="section-title text-center mb-60">
+                    <p class="sub-title">Our Partners</p>
+                    <h2 class="title">Banking Partner</h2>
+                </div>
                 <div class="banking-partner-marquee">
                     <div class="banking-partner-track">
                         <img src="https://imagizer.imageshack.com/img923/5628/nnIWNw.png" alt="SBI"

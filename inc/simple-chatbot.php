@@ -34,8 +34,15 @@ try {
     $message = isset($_POST['message']) ? trim($_POST['message']) : '';
     
     logMsg("Name: $name, Email: $email, Phone: $phone");
-    
-    if (empty($name) || empty($email) || empty($phone)) {
+    // Fallback: if name missing, use email local part or 'Chatbot User'
+    if (empty($name)) {
+        if (!empty($email) && filter_var($email, FILTER_VALIDATE_EMAIL)) {
+            $name = explode('@', $email)[0];
+        } else {
+            $name = 'Chatbot User';
+        }
+    }
+    if (empty($email) || empty($phone)) {
         throw new Exception('Required fields missing');
     }
     
@@ -89,27 +96,12 @@ try {
         throw new Exception('Unsupported DB connection type');
     }
     
-    // Insert query
-    $sql = "INSERT INTO contact_leads (name, email, phone, subject, message, status, created_at) 
-            VALUES ('$name', '$email', '$phone', '$subject', '$message', 'new', NOW())";
-    
-    logMsg("SQL: $sql");
-    
-    if ($conn->query($sql) === TRUE) {
-        $lead_id = $conn->insert_id;
-        logMsg("SUCCESS! Lead ID: $lead_id");
-        
-        echo json_encode([
-            'type' => 'success',
-            'message' => 'Lead saved successfully',
-            'lead_id' => $lead_id
-        ]);
-    } else {
-        logMsg("SQL Error: " . $conn->error);
-        throw new Exception('Failed to insert: ' . $conn->error);
+    // No duplicate insertion; the above mysqli/PDO insert handles the save
+    if (is_object($conn) && ($conn instanceof mysqli)) {
+        $conn->close();
+    } else if (is_object($conn) && ($conn instanceof PDO)) {
+        $conn = null;
     }
-    
-    $conn->close();
     
 } catch (Exception $e) {
     logMsg("ERROR: " . $e->getMessage());

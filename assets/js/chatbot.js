@@ -397,7 +397,19 @@
     console.log("=== CHATBOT LEAD SUBMISSION STARTED ===");
 
     const formData = new FormData();
-    formData.append("name", conversation.userData.name);
+    // Ensure name is present: if missing, fallback to email local part or 'Chatbot User'
+    let nameToSend = conversation.userData.name;
+    if (!nameToSend || nameToSend.trim() === "") {
+      if (
+        conversation.userData.email &&
+        conversation.userData.email.includes("@")
+      ) {
+        nameToSend = conversation.userData.email.split("@")[0];
+      } else {
+        nameToSend = "Chatbot User";
+      }
+    }
+    formData.append("name", nameToSend);
     formData.append("email", conversation.userData.email);
     formData.append("phone", conversation.userData.phone);
     formData.append("subject", conversation.userData.subject);

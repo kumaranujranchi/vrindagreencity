@@ -44,9 +44,14 @@ try {
     
     error_log("Extracted data - Name: $name, Email: $email, Phone: $phone, Subject: $subject");
     
-    // Validate required fields
+    // If name is missing, try fallback to email local part or use 'Chatbot User'
     if (empty($name)) {
-        throw new Exception('Name is required');
+            if (!empty($email) && filter_var($email, FILTER_VALIDATE_EMAIL)) {
+                $emailParts = explode('@', $email);
+                $name = $emailParts[0];
+            } else {
+                $name = 'Chatbot User';
+            }
     }
     
     if (empty($email)) {

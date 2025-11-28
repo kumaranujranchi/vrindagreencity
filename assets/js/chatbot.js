@@ -7,7 +7,9 @@
   );
 
   // Chatbot conversation flow
-  const CHATBOT_DEBUG = false; // set true to enable verbose console logs for debugging
+  const CHATBOT_DEBUG = /[?&]chatbot_debug=1(\b|$)/.test(
+    window.location.search
+  );
   const conversation = {
     started: false,
     step: 0,
@@ -179,7 +181,13 @@
   // Handle conversation flow
   function handleConversation(userInput) {
     const step = conversation.step;
-    if (CHATBOT_DEBUG) console.log('[Chatbot] handleConversation step:', step, 'userInput:', userInput);
+    if (CHATBOT_DEBUG)
+      console.log(
+        "[Chatbot] handleConversation step:",
+        step,
+        "userInput:",
+        userInput
+      );
 
     switch (step) {
       case 0: // Welcome
@@ -213,22 +221,32 @@
       case 1: // Name
         conversation.userData.name = userInput;
         const userName = userInput || conversation.userData.name;
-        if (CHATBOT_DEBUG) console.log('[Chatbot] Set name:', conversation.userData.name);
+        if (CHATBOT_DEBUG)
+          console.log("[Chatbot] Set name:", conversation.userData.name);
         setTimeout(() => {
           showTyping();
           setTimeout(() => {
             removeTyping();
-            addBotMessage("Nice to meet you, " + (conversation.userData.name || userName || 'there') + "! 🙂");
+            addBotMessage(
+              "Nice to meet you, " +
+                (conversation.userData.name || userName || "there") +
+                "! 🙂"
+            );
             setTimeout(() => {
               showTyping();
               setTimeout(() => {
                 removeTyping();
-                addBotMessage((conversation.userData.name || userName || '') + ", how can I help you today?", true, [
-                  "View Plots",
-                  "Book Site Visit",
-                  "Get Price Info",
-                  "Talk to Agent",
-                ]);
+                addBotMessage(
+                  (conversation.userData.name || userName || "") +
+                    ", how can I help you today?",
+                  true,
+                  [
+                    "View Plots",
+                    "Book Site Visit",
+                    "Get Price Info",
+                    "Talk to Agent",
+                  ]
+                );
                 conversation.step++;
               }, 800);
             }, 500);
@@ -238,7 +256,8 @@
 
       case 2: // Interest selection
         conversation.userData.subject = userInput;
-        if (CHATBOT_DEBUG) console.log('[Chatbot] Set subject:', conversation.userData.subject);
+        if (CHATBOT_DEBUG)
+          console.log("[Chatbot] Set subject:", conversation.userData.subject);
         setTimeout(() => {
           showTyping();
           setTimeout(() => {
@@ -272,7 +291,8 @@
           return;
         }
         conversation.userData.email = userInput;
-        if (CHATBOT_DEBUG) console.log('[Chatbot] Set email:', conversation.userData.email);
+        if (CHATBOT_DEBUG)
+          console.log("[Chatbot] Set email:", conversation.userData.email);
         setTimeout(() => {
           showTyping();
           setTimeout(() => {
@@ -295,7 +315,8 @@
           return;
         }
         conversation.userData.phone = userInput;
-        if (CHATBOT_DEBUG) console.log('[Chatbot] Set phone:', conversation.userData.phone);
+        if (CHATBOT_DEBUG)
+          console.log("[Chatbot] Set phone:", conversation.userData.phone);
         setTimeout(() => {
           showTyping();
           setTimeout(() => {
@@ -312,7 +333,8 @@
 
       case 5: // Message
         conversation.userData.message = userInput;
-        if (CHATBOT_DEBUG) console.log('[Chatbot] Set message:', conversation.userData.message);
+        if (CHATBOT_DEBUG)
+          console.log("[Chatbot] Set message:", conversation.userData.message);
         setTimeout(() => {
           showTyping();
           setTimeout(() => {

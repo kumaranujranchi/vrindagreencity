@@ -125,7 +125,7 @@
                         <div class="menu-wrap">
                             <nav class="menu-nav">
                                 <div class="logo">
-                                    <a href="index.html"><img
+                                    <a href="index.php"><img
                                             src="https://imagizer.imageshack.com/img922/9871/Gka2b7.png"
                                             alt="Vrinda Green City"></a>
                                 </div>
@@ -164,7 +164,7 @@
                             <nav class="menu-box">
                                 <div class="close-btn"><i class="fas fa-times"></i></div>
                                 <div class="nav-logo">
-                                    <a href="index.html"><img
+                                    <a href="index.php"><img
                                             src="https://imagizer.imageshack.com/img922/9871/Gka2b7.png"
                                             alt="Vrinda Green City"></a>
                                 </div>
@@ -1948,7 +1948,7 @@
                             <div class="footer-widget">
                                 <div class="footer-about">
                                     <div class="footer-logo logo">
-                                        <a href="index.html"><img
+                                        <a href="index.php"><img
                                                 src="https://imagizer.imageshack.com/img922/234/kdlZy4.jpg"
                                                 alt="Vrinda Green City"></a>
                                     </div>

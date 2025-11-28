@@ -11,8 +11,15 @@ define('DB_NAME', 'u743570205_vrindagreen');  // Database name remains same
 // Create database connection
 function getDBConnection() {
     try {
-        // Enable error reporting for debugging
-        mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
+        // Ensure mysqli extension is available
+        if (!function_exists('mysqli_connect')) {
+            throw new Exception("PHP 'mysqli' extension is not installed or enabled. Please enable it in your PHP configuration.");
+        }
+
+        // Enable error reporting for debugging if available
+        if (function_exists('mysqli_report')) {
+            mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
+        }
         
         $conn = new mysqli(DB_HOST, DB_USER, DB_PASS, DB_NAME);
         
@@ -28,13 +35,17 @@ function getDBConnection() {
         error_log("Database connection failed - Host: " . DB_HOST . ", User: " . DB_USER . ", DB: " . DB_NAME);
         error_log("Error: " . $e->getMessage());
         
-        // Show user-friendly error
-        die("Database connection error: " . $e->getMessage() . 
+        // Show user-friendly error and provide diagnostic details
+        $message = "Database connection error: " . $e->getMessage() .
             "<br><br>Please check:<br>" .
             "1. Database user has access to database<br>" .
             "2. Password is correct<br>" .
             "3. Database exists<br>" .
-            "4. User has ALL PRIVILEGES on database");
+            "4. User has ALL PRIVILEGES on database";
+        
+        // Attempt to log to a server-side file in the admin folder (if possible)
+        @file_put_contents(__DIR__ . '/error_log_push_notifications.txt', '[' . date('Y-m-d H:i:s') . '] ' . $e->__toString() . PHP_EOL, FILE_APPEND);
+        die($message);
     }
 }
 

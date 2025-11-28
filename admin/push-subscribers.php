@@ -3,7 +3,13 @@ require_once 'config.php';
 require_once 'push-notification-lib.php';
 requireLogin();
 
-$pushService = new PushNotificationService();
+// Initialize push service safely
+try {
+  $pushService = new PushNotificationService();
+} catch (Throwable $e) {
+  @file_put_contents(__DIR__ . '/error_log_push_notifications.txt', '[' . date('Y-m-d H:i:s') . '] ' . $e->__toString() . PHP_EOL, FILE_APPEND);
+  die('<div style="padding:20px; background:#f8d7da;color:#721c24;border-radius:6px; margin:20px;">Could not initialize Push Notification Service: ' . htmlspecialchars($e->getMessage()) . '</div>');
+}
 
 // Handle delete subscriber
 if (isset($_GET['delete'])) {

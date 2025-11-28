@@ -95,12 +95,7 @@
                                         <li><a href="index.html#paroller">Location Map</a></li>
                                         <li><a href="index.html#inventory">Inventory</a></li>
                                         <li><a href="index.html#pricing">Pricing</a></li>
-                                        <li class="menu-item-has-children"><a href="index.html#news">News</a>
-                                            <ul class="sub-menu">
-                                                <li><a href="blog.html">Our Blog</a></li>
-                                                <li><a href="blog-details.php">Blog Details</a></li>
-                                            </ul>
-                                        </li>
+                                        <li><a href="index.html#news">News</a></li>
                                         <li class="active"><a href="contact.php">contacts</a></li>
                                     </ul>
                                 </div>

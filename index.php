@@ -221,8 +221,7 @@
                 </div>
                 <div class="offcanvas-contact">
                     <h4 class="number">+91 9200800600</h4>
-                    <p><strong>Dehliz Infratech Pvt Ltd</strong><br>L-3/9 Opp SK Puri Park(Main Gate)<br>SK Puri
-                        Patna-800001</p>
+                    <p><strong>Dehliz Infratech Pvt Ltd</strong><br>Mauja – Barah, Patut, Near Shivam Vidya Mandir, Bihta, Bihar</p>
                     <ul class="offcanvas-social list-wrap">
                         <li><a href="https://www.facebook.com/vrindagreencity" target="_blank"><i
                                     class="fab fa-facebook-f"></i></a></li>
@@ -2067,8 +2066,7 @@
                             <div class="footer-widget">
                                 <h4 class="fw-title">CONTACT US</h4>
                                 <div class="footer-contact-wrap">
-                                    <p><strong>Dehliz Infratech Pvt Ltd</strong><br>L-3/9 Opp SK Puri Park(Main
-                                        Gate)<br>SK Puri Patna-800001</p>
+                                    <p><strong>Dehliz Infratech Pvt Ltd</strong><br>Mauja – Barah, Patut, Near Shivam Vidya Mandir, Bihta, Bihar</p>
                                     <ul class="list-wrap">
                                         <li class="phone"><i class="fas fa-phone"></i> +91 9200800600</li>
                                     </ul>

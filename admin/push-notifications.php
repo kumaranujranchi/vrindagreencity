@@ -1,11 +1,21 @@
 <?php
 require_once 'config.php';
-require_once 'push-notification-lib.php';
 requireLogin();
 
-$pushService = new PushNotificationService();
-$stats = $pushService->getStats();
-$notificationHistory = $pushService->getNotificationHistory(25);
+// Check if vendor directory exists
+if (!file_exists(__DIR__ . '/../vendor/autoload.php')) {
+    die('<div style="padding: 20px; background: #f8d7da; color: #721c24; border-radius: 5px;">Error: Composer dependencies not found. Please run \'composer install\' or upload the vendor/ directory to your server.</div>');
+}
+
+require_once 'push-notification-lib.php';
+
+try {
+    $pushService = new PushNotificationService();
+    $stats = $pushService->getStats();
+    $notificationHistory = $pushService->getNotificationHistory(25);
+} catch (Exception $e) {
+    die('<div style="padding: 20px; background: #f8d7da; color: #721c24; border-radius: 5px;"><strong>Error:</strong> ' . htmlspecialchars($e->getMessage()) . '</div>');
+}
 
 $success_message = '';
 $error_message = '';

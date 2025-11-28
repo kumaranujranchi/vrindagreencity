@@ -1,5 +1,6 @@
 # Composer dependencies (install via: composer install)
-/vendor/
+# Note: vendor/ is committed to allow easy deployment to Hostinger
+# /vendor/
 
 # Environment-specific files
 *.log

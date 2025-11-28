@@ -10,6 +10,11 @@
     z-index: 9999;
   }
 
+  /* avoid blocking clicks on page elements underneath the floating container */
+  .push-notification-bell {
+    pointer-events: none;
+  }
+
   .notification-bell-trigger {
     width: 60px;
     height: 60px;
@@ -23,6 +28,11 @@
     transition: all 0.3s ease;
     border: 3px solid #fff;
     position: relative;
+  }
+
+  /* make the visible trigger itself clickable while keeping the wrapper inert */
+  .notification-bell-trigger {
+    pointer-events: auto;
   }
 
   .notification-bell-trigger:hover {
@@ -102,12 +112,14 @@
     visibility: hidden;
     transform: translateY(20px);
     transition: all 0.3s ease;
+    pointer-events: none; /* don't intercept clicks when hidden */
   }
 
   .notification-popup.active {
     opacity: 1;
     visibility: visible;
     transform: translateY(0);
+    pointer-events: auto; /* allow interaction when visible */
   }
 
   .popup-header {

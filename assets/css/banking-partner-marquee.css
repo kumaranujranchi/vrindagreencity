@@ -61,7 +61,12 @@
 }
 @media (max-width: 767px) {
   .banking-partner-track { grid-template-columns: repeat(auto-fit, minmax(80px, 1fr)); gap: 12px; }
-  .banking-partner-logo { height: 48px; max-width: 120px; padding: 6px; }
+  .banking-partner-logo { height: 44px; max-width: 100px; padding: 5px; }
+}
+@media (max-width: 480px) {
+  /* Force all logos into a single row on narrow screens by shrinking items and padding */
+  .banking-partner-track { grid-template-columns: repeat(5, minmax(40px, 1fr)); gap: 8px; justify-items: center; }
+  .banking-partner-logo { height: 36px; max-width: 80px; padding: 4px; }
 }
   .banking-partner-area {
     padding: 35px 0 22px 0;

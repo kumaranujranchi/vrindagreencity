@@ -913,7 +913,15 @@
   }
   .brand-title .title::before,
   .brand-title .title::after {
-    top: 9px;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  .brand-title .title::before {
+    transform: translateX(calc(-50% - 60px));
+  }
+  .brand-title .title::after {
+    transform: translateX(calc(-50% + 60px));
   }
   .banner-area {
     padding: 45px 0 0;

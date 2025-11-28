@@ -28,15 +28,14 @@ try {
     
     // Connect to database
     $conn = getDBConnection();
-    
     // Check if email already exists
-    $stmt = $conn->prepare("SELECT id, status FROM newsletter_subscribers WHERE email = ?");
-    $stmt->bind_param("s", $email);
-    $stmt->execute();
-    $result = $stmt->get_result();
-    
-    if ($result->num_rows > 0) {
-        $subscriber = $result->fetch_assoc();
+    $check = dbQuery($conn, "SELECT id, status FROM newsletter_subscribers WHERE email = " . (is_object($conn) && ($conn instanceof mysqli) ? "'" . $conn->real_escape_string($email) . "'" : "?"), is_object($conn) && ($conn instanceof mysqli) ? [] : [$email]);
+    if (!$check['success']) {
+        throw new Exception('Database error');
+    }
+    $rows = $check['rows'];
+    if (count($rows) > 0) {
+        $subscriber = $rows[0];
         
         if ($subscriber['status'] === 'active') {
             echo json_encode([
@@ -45,10 +44,15 @@ try {
             ]);
         } else {
             // Reactivate subscription
-            $updateStmt = $conn->prepare("UPDATE newsletter_subscribers SET status = 'active' WHERE email = ?");
-            $updateStmt->bind_param("s", $email);
-            
-            if ($updateStmt->execute()) {
+            if (is_object($conn) && ($conn instanceof mysqli)) {
+                $updateStmt = $conn->prepare("UPDATE newsletter_subscribers SET status = 'active' WHERE email = ?");
+                $updateStmt->bind_param("s", $email);
+                $success = $updateStmt->execute();
+            } else {
+                $update = dbPrepareAndExecute($conn, "UPDATE newsletter_subscribers SET status = 'active' WHERE email = ?", [$email], 's');
+                $success = $update['success'];
+            }
+            if ($success) {
                 echo json_encode([
                     'success' => true,
                     'message' => 'Welcome back! You have been resubscribed successfully'
@@ -63,10 +67,15 @@ try {
         }
     } else {
         // Insert new subscriber
-        $insertStmt = $conn->prepare("INSERT INTO newsletter_subscribers (email, status) VALUES (?, 'active')");
-        $insertStmt->bind_param("s", $email);
-        
-        if ($insertStmt->execute()) {
+        if (is_object($conn) && ($conn instanceof mysqli)) {
+            $insertStmt = $conn->prepare("INSERT INTO newsletter_subscribers (email, status) VALUES (?, 'active')");
+            $insertStmt->bind_param("s", $email);
+            $success = $insertStmt->execute();
+        } else {
+            $insert = dbPrepareAndExecute($conn, "INSERT INTO newsletter_subscribers (email, status) VALUES (?, 'active')", [$email], 's');
+            $success = $insert['success'];
+        }
+        if ($success) {
             echo json_encode([
                 'success' => true,
                 'message' => 'Thank you for subscribing to our newsletter!'
@@ -80,7 +89,9 @@ try {
         $insertStmt->close();
     }
     
-    $stmt->close();
+    if (is_object($conn) && ($conn instanceof mysqli) && isset($stmt) && $stmt) {
+        $stmt->close();
+    }
     closeDBConnection($conn);
     
 } catch (Exception $e) {

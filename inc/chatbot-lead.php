@@ -80,27 +80,42 @@ try {
     
     error_log("Database connection established");
     
-    // Prepare SQL statement
-    $sql = "INSERT INTO contact_leads (name, email, phone, subject, message, status, created_at) VALUES (?, ?, ?, ?, ?, 'new', NOW())";
-    
-    error_log("Preparing SQL: $sql");
-    
-    $stmt = $conn->prepare($sql);
-    
-    if (!$stmt) {
-        throw new Exception('Failed to prepare statement: ' . $conn->error);
+    // Insert using appropriate DB driver (mysqli or PDO)
+    if (is_object($conn) && ($conn instanceof mysqli)) {
+        // mysqli
+        $sql = "INSERT INTO contact_leads (name, email, phone, subject, message, status, created_at) VALUES (?, ?, ?, ?, ?, 'new', NOW())";
+        error_log("Preparing SQL (mysqli): $sql");
+        $stmt = $conn->prepare($sql);
+        if (!$stmt) {
+            throw new Exception('Failed to prepare statement (mysqli): ' . $conn->error);
+        }
+        $stmt->bind_param("sssss", $name, $email, $phone, $subject, $message);
+        error_log("Parameters bound successfully (mysqli)");
+        if (!$stmt->execute()) {
+            throw new Exception('Failed to insert lead (mysqli): ' . $stmt->error);
+        }
+        $lead_id = $conn->insert_id;
+        $stmt->close();
+    } elseif (is_object($conn) && ($conn instanceof PDO)) {
+        // PDO
+        $sql = "INSERT INTO contact_leads (name, email, phone, subject, message, status, created_at) VALUES (:name, :email, :phone, :subject, :message, 'new', NOW())";
+        error_log("Preparing SQL (PDO): $sql");
+        $stmt = $conn->prepare($sql);
+        if (!$stmt) {
+            $errorInfo = $conn->errorInfo();
+            throw new Exception('Failed to prepare statement (PDO): ' . json_encode($errorInfo));
+        }
+        $stmt->execute([
+            ':name' => $name,
+            ':email' => $email,
+            ':phone' => $phone,
+            ':subject' => $subject,
+            ':message' => $message
+        ]);
+        $lead_id = $conn->lastInsertId();
+    } else {
+        throw new Exception('Unsupported DB connection type');
     }
-    
-    $stmt->bind_param("sssss", $name, $email, $phone, $subject, $message);
-    
-    error_log("Parameters bound successfully");
-    
-    // Execute query
-    if (!$stmt->execute()) {
-        throw new Exception('Failed to insert lead: ' . $stmt->error);
-    }
-    
-    $lead_id = $conn->insert_id;
     
     error_log("✅ SUCCESS! Lead saved with ID: $lead_id");
     

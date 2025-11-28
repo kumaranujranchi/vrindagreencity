@@ -6,7 +6,11 @@ $conn = getDBConnection();
 
 // Get last 20 leads from contact_leads
 $query = "SELECT * FROM contact_leads ORDER BY created_at DESC LIMIT 20";
-$result = $conn->query($query);
+$res = dbQuery($conn, $query);
+$result = null;
+if ($res['success']) {
+    $result = $res['rows'];
+}
 
 ?>
 <!DOCTYPE html>
@@ -67,8 +71,8 @@ $result = $conn->query($query);
                 </tr>
             </thead>
             <tbody>
-                <?php if ($result && $result->num_rows > 0): ?>
-                    <?php while ($row = $result->fetch_assoc()): ?>
+                    <?php if ($result && count($result) > 0): ?>
+                        <?php foreach ($result as $row): ?>
                         <tr>
                             <td><?php echo $row['id']; ?></td>
                             <td><?php echo htmlspecialchars($row['name']); ?></td>
@@ -78,7 +82,7 @@ $result = $conn->query($query);
                             <td><?php echo htmlspecialchars(substr($row['message'], 0, 50)) . '...'; ?></td>
                             <td><?php echo $row['created_at']; ?></td>
                         </tr>
-                    <?php endwhile; ?>
+                        <?php endforeach; ?>
                 <?php else: ?>
                     <tr>
                         <td colspan="7" style="text-align: center; color: #999;">No leads found yet. Try submitting through chatbot!</td>

@@ -7,11 +7,12 @@ require_once __DIR__ . '/../admin/config.php';
 try {
     $conn = getDBConnection();
     $sql = "SELECT * FROM contact_leads ORDER BY id DESC LIMIT 1";
-    $result = $conn->query($sql);
-    if (!$result) {
-        throw new Exception('Query failed: ' . $conn->error);
+    $res = dbQuery($conn, $sql);
+    if (!$res['success']) {
+        throw new Exception('Query failed: ' . ($res['error'] ?? 'unknown'));
     }
-    $row = $result->fetch_assoc();
+    $rows = $res['rows'];
+    $row = (!empty($rows)) ? $rows[0] : null;
     closeDBConnection($conn);
 
     if ($row) {

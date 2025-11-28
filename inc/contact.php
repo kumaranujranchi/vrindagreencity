@@ -66,18 +66,14 @@ try {
     // Save to database
     try {
         $conn = getDBConnection();
-        $stmt = $conn->prepare("INSERT INTO contact_leads (name, email, phone, subject, message) VALUES (?, ?, ?, ?, ?)");
-        $stmt->bind_param("sssss", $name, $email, $phone, $form_subject, $message);
-        
-        if (!$stmt->execute()) {
-            error_log("SQL Error: " . $stmt->error);
+        $sql = "INSERT INTO contact_leads (name, email, phone, subject, message) VALUES (?, ?, ?, ?, ?)";
+        $res = dbPrepareAndExecute($conn, $sql, [$name, $email, $phone, $form_subject, $message], 'sssss');
+        if (!$res['success']) {
+            error_log("SQL Error: " . ($res['error'] ?? 'unknown'));
             throw new Exception('Failed to save lead to database');
         }
-        
-        $lead_id = $conn->insert_id;
+        $lead_id = $res['insert_id'] ?? null;
         error_log("Lead saved successfully with ID: " . $lead_id);
-        
-        $stmt->close();
         closeDBConnection($conn);
     } catch (Exception $db_error) {
         // Log error and throw exception to be caught by outer catch block

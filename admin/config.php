@@ -11,25 +11,35 @@ define('DB_NAME', 'u743570205_vrindagreen');  // Database name remains same
 // Create database connection
 function getDBConnection() {
     try {
-        // Ensure mysqli extension is available
-        if (!function_exists('mysqli_connect')) {
-            throw new Exception("PHP 'mysqli' extension is not installed or enabled. Please enable it in your PHP configuration.");
+        // First attempt mysqli if available
+        if (function_exists('mysqli_connect')) {
+            // Enable error reporting for debugging if available
+            if (function_exists('mysqli_report')) {
+                mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
+            }
+            $conn = new mysqli(DB_HOST, DB_USER, DB_PASS, DB_NAME);
+            if ($conn->connect_error) {
+                error_log("MySQL Connection Error (mysqli): " . $conn->connect_error);
+                throw new Exception("Connection failed (mysqli): " . $conn->connect_error);
+            }
+            $conn->set_charset("utf8mb4");
+            return $conn; // mysqli object
         }
 
-        // Enable error reporting for debugging if available
-        if (function_exists('mysqli_report')) {
-            mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
+        // If mysqli not available, try PDO (pdo_mysql)
+        if (class_exists('PDO')) {
+            $dsn = sprintf('mysql:host=%s;dbname=%s;charset=utf8mb4', DB_HOST, DB_NAME);
+            $options = [
+                PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
+                PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
+                PDO::ATTR_EMULATE_PREPARES => false,
+            ];
+            $pdo = new PDO($dsn, DB_USER, DB_PASS, $options);
+            return $pdo; // PDO instance
         }
-        
-        $conn = new mysqli(DB_HOST, DB_USER, DB_PASS, DB_NAME);
-        
-        if ($conn->connect_error) {
-            error_log("MySQL Connection Error: " . $conn->connect_error);
-            throw new Exception("Connection failed: " . $conn->connect_error);
-        }
-        
-        $conn->set_charset("utf8mb4");
-        return $conn;
+
+        // No supported MySQL extension found
+        throw new Exception("No supported MySQL extension available. Enable mysqli or pdo_mysql.");
     } catch (Exception $e) {
         // Log detailed error
         error_log("Database connection failed - Host: " . DB_HOST . ", User: " . DB_USER . ", DB: " . DB_NAME);
@@ -51,8 +61,83 @@ function getDBConnection() {
 
 // Close database connection
 function closeDBConnection($conn) {
-    if ($conn) {
+    if (!$conn) return;
+    // mysqli instance
+    if (is_object($conn) && (get_class($conn) === 'mysqli' || $conn instanceof mysqli)) {
         $conn->close();
+    }
+    // PDO instance
+    if (is_object($conn) && ($conn instanceof PDO)) {
+        // PDO does not have close(); unset the var to close
+        $conn = null;
+    }
+}
+
+/**
+ * Helper: Execute prepared statement for both mysqli and PDO
+ * Returns associative array with success, insert_id, rows, error
+ */
+function dbPrepareAndExecute($conn, $sql, $params = [], $types = '') {
+    try {
+        // mysqli
+        if (is_object($conn) && ($conn instanceof mysqli)) {
+            $stmt = $conn->prepare($sql);
+            if (!$stmt) {
+                return ['success' => false, 'error' => $conn->error];
+            }
+            if (!empty($params) && !empty($types)) {
+                // bind_param requires variables by reference
+                $bind_names[] = $types;
+                for ($i = 0; $i < count($params); $i++) {
+                    $bind_name = 'bind' . $i;
+                    $$bind_name = $params[$i];
+                    $bind_names[] = &$$bind_name;
+                }
+                call_user_func_array([$stmt, 'bind_param'], $bind_names);
+            }
+            $stmt->execute();
+            $insert_id = $conn->insert_id;
+            $stmt->close();
+            return ['success' => true, 'insert_id' => $insert_id];
+        }
+
+        // PDO
+        if (is_object($conn) && ($conn instanceof PDO)) {
+            $stmt = $conn->prepare($sql);
+            $stmt->execute($params);
+            $insert_id = $conn->lastInsertId();
+            return ['success' => true, 'insert_id' => $insert_id];
+        }
+        return ['success' => false, 'error' => 'Unsupported DB connection type'];
+    } catch (Exception $e) {
+        return ['success' => false, 'error' => $e->getMessage()];
+    }
+}
+
+/**
+ * Helper: Run a SELECT query and return rows
+ */
+function dbQuery($conn, $sql, $params = [], $types = '') {
+    try {
+        if (is_object($conn) && ($conn instanceof mysqli)) {
+            $result = $conn->query($sql);
+            $rows = [];
+            if ($result) {
+                while ($row = $result->fetch_assoc()) {
+                    $rows[] = $row;
+                }
+            }
+            return ['success' => true, 'rows' => $rows];
+        }
+        if (is_object($conn) && ($conn instanceof PDO)) {
+            $stmt = $conn->prepare($sql);
+            $stmt->execute($params);
+            $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
+            return ['success' => true, 'rows' => $rows];
+        }
+        return ['success' => false, 'error' => 'Unsupported DB connection type'];
+    } catch (Exception $e) {
+        return ['success' => false, 'error' => $e->getMessage()];
     }
 }
 

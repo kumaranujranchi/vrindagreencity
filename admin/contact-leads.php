@@ -9,10 +9,15 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['update_status'])) {
     $lead_id = (int)$_POST['lead_id'];
     $status = sanitize($_POST['status']);
     
-    $stmt = $conn->prepare("UPDATE contact_leads SET status = ? WHERE id = ?");
-    $stmt->bind_param("si", $status, $lead_id);
-    
-    if ($stmt->execute()) {
+    if (is_object($conn) && ($conn instanceof mysqli)) {
+        $stmt = $conn->prepare("UPDATE contact_leads SET status = ? WHERE id = ?");
+        $stmt->bind_param("si", $status, $lead_id);
+        $success = $stmt->execute();
+    } else {
+        $res = dbPrepareAndExecute($conn, "UPDATE contact_leads SET status = ? WHERE id = ?", [$status, $lead_id], 'si');
+        $success = $res['success'];
+    }
+    if ($success) {
         $success_message = "Status updated successfully!";
     } else {
         $error_message = "Failed to update status.";
@@ -21,12 +26,17 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['update_status'])) {
 }
 
 // Handle delete
-if (isset($_GET['delete'])) {
+    if (isset($_GET['delete'])) {
     $lead_id = (int)$_GET['delete'];
-    $stmt = $conn->prepare("DELETE FROM contact_leads WHERE id = ?");
-    $stmt->bind_param("i", $lead_id);
-    
-    if ($stmt->execute()) {
+    if (is_object($conn) && ($conn instanceof mysqli)) {
+        $stmt = $conn->prepare("DELETE FROM contact_leads WHERE id = ?");
+        $stmt->bind_param("i", $lead_id);
+        $success = $stmt->execute();
+    } else {
+        $res = dbPrepareAndExecute($conn, "DELETE FROM contact_leads WHERE id = ?", [$lead_id], 'i');
+        $success = $res['success'];
+    }
+    if ($success) {
         $success_message = "Lead deleted successfully!";
     } else {
         $error_message = "Failed to delete lead.";
@@ -38,19 +48,22 @@ if (isset($_GET['delete'])) {
 $status_filter = isset($_GET['status']) ? sanitize($_GET['status']) : '';
 
 // Build query
-$query = "SELECT * FROM contact_leads";
-if ($status_filter) {
-    $query .= " WHERE status = '" . $conn->real_escape_string($status_filter) . "'";
-}
-$query .= " ORDER BY created_at DESC";
-
-$result = $conn->query($query);
-$leads = [];
-if ($result) {
-    while ($row = $result->fetch_assoc()) {
-        $leads[] = $row;
+    $query = "SELECT * FROM contact_leads";
+    $params = [];
+    if ($status_filter) {
+        if (is_object($conn) && ($conn instanceof mysqli)) {
+            $query .= " WHERE status = '" . $conn->real_escape_string($status_filter) . "'";
+        } else {
+            $query .= " WHERE status = ?";
+            $params[] = $status_filter;
+        }
     }
-}
+    $query .= " ORDER BY created_at DESC";
+    $res = dbQuery($conn, $query, $params);
+    $leads = [];
+    if ($res['success']) {
+        $leads = $res['rows'];
+    }
 
 closeDBConnection($conn);
 ?>

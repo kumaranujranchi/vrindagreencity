@@ -78,7 +78,6 @@
     $('.navigation a[href*="#"], a.section-link[href*="#"]:not([href="#"])').on(
       "click",
       function (e) {
-        e.preventDefault();
         var target = $(this.hash);
         // If the target section exists on the current page, animate; otherwise let the link behave normally.
         if (target.length) {
@@ -101,6 +100,7 @@
             } else {
               history.pushState(null, null, "/");
             }
+            e.preventDefault();
             return false;
           }
         }

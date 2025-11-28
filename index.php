@@ -265,11 +265,12 @@
 
                             .hero-video-embed iframe {
                                 position: absolute;
-                                top: 0;
+                                top: -60px;
                                 left: 0;
                                 width: 100%;
-                                height: 100%;
+                                height: calc(100% + 120px);
                                 border: 0;
+                                pointer-events: none;
                             }
 
                             /* Mobile adjustments only - keep mobile unchanged */
@@ -283,6 +284,10 @@
                                     content: '';
                                     display: block;
                                     padding-top: 56.25%;
+                                }
+                                .hero-video-embed iframe {
+                                    top: -30px;
+                                    height: calc(100% + 60px);
                                 }
                             }
 
@@ -308,7 +313,7 @@
                             <div class="hero-video-embed" aria-hidden="false"
                                 style="overflow: hidden; border-radius: 15px; position: relative; width: 100%;">
                                 <iframe loading="lazy"
-                                    src="https://www.youtube.com/embed/eA9wyv7vtpY?autoplay=1&mute=1&loop=1&playlist=eA9wyv7vtpY&controls=0&showinfo=0&rel=0&modestbranding=1"
+                                    src="https://www.youtube.com/embed/eA9wyv7vtpY?autoplay=1&mute=1&loop=1&playlist=eA9wyv7vtpY&controls=0&showinfo=0&rel=0&modestbranding=1&iv_load_policy=3&disablekb=1&fs=0"
                                     frameborder="0" allow="autoplay; encrypted-media" allowfullscreen>
                                 </iframe>
                             </div>

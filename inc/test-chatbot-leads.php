@@ -52,8 +52,11 @@ if ($res['success']) {
         <h2>Recent Leads (Last 20)</h2>
         <p>Total leads in database: 
             <?php 
-            $count_result = $conn->query("SELECT COUNT(*) as total FROM contact_leads");
-            $count = $count_result->fetch_assoc()['total'];
+            $countRes = dbQuery($conn, "SELECT COUNT(*) as total FROM contact_leads");
+            $count = 0;
+            if ($countRes['success'] && !empty($countRes['rows'])) {
+                $count = $countRes['rows'][0]['total'];
+            }
             echo "<strong class='success'>$count</strong>";
             ?>
         </p>

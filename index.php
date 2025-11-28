@@ -241,8 +241,40 @@
 
     <!-- main-area -->
     <main class="main-area fix">
-
         <!-- banner-area -->
+
+        <!-- hero-video-area -->
+        <section id="hero-video" class="banner-area" style="padding: 60px 0 40px;">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-xl-10 col-lg-11">
+                        <!-- Scoped styles to keep design consistent -->
+                        <style>
+                            .hero-video-embed{position:relative;width:100%;background:#000;border-radius:15px;overflow:hidden}
+                            /* fallback for browsers that don't support aspect-ratio */
+                            .hero-video-embed::before{content:'';display:block;padding-top:56.25%}
+                            .hero-video-embed iframe{position:absolute;top:0;left:0;width:100%;height:100%;border:0}
+                            .hero-video-cta{margin-top:18px;text-align:center}
+                            .hero-video-cta .btn{padding:14px 36px;border-radius:8px}
+                        </style>
+
+                        <div class="hero-video-wrapper">
+                            <div class="hero-video-embed" aria-hidden="false">
+                                <iframe src="https://www.youtube.com/embed/eA9wyv7vtpY?rel=0" title="Vrinda Green City - Intro" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            </div>
+
+                            <div class="video-content" style="margin-top:12px; text-align:center; color:#777;">
+                                <p>Video will be embedded here</p>
+                            </div>
+
+                            <div class="hero-video-cta">
+                                <a href="contact.php" class="btn">Site Vist</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
         <!-- amenities-area (redesigned using key-features-area layout) -->
         <section id="amenities" class="key-features-area features-bg" data-background="assets/img/bg/features_bg.jpg">
             <div class="container">

@@ -17,7 +17,7 @@
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://vrindagreencity.com/contact.html">
+    <meta property="og:url" content="https://vrindagreencity.com/contact.php">
     <meta property="og:title" content="Contact Vrinda Green City - Residential Plots in Bihta, Patna">
     <meta property="og:description"
         content="Get in touch with Vrinda Green City for residential plot inquiries in Bihta, Patna. Visit our office or contact us today.">
@@ -25,13 +25,13 @@
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://vrindagreencity.com/contact.html">
+    <meta property="twitter:url" content="https://vrindagreencity.com/contact.php">
     <meta property="twitter:title" content="Contact Vrinda Green City - Residential Plots in Bihta, Patna">
     <meta property="twitter:description"
         content="Get in touch with Vrinda Green City for residential plot inquiries in Bihta, Patna. Visit our office or contact us today.">
     <meta property="twitter:image" content="https://imagizer.imageshack.com/img922/9871/Gka2b7.png">
 
-    <link rel="canonical" href="https://vrindagreencity.com/contact.html">
+    <link rel="canonical" href="https://vrindagreencity.com/contact.php">
     <link rel="shortcut icon" type="image/x-icon" href="https://imagizer.imageshack.com/img923/9404/A1ADwj.png">
     <!-- Place favicon.ico in the root directory -->
 
@@ -98,10 +98,10 @@
                                         <li class="menu-item-has-children"><a href="index.html#news">News</a>
                                             <ul class="sub-menu">
                                                 <li><a href="blog.html">Our Blog</a></li>
-                                                <li><a href="blog-details.html">Blog Details</a></li>
+                                                <li><a href="blog-details.php">Blog Details</a></li>
                                             </ul>
                                         </li>
-                                        <li class="active"><a href="contact.html">contacts</a></li>
+                                        <li class="active"><a href="contact.php">contacts</a></li>
                                     </ul>
                                 </div>
                                 <div class="header-action d-none d-sm-block">
@@ -514,7 +514,7 @@
                                     <li><a href="#">Knowledge Base</a></li>
                                     <li><a href="blog.html">Blog</a></li>
                                     <li><a href="#">FAQ</a></li>
-                                    <li><a href="contact.html">Contact</a></li>
+                                    <li><a href="contact.php">Contact</a></li>
                                     <li><a href="admin/login.php" style="color: #FAA432;">Admin Login</a></li>
                                 </ul>
                             </div>

@@ -28,4 +28,6 @@ cache/
 # Backup files and old HTML
 index.html
 index_backup.html
+contact.html
+blog-details.html
 *.bak

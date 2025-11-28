@@ -15,19 +15,19 @@
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://vrindagreencity.com/blog-details.html">
+    <meta property="og:url" content="https://vrindagreencity.com/blog-details.php">
     <meta property="og:title" content="Vrinda Green City Blog - Real Estate News & Property Updates">
     <meta property="og:description" content="Latest real estate news, property market updates, and Bihta development news from Vrinda Green City.">
     <meta property="og:image" content="https://imagizer.imageshack.com/img922/9871/Gka2b7.png">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://vrindagreencity.com/blog-details.html">
+    <meta property="twitter:url" content="https://vrindagreencity.com/blog-details.php">
     <meta property="twitter:title" content="Vrinda Green City Blog - Real Estate News & Property Updates">
     <meta property="twitter:description" content="Latest real estate news, property market updates, and Bihta development news from Vrinda Green City.">
     <meta property="twitter:image" content="https://imagizer.imageshack.com/img922/9871/Gka2b7.png">
 
-    <link rel="canonical" href="https://vrindagreencity.com/blog-details.html">
+    <link rel="canonical" href="https://vrindagreencity.com/blog-details.php">
     <link rel="shortcut icon" type="image/x-icon" href="https://imagizer.imageshack.com/img923/9404/A1ADwj.png">
     <!-- Place favicon.ico in the root directory -->
 
@@ -93,10 +93,10 @@
                                         <li class="menu-item-has-children"><a href="index.html#news">News</a>
                                             <ul class="sub-menu">
                                                 <li><a href="blog.html">Our Blog</a></li>
-                                                <li class="active"><a href="blog-details.html">Blog Details</a></li>
+                                                <li class="active"><a href="blog-details.php">Blog Details</a></li>
                                             </ul>
                                         </li>
-                                        <li><a href="contact.html">contacts</a></li>
+                                        <li><a href="contact.php">contacts</a></li>
                                     </ul>
                                 </div>
                                 <div class="header-action d-none d-sm-block">
@@ -791,7 +791,7 @@
                                     <li><a href="#">Developer API</a></li>
                                     <li><a href="#">FAQ</a></li>
                                     <li><a href="#">Team</a></li>
-                                    <li><a href="contact.html">Contact</a></li>
+                                    <li><a href="contact.php">Contact</a></li>
                                 </ul>
                             </div>
                         </div>

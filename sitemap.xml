@@ -14,7 +14,7 @@
 
   <!-- Contact Page -->
   <url>
-    <loc>https://vrindagreencity.com/contact.html</loc>
+    <loc>https://vrindagreencity.com/contact.php</loc>
     <lastmod>2024-11-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -22,7 +22,7 @@
 
   <!-- Blog Details Page -->
   <url>
-    <loc>https://vrindagreencity.com/blog-details.html</loc>
+    <loc>https://vrindagreencity.com/blog-details.php</loc>
     <lastmod>2024-11-23</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>

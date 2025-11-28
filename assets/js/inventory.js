@@ -360,6 +360,6 @@
   // Global function for inquire button
   window.inquirePlot = function (plotNo) {
     // Redirect to contact page with plot information
-    window.location.href = `contact.html?plot=${plotNo}`;
+    window.location.href = `contact.php?plot=${plotNo}`;
   };
 })(jQuery);

@@ -137,7 +137,7 @@
                                         <li><a href="#inventory" class="section-link">Inventory</a></li>
                                         <li><a href="#pricing" class="section-link">Pricing</a></li>
                                         <li><a href="#news" class="section-link">News</a></li>
-                                        <li><a href="contact.html">contacts</a></li>
+                                        <li><a href="contact.php">contacts</a></li>
                                     </ul>
                                 </div>
                                 <div class="header-action d-none d-sm-block">
@@ -250,7 +250,7 @@
                         <div class="banner-content text-center">
                             <p class="banner-caption">A calm, nature-forward residential enclave</p>
                             <h1 class="title">Clear-title residential plots in the heart of Bihta</h1>
-                            <a href="contact.html" class="btn btn-two">Book Site Visit</a>
+                            <a href="contact.php" class="btn btn-two">Book Site Visit</a>
                         </div>
                     </div>
                 </div>
@@ -1028,7 +1028,7 @@
 
                 <div class="row">
                     <div class="col-12 text-center">
-                        <a href="contact.html" class="btn btn-two">Know More</a>
+                        <a href="contact.php" class="btn btn-two">Know More</a>
                     </div>
                 </div>
             </div>
@@ -1996,7 +1996,7 @@
                                 <ul class="list-wrap">
                                     <li><a href="#">Knowledge Base</a></li>
                                     <li><a href="#">FAQ</a></li>
-                                    <li><a href="contact.html">Contact</a></li>
+                                    <li><a href="contact.php">Contact</a></li>
                                     <li><a href="admin/login.php" style="color: #FAA432;">Admin Login</a></li>
                                 </ul>
                             </div>

@@ -1,3 +1,8 @@
 --- Push notifications error log ---
 This file is used for temporary debugging and should be cleaned up regularly.
 If no issues are present, the file will remain empty.
+[2025-11-28 17:26:25] Exception: PHP 'mysqli' extension is not installed or enabled. Please enable it in your PHP configuration. in E:\vrindagreencity\admin\config.php:16
+Stack trace:
+#0 E:\vrindagreencity\inc\chatbot-lead.php(79): getDBConnection()
+#1 E:\vrindagreencity\admin\test-chatbot-submit.php(10): require_once('...')
+#2 {main}

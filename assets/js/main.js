@@ -1,3 +1,24 @@
+// Update header placeholder height to avoid content jumping when header becomes fixed
+function updateHeaderPlaceholder() {
+  var $stickyHeader = $("#sticky-header");
+  var $placeholder = $("#header-top-fixed");
+  if (!$stickyHeader.length || !$placeholder.length) {
+    return;
+  }
+  if ($stickyHeader.hasClass("sticky-menu")) {
+    // set placeholder height to header height
+    $placeholder.css("height", $stickyHeader.outerHeight() + "px");
+    $placeholder.css("display", "block");
+  } else {
+    $placeholder.css("height", 0);
+    $placeholder.css("display", "none");
+  }
+}
+
+// Ensure header placeholder is correct on load and resize
+$(window).on("load resize scroll", function () {
+  updateHeaderPlaceholder();
+});
 (function ($) {
   "use strict";
 
@@ -225,6 +246,7 @@
       $("#header-top-fixed").addClass("header-fixed-position");
       $("#header-fixed-height").addClass("active-height");
     }
+    updateHeaderPlaceholder(); // Call to update placeholder height on scroll
   });
 
   /*=============================================

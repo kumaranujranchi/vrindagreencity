@@ -582,6 +582,12 @@ label {
   box-shadow: 0 10px 15px rgba(25, 25, 25, 0.1);
   border-radius: 0;
   padding: 0 0;
+.sticky-menu {
+  position: fixed !important;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 9999;
 }
 .header-fixed-position {
   display: block;
@@ -5198,6 +5204,16 @@ body.search-visible {
 #header-fixed-height.active-height {
   display: block;
   height: 104px;
+}
+
+/* Placeholder fix for header spacing when sticky */
+#header-top-fixed {
+  display: none;
+  height: 0;
+}
+#header-top-fixed.header-fixed-position {
+  display: block !important;
+  height: 138px !important;
 }
 .scroll-top-two {
   background-image: linear-gradient(

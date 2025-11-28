@@ -250,20 +250,51 @@
                     <div class="col-xl-10 col-lg-11">
                         <!-- Scoped styles to keep design consistent -->
                         <style>
-                            .hero-video-embed{position:relative;width:100%;background:#000;border-radius:15px;overflow:hidden}
+                            .hero-video-embed {
+                                position: relative;
+                                width: 100%;
+                                background: #000;
+                                border-radius: 15px;
+                                overflow: hidden
+                            }
+
                             /* fallback for browsers that don't support aspect-ratio */
-                            .hero-video-embed::before{content:'';display:block;padding-top:56.25%}
-                            .hero-video-embed iframe{position:absolute;top:0;left:0;width:100%;height:100%;border:0}
-                            .hero-video-cta{margin-top:18px;text-align:center}
-                            .hero-video-cta .btn{padding:14px 36px;border-radius:8px}
+                            .hero-video-embed::before {
+                                content: '';
+                                display: block;
+                                padding-top: 56.25%
+                            }
+
+                            .hero-video-embed iframe {
+                                position: absolute;
+                                top: 0;
+                                left: 0;
+                                width: 100%;
+                                height: 100%;
+                                border: 0
+                            }
+
+                            .hero-video-cta {
+                                margin-top: 18px;
+                                text-align: center
+                            }
+
+                            .hero-video-cta .btn {
+                                padding: 14px 36px;
+                                border-radius: 8px
+                            }
                         </style>
 
                         <div class="hero-video-wrapper">
                             <div class="hero-video-heading" style="text-align:center; margin-bottom:28px;">
-                                <h1 style="font-family:'Oswald',sans-serif;font-size:3.2rem;font-weight:500;line-height:1.1;color:#FAA432;margin-bottom:10px;">A calm, nature-forward<br>residential enclave</h1>
-                                <div style="font-size:1.25rem;color:#FAA432;opacity:0.85;">Clear-title residential plots in the heart of Bihta</div>
+                                <h1
+                                    style="font-family:'Oswald',sans-serif;font-size:3.2rem;font-weight:500;line-height:1.1;color:#FAA432;margin-bottom:10px;">
+                                    A calm, nature-forward<br>residential enclave</h1>
+                                <div style="font-size:1.25rem;color:#FAA432;opacity:0.85;">Clear-title residential plots
+                                    in the heart of Bihta</div>
                             </div>
-                            <div class="hero-video-embed" aria-hidden="false" style="overflow: hidden; border-radius: 15px; position: relative; width: 100%; height: 480px; box-shadow: 0 10px 40px rgba(0,0,0,0.4);">
+                            <div class="hero-video-embed" aria-hidden="false"
+                                style="overflow: hidden; border-radius: 15px; position: relative; width: 100%; height: 480px; box-shadow: 0 10px 40px rgba(0,0,0,0.4);">
                                 <iframe loading="lazy"
                                     src="https://www.youtube.com/embed/eA9wyv7vtpY?autoplay=1&mute=1&loop=1&playlist=eA9wyv7vtpY&controls=0&showinfo=0&rel=0&modestbranding=1"
                                     frameborder="0" allow="autoplay; encrypted-media" allowfullscreen
@@ -287,7 +318,8 @@
                 <div class="row justify-content-center">
                     <div class="col-xl-6 col-lg-8">
                         <div class="section-title text-center mb-60">
-                            <p class="sub-title key-features-subtitle" data-en=".. Amenities .." data-hi=".. सुविधाएं ..">.. Amenities ..</p>
+                            <p class="sub-title key-features-subtitle" data-en=".. Amenities .."
+                                data-hi=".. सुविधाएं ..">.. Amenities ..</p>
                             <h2 class="title key-features-title" data-en="AMENITIES" data-hi="सुविधाएं">AMENITIES</h2>
                         </div>
                     </div>
@@ -299,8 +331,13 @@
                                 <i class="flaticon-tape-measure"></i>
                             </div>
                             <div class="key-feature-content">
-                                <h4 class="title amenity-title" data-en="Central Drainage System" data-hi="सेंट्रल ड्रेनेज सिस्टम">Central Drainage System</h4>
-                                <p class="amenity-desc" data-en="Well-planned central drainage system ensuring clean surroundings and hassle-free living." data-hi="सुव्यवस्थित सेंट्रल ड्रेनेज सिस्टम, जो कॉलोनी को स्वच्छ और परेशानी-मुक्त बनाए रखता है।">Well-planned central drainage system ensuring clean surroundings and hassle-free living.</p>
+                                <h4 class="title amenity-title" data-en="Central Drainage System"
+                                    data-hi="सेंट्रल ड्रेनेज सिस्टम">Central Drainage System</h4>
+                                <p class="amenity-desc"
+                                    data-en="Well-planned central drainage system ensuring clean surroundings and hassle-free living."
+                                    data-hi="सुव्यवस्थित सेंट्रल ड्रेनेज सिस्टम, जो कॉलोनी को स्वच्छ और परेशानी-मुक्त बनाए रखता है।">
+                                    Well-planned central drainage system ensuring clean surroundings and hassle-free
+                                    living.</p>
                             </div>
                         </div>
                     </div>
@@ -310,8 +347,13 @@
                                 <i class="flaticon-test"></i>
                             </div>
                             <div class="key-feature-content">
-                                <h4 class="title amenity-title" data-en="CCTV Security" data-hi="CCTV सुरक्षा">CCTV Security</h4>
-                                <p class="amenity-desc" data-en="High-definition CCTV surveillance across key points for complete safety and peace of mind." data-hi="कॉलोनी के प्रमुख स्थानों पर हाई-डेफिनिशन CCTV निगरानी, आपकी पूरी सुरक्षा और चैन के लिए।">High-definition CCTV surveillance across key points for complete safety and peace of mind.</p>
+                                <h4 class="title amenity-title" data-en="CCTV Security" data-hi="CCTV सुरक्षा">CCTV
+                                    Security</h4>
+                                <p class="amenity-desc"
+                                    data-en="High-definition CCTV surveillance across key points for complete safety and peace of mind."
+                                    data-hi="कॉलोनी के प्रमुख स्थानों पर हाई-डेफिनिशन CCTV निगरानी, आपकी पूरी सुरक्षा और चैन के लिए।">
+                                    High-definition CCTV surveillance across key points for complete safety and peace of
+                                    mind.</p>
                             </div>
                         </div>
                     </div>
@@ -321,8 +363,13 @@
                                 <i class="flaticon-weight"></i>
                             </div>
                             <div class="key-feature-content">
-                                <h4 class="title amenity-title" data-en="24/7 Security Guards" data-hi="24/7 सिक्योरिटी गार्ड्स">24/7 Security Guards</h4>
-                                <p class="amenity-desc" data-en="Trained security guards available round the clock to protect residents and visitors." data-hi="24/7 प्रशिक्षित सिक्योरिटी गार्ड्स—हमेशा आपकी सुरक्षा के लिए तैनात।">Trained security guards available round the clock to protect residents and visitors.</p>
+                                <h4 class="title amenity-title" data-en="24/7 Security Guards"
+                                    data-hi="24/7 सिक्योरिटी गार्ड्स">24/7 Security Guards</h4>
+                                <p class="amenity-desc"
+                                    data-en="Trained security guards available round the clock to protect residents and visitors."
+                                    data-hi="24/7 प्रशिक्षित सिक्योरिटी गार्ड्स—हमेशा आपकी सुरक्षा के लिए तैनात।">
+                                    Trained security guards available round the clock to protect residents and visitors.
+                                </p>
                             </div>
                         </div>
                     </div>
@@ -332,8 +379,13 @@
                                 <i class="flaticon-abs"></i>
                             </div>
                             <div class="key-feature-content">
-                                <h4 class="title amenity-title" data-en="Complete Outside Boundary Wall" data-hi="पूर्ण बाहरी बाउंड्री वॉल">Complete Outside Boundary Wall</h4>
-                                <p class="amenity-desc" data-en="A sturdy, full-perimeter boundary wall that ensures privacy, safety, and a protected township environment." data-hi="मजबूत और पूर्ण परिधि वाली बाउंड्री वॉल, जो प्राइवेसी और सुरक्षा का भरोसा देती है।">A sturdy, full-perimeter boundary wall that ensures privacy, safety, and a protected township environment.</p>
+                                <h4 class="title amenity-title" data-en="Complete Outside Boundary Wall"
+                                    data-hi="पूर्ण बाहरी बाउंड्री वॉल">Complete Outside Boundary Wall</h4>
+                                <p class="amenity-desc"
+                                    data-en="A sturdy, full-perimeter boundary wall that ensures privacy, safety, and a protected township environment."
+                                    data-hi="मजबूत और पूर्ण परिधि वाली बाउंड्री वॉल, जो प्राइवेसी और सुरक्षा का भरोसा देती है।">
+                                    A sturdy, full-perimeter boundary wall that ensures privacy, safety, and a protected
+                                    township environment.</p>
                             </div>
                         </div>
                     </div>
@@ -343,8 +395,13 @@
                                 <i class="flaticon-tape-measure"></i>
                             </div>
                             <div class="key-feature-content">
-                                <h4 class="title amenity-title" data-en="Internal Roads" data-hi="आंतरिक सड़कें">Internal Roads</h4>
-                                <p class="amenity-desc" data-en="Wide, well-constructed internal roads designed for smooth movement and easy navigation inside the township." data-hi="चौड़ी और मजबूत आंतरिक सड़कें—आरामदायक सफर और बेहतर कनेक्टिविटी के लिए।">Wide, well-constructed internal roads designed for smooth movement and easy navigation inside the township.</p>
+                                <h4 class="title amenity-title" data-en="Internal Roads" data-hi="आंतरिक सड़कें">
+                                    Internal Roads</h4>
+                                <p class="amenity-desc"
+                                    data-en="Wide, well-constructed internal roads designed for smooth movement and easy navigation inside the township."
+                                    data-hi="चौड़ी और मजबूत आंतरिक सड़कें—आरामदायक सफर और बेहतर कनेक्टिविटी के लिए।">
+                                    Wide, well-constructed internal roads designed for smooth movement and easy
+                                    navigation inside the township.</p>
                             </div>
                         </div>
                     </div>
@@ -354,8 +411,13 @@
                                 <i class="flaticon-abs"></i>
                             </div>
                             <div class="key-feature-content">
-                                <h4 class="title amenity-title" data-en="Park Area" data-hi="पार्क क्षेत्र">Park Area</h4>
-                                <p class="amenity-desc" data-en="Green, peaceful park space for morning walks, relaxation, and a healthy outdoor lifestyle." data-hi="हरियाली से भरपूर शांत पार्क—सुबह की सैर, आराम और स्वस्थ जीवनशैली के लिए आदर्श।">Green, peaceful park space for morning walks, relaxation, and a healthy outdoor lifestyle.</p>
+                                <h4 class="title amenity-title" data-en="Park Area" data-hi="पार्क क्षेत्र">Park Area
+                                </h4>
+                                <p class="amenity-desc"
+                                    data-en="Green, peaceful park space for morning walks, relaxation, and a healthy outdoor lifestyle."
+                                    data-hi="हरियाली से भरपूर शांत पार्क—सुबह की सैर, आराम और स्वस्थ जीवनशैली के लिए आदर्श।">
+                                    Green, peaceful park space for morning walks, relaxation, and a healthy outdoor
+                                    lifestyle.</p>
                             </div>
                         </div>
                     </div>
@@ -364,7 +426,7 @@
         </section>
         <!-- features-area-end -->
 
-            <!-- banking-partner-area -->
+
 
         <!-- features-product -->
         <!-- plotting-map-area -->
@@ -1247,29 +1309,40 @@
         </section>
         <!-- pricing-area-end -->
 
-            <!-- banking-partner-area -->
-            <link rel="stylesheet" href="assets/css/banking-partner-marquee.css">
-            <section class="banking-partner-area">
-                <div class="container">
-                    <div class="banking-partner-title">Banking Partner</div>
-                    <div class="banking-partner-marquee">
-                        <div class="banking-partner-track">
-                            <img src="https://imagizer.imageshack.com/img923/5628/nnIWNw.png" alt="SBI" class="banking-partner-logo" />
-                            <img src="https://imagizer.imageshack.com/img924/9968/vIlVWk.png" alt="HDFC" class="banking-partner-logo" />
-                            <img src="https://imagizer.imageshack.com/img924/350/TK8aPL.png" alt="Axis" class="banking-partner-logo" />
-                            <img src="https://imagizer.imageshack.com/img924/8052/DQSFpk.png" alt="Bank of Baroda" class="banking-partner-logo" />
-                            <img src="https://imagizer.imageshack.com/img922/7303/4OFk1r.png" alt="Indian Bank" class="banking-partner-logo" />
-                            <!-- Repeat for smooth infinite scroll -->
-                            <img src="https://imagizer.imageshack.com/img923/5628/nnIWNw.png" alt="SBI" class="banking-partner-logo" />
-                            <img src="https://imagizer.imageshack.com/img924/9968/vIlVWk.png" alt="HDFC" class="banking-partner-logo" />
-                            <img src="https://imagizer.imageshack.com/img924/350/TK8aPL.png" alt="Axis" class="banking-partner-logo" />
-                            <img src="https://imagizer.imageshack.com/img924/8052/DQSFpk.png" alt="Bank of Baroda" class="banking-partner-logo" />
-                            <img src="https://imagizer.imageshack.com/img922/7303/4OFk1r.png" alt="Indian Bank" class="banking-partner-logo" />
-                        </div>
+        <!-- banking-partner-area -->
+        <link rel="stylesheet" href="assets/css/banking-partner-marquee.css">
+        <section class="banking-partner-area">
+            <div class="container">
+                <div class="banking-partner-title">Banking Partner</div>
+                <div class="banking-partner-marquee">
+                    <div class="banking-partner-track">
+                        <img src="https://imagizer.imageshack.com/img923/5628/nnIWNw.png" alt="SBI"
+                            class="banking-partner-logo" />
+                        <img src="https://imagizer.imageshack.com/img924/9968/vIlVWk.png" alt="HDFC"
+                            class="banking-partner-logo" />
+                        <img src="https://imagizer.imageshack.com/img924/350/TK8aPL.png" alt="Axis"
+                            class="banking-partner-logo" />
+                        <img src="https://imagizer.imageshack.com/img924/8052/DQSFpk.png" alt="Bank of Baroda"
+                            class="banking-partner-logo" />
+                        <img src="https://imagizer.imageshack.com/img922/7303/4OFk1r.png" alt="Indian Bank"
+                            class="banking-partner-logo" />
+                        <!-- Repeat for smooth infinite scroll -->
+                        <img src="https://imagizer.imageshack.com/img923/5628/nnIWNw.png" alt="SBI"
+                            class="banking-partner-logo" />
+                        <img src="https://imagizer.imageshack.com/img924/9968/vIlVWk.png" alt="HDFC"
+                            class="banking-partner-logo" />
+                        <img src="https://imagizer.imageshack.com/img924/350/TK8aPL.png" alt="Axis"
+                            class="banking-partner-logo" />
+                        <img src="https://imagizer.imageshack.com/img924/8052/DQSFpk.png" alt="Bank of Baroda"
+                            class="banking-partner-logo" />
+                        <img src="https://imagizer.imageshack.com/img922/7303/4OFk1r.png" alt="Indian Bank"
+                            class="banking-partner-logo" />
                     </div>
                 </div>
-            </section>
-            <!-- banking-partner-area-end -->
+            </div>
+
+        </section>
+        <!-- banking-partner-area-end -->
 
         <!-- testimonial-area -->
         <section class="testimonial-area testimonial-bg"

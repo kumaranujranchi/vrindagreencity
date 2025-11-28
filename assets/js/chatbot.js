@@ -186,12 +186,13 @@
         "[Chatbot] handleConversation step:",
         step,
         "userInput:",
-        userInput
+        userInput,
+        "userData:",
+        conversation.userData
       );
 
     switch (step) {
       case 0: // Welcome
-        conversation.step++;
         setTimeout(() => {
           showTyping();
           setTimeout(() => {
@@ -209,6 +210,7 @@
                   setTimeout(() => {
                     removeTyping();
                     addBotMessage("May I know your name?");
+                    // advance to Name step only once when question is asked
                     conversation.step++;
                   }, 800);
                 }, 500);

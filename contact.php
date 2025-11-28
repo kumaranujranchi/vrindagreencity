@@ -231,8 +231,7 @@
                                 </div>
                                 <div class="contact-content">
                                     <h5 class="title">Office Address</h5>
-                                    <p class="contact-desc">Dehliz Infratech Pvt Ltd<br>L-3/9 Opp SK Puri Park(Main
-                                        Gate)<br>SK Puri Patna-800001</p>
+                                    <p class="contact-desc">Mauja – Barah, Patut, Near Shivam Vidya Mandir, Bihta, Bihar</p>
                                 </div>
                             </div>
                         </div>
@@ -518,8 +517,7 @@
                             <div class="footer-widget">
                                 <h4 class="fw-title">CONTACT US</h4>
                                 <div class="footer-contact-wrap">
-                                    <p><strong>Dehliz Infratech Pvt Ltd</strong><br>L-3/9 Opp SK Puri Park(Main
-                                        Gate)<br>SK Puri Patna-800001</p>
+                                    <p><strong>Dehliz Infratech Pvt Ltd</strong><br>Mauja – Barah, Patut, Near Shivam Vidya Mandir, Bihta, Bihar</p>
                                     <ul class="list-wrap">
                                         <li class="phone"><i class="fas fa-phone"></i> +91 9200800600</li>
                                     </ul>

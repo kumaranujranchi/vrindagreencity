@@ -364,6 +364,38 @@
         </section>
         <!-- features-area-end -->
 
+            <!-- banking-partner-area -->
+            <section id="banking-partner" class="banking-partner-area features-bg" style="padding: 60px 0; background: #fff;">
+                <div class="container">
+                    <div class="row justify-content-center">
+                        <div class="col-xl-6 col-lg-8">
+                            <div class="section-title text-center mb-40">
+                                <p class="sub-title key-features-subtitle" style="color: #FAA432;">.. Banking Partner ..</p>
+                                <h2 class="title key-features-title" style="color: #222;">BANKING PARTNER</h2>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row justify-content-center align-items-center">
+                        <div class="col-6 col-sm-4 col-md-2 mb-4 mb-md-0 text-center">
+                            <img src="https://imagizer.imageshack.com/img923/5628/nnIWNw.png" alt="Bank Partner 1" class="img-fluid" style="max-height: 60px; object-fit: contain;">
+                        </div>
+                        <div class="col-6 col-sm-4 col-md-2 mb-4 mb-md-0 text-center">
+                            <img src="https://imagizer.imageshack.com/img924/9968/vIlVWk.png" alt="Bank Partner 2" class="img-fluid" style="max-height: 60px; object-fit: contain;">
+                        </div>
+                        <div class="col-6 col-sm-4 col-md-2 mb-4 mb-md-0 text-center">
+                            <img src="https://imagizer.imageshack.com/img924/350/TK8aPL.png" alt="Bank Partner 3" class="img-fluid" style="max-height: 60px; object-fit: contain;">
+                        </div>
+                        <div class="col-6 col-sm-4 col-md-2 mb-4 mb-md-0 text-center">
+                            <img src="https://imagizer.imageshack.com/img924/8052/DQSFpk.png" alt="Bank Partner 4" class="img-fluid" style="max-height: 60px; object-fit: contain;">
+                        </div>
+                        <div class="col-6 col-sm-4 col-md-2 mb-4 mb-md-0 text-center">
+                            <img src="https://imagizer.imageshack.com/img922/7303/4OFk1r.png" alt="Bank Partner 5" class="img-fluid" style="max-height: 60px; object-fit: contain;">
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- banking-partner-area-end -->
+
         <!-- features-product -->
         <!-- plotting-map-area -->
         <section id="paroller" class="plotting-map-area" style="padding: 100px 0; background: #f9f9f9;">

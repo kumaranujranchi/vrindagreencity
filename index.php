@@ -465,8 +465,6 @@
                 document.getElementById('zoomLevel').textContent = Math.round(currentZoom * 100) + '%';
             }
         </script>
-        </div>
-        </div>
         <div class="fp-circle one"></div>
         <div class="fp-circle two"></div>
         <div class="fp-circle three"></div>

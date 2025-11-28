@@ -75,6 +75,7 @@ try {
     $message = htmlspecialchars(strip_tags($message));
     
     error_log("Data sanitized successfully");
+    error_log("Final name to store: $name");
     
     // Database connection
     require_once __DIR__ . '/../admin/config.php';

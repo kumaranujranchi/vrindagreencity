@@ -2,7 +2,9 @@
 (function () {
   "use strict";
 
-  console.log("🤖 Chatbot v3.0 loaded - Using SIMPLE endpoint: /inc/simple-chatbot.php");
+  console.log(
+    "🤖 Chatbot v3.0 loaded - Using SIMPLE endpoint: /inc/simple-chatbot.php"
+  );
 
   // Chatbot conversation flow
   const conversation = {
@@ -362,7 +364,7 @@
   // Submit lead to backend
   function submitLead() {
     console.log("=== CHATBOT LEAD SUBMISSION STARTED ===");
-    
+
     const formData = new FormData();
     formData.append("name", conversation.userData.name);
     formData.append("email", conversation.userData.email);
@@ -379,11 +381,11 @@
       email: conversation.userData.email,
       phone: conversation.userData.phone,
       subject: conversation.userData.subject,
-      message: conversation.userData.message
+      message: conversation.userData.message,
     });
-    
-    // Use dedicated chatbot endpoint
-    const apiPath = window.location.origin + "/inc/simple-chatbot.php";
+
+    // Use robust chatbot endpoint that uses site config
+    const apiPath = window.location.origin + "/inc/chatbot-lead.php";
     console.log("Sending POST request to:", apiPath);
 
     fetch(apiPath, {
@@ -394,8 +396,8 @@
         console.log("Response received!");
         console.log("Response status:", response.status);
         console.log("Response OK:", response.ok);
-        
-        return response.text().then(text => {
+
+        return response.text().then((text) => {
           console.log("Raw server response:", text);
           try {
             return JSON.parse(text);
@@ -407,17 +409,17 @@
       })
       .then((data) => {
         console.log("Parsed response:", data);
-        
-        if (data.type === 'success') {
-            console.log("✅ ✅ ✅ LEAD SUBMITTED SUCCESSFULLY! ✅ ✅ ✅");
-            console.log("Lead ID:", data.lead_id);
-            console.log("Response message:", data.message);
-            console.log("Saved data:", data.data);
+
+        if (data.type === "success") {
+          console.log("✅ ✅ ✅ LEAD SUBMITTED SUCCESSFULLY! ✅ ✅ ✅");
+          console.log("Lead ID:", data.lead_id);
+          console.log("Response message:", data.message);
+          console.log("Saved data:", data.data);
         } else {
-            console.error("❌ Server reported error:", data.message);
-            if (data.error) {
-                console.error("Error details:", data.error);
-            }
+          console.error("❌ Server reported error:", data.message);
+          if (data.error) {
+            console.error("Error details:", data.error);
+          }
         }
       })
       .catch((error) => {

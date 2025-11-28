@@ -81,14 +81,7 @@
             </svg>
             <span class="nav-label">Subscribers</span>
         </a>
-        <a href="test-chatbot-leads.php"
-            class="nav-link <?php echo basename($_SERVER['PHP_SELF']) == 'test-chatbot-leads.php' ? 'active' : ''; ?>">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                stroke-linecap="round" stroke-linejoin="round">
-                <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
-            </svg>
-            <span class="nav-label">Chatbot</span>
-        </a>
+        <!-- Chatbot admin link removed as it was for testing only -->
         <a href="push-notifications.php"
             class="nav-link <?php echo basename($_SERVER['PHP_SELF']) == 'push-notifications.php' || basename($_SERVER['PHP_SELF']) == 'push-subscribers.php' ? 'active' : ''; ?>">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
@@ -97,6 +90,14 @@
                 <path d="M13.73 21a2 2 0 0 1-3.46 0"></path>
             </svg>
             <span class="nav-label">Push Notifications</span>
+        </a>
+        <a href="view-chatbot-logs.php"
+            class="nav-link <?php echo basename($_SERVER['PHP_SELF']) == 'view-chatbot-logs.php' ? 'active' : ''; ?>">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+            </svg>
+            <span class="nav-label">Chatbot Logs</span>
         </a>
         <a href="logout.php" class="nav-link logout">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"

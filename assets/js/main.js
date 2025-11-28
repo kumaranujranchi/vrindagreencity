@@ -19,6 +19,10 @@ function updateHeaderPlaceholder() {
 $(window).on("load resize scroll", function () {
   updateHeaderPlaceholder();
 });
+// Trigger initial scroll handler to set initial sticky state
+$(function () {
+  $(window).trigger("scroll");
+});
 (function ($) {
   "use strict";
 

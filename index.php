@@ -1798,22 +1798,6 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-4 col-md-6">
-                        <div class="news-card wow fadeInUp" data-wow-delay="2s">
-                            <div class="news-thumb">
-                                <a href="https://imagizer.imageshack.com/img924/1584/wHdN1u.jpg"
-                                    class="news-image-popup">
-                                    <img src="https://imagizer.imageshack.com/img924/1584/wHdN1u.jpg" alt="News 19">
-                                </a>
-                            </div>
-                            <div class="news-content">
-                                <span class="news-date"><i class="far fa-calendar"></i> Oct 1, 2025</span>
-                                <h4 class="news-title">Rising Property Values in Bihta Area</h4>
-                                <p>Real estate experts predict significant appreciation in property values around Vrinda
-                                    Green City location.</p>
-                            </div>
-                        </div>
-                    </div>
                 </div>
             </div>
         </section>

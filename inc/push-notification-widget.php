@@ -103,8 +103,10 @@
   .notification-popup {
     position: absolute;
     bottom: 80px;
-    right: 0;
+    left: 80px; /* show to the right side of the bell */
+    right: auto;
     width: 340px;
+    max-width: calc(100vw - 110px); /* keep within screen when bell is on left */
     background: #fff;
     border-radius: 15px;
     box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
@@ -276,12 +278,12 @@
     .notification-popup {
       width: 90vw;
       max-width: 340px;
-      right: 50%;
-      transform: translateX(50%) translateY(20px);
+      left: 50%;
+      transform: translateX(-50%) translateY(20px);
     }
 
     .notification-popup.active {
-      transform: translateX(50%) translateY(0);
+      transform: translateX(-50%) translateY(0);
     }
 
     .push-notification-bell {

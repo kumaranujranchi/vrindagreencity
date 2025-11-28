@@ -1,0 +1,3 @@
+--- Push notifications error log ---
+This file is used for temporary debugging and should be cleaned up regularly.
+If no issues are present, the file will remain empty.

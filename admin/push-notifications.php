@@ -1,9 +1,5 @@
 <?php
-// Temporary: enable verbose error reporting to diagnose HTTP 500
-// NOTE: remove these lines after debugging to avoid exposing sensitive details.
-ini_set('display_errors', 1);
-ini_set('display_startup_errors', 1);
-error_reporting(E_ALL);
+// (debugging removed) -- production friendly - errors are logged and handled
 
 require_once 'config.php';
 requireLogin();

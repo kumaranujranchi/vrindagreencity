@@ -252,20 +252,15 @@
                             .hero-video-embed {
                                 position: relative;
                                 width: 100%;
-                                background: #000;
+                                background: transparent;
                                 border-radius: 15px;
                                 overflow: hidden;
-                                /* prefer aspect-ratio; fallback to padding-top when unsupported */
                                 aspect-ratio: 16/9;
-                                max-height: 480px;
-                                height: auto;
                             }
 
-                            /* fallback for browsers that don't support aspect-ratio */
+                            /* Hide ::before on desktop - aspect-ratio handles it */
                             .hero-video-embed::before {
-                                content: '';
-                                display: block;
-                                padding-top: 56.25%;
+                                display: none;
                             }
 
                             .hero-video-embed iframe {
@@ -275,15 +270,19 @@
                                 width: 100%;
                                 height: 100%;
                                 border: 0;
-                                /* ensure the iframe covers the container without stretching */
-                                transform: none !important;
                             }
 
-                            /* Mobile adjustments: reduce height to minimize black area */
+                            /* Mobile adjustments only - keep mobile unchanged */
                             @media (max-width: 767px) {
                                 .hero-video-embed {
-                                    max-height: 260px; /* smaller for phones */
+                                    max-height: 260px;
                                     border-radius: 12px;
+                                    background: #000;
+                                }
+                                .hero-video-embed::before {
+                                    content: '';
+                                    display: block;
+                                    padding-top: 56.25%;
                                 }
                             }
 
@@ -307,11 +306,10 @@
                                     in the heart of Bihta</div>
                             </div>
                             <div class="hero-video-embed" aria-hidden="false"
-                                style="overflow: hidden; border-radius: 15px; position: relative; width: 100%; box-shadow: 0 10px 40px rgba(0,0,0,0.4);">
+                                style="overflow: hidden; border-radius: 15px; position: relative; width: 100%;">
                                 <iframe loading="lazy"
                                     src="https://www.youtube.com/embed/eA9wyv7vtpY?autoplay=1&mute=1&loop=1&playlist=eA9wyv7vtpY&controls=0&showinfo=0&rel=0&modestbranding=1"
-                                    frameborder="0" allow="autoplay; encrypted-media" allowfullscreen
-                                    style="border: none;">
+                                    frameborder="0" allow="autoplay; encrypted-media" allowfullscreen>
                                 </iframe>
                             </div>
 

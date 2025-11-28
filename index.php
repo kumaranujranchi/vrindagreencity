@@ -220,7 +220,7 @@
                         CCTV, security guards, and all essential modern amenities.</p>
                 </div>
                 <div class="offcanvas-contact">
-                    <h4 class="number">7280008102</h4>
+                    <h4 class="number">+91 9200800600</h4>
                     <p><strong>Dehliz Infratech Pvt Ltd</strong><br>L-3/9 Opp SK Puri Park(Main Gate)<br>SK Puri
                         Patna-800001</p>
                     <ul class="offcanvas-social list-wrap">
@@ -2008,7 +2008,7 @@
                                     <p><strong>Dehliz Infratech Pvt Ltd</strong><br>L-3/9 Opp SK Puri Park(Main
                                         Gate)<br>SK Puri Patna-800001</p>
                                     <ul class="list-wrap">
-                                        <li class="phone"><i class="fas fa-phone"></i> 7280008102</li>
+                                        <li class="phone"><i class="fas fa-phone"></i> +91 9200800600</li>
                                     </ul>
                                 </div>
                             </div>

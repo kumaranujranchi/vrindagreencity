@@ -86,7 +86,7 @@
     <link rel="stylesheet" href="assets/css/default.css">
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="assets/css/responsive.css">
-    <link rel="stylesheet" href="assets/css/popup-form.css">
+    <!-- <link rel="stylesheet" href="assets/css/popup-form.css"> -->
     <link rel="stylesheet" href="assets/css/chatbot.css">
 </head>
 
@@ -2368,8 +2368,8 @@
         });
     </script>
 
-    <!-- Popup Lead Form Script -->
-    <script src="assets/js/popup-form.js"></script>
+    <!-- Popup Lead Form Script (Disabled) -->
+    <!-- <script src="assets/js/popup-form.js"></script> -->
 
     <!-- Chatbot Widget Script -->
     <script src="assets/js/chatbot.js?v=3.0"></script>

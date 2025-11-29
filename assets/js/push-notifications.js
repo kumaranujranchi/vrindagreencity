@@ -81,6 +81,10 @@ class PushNotificationManager {
             
             if (permission !== 'granted') {
                 alert('Please allow notifications to subscribe');
+                // Dispatch event to reset button
+                window.dispatchEvent(new CustomEvent('pushSubscriptionChanged', {
+                    detail: { subscribed: false, error: 'Permission denied' }
+                }));
                 return;
             }
 
@@ -100,9 +104,21 @@ class PushNotificationManager {
 
             this.isSubscribed = true;
             this.updateUI();
+            
+            // Dispatch success event for widget
+            window.dispatchEvent(new CustomEvent('pushSubscriptionChanged', {
+                detail: { subscribed: true }
+            }));
+            
             this.showMessage('Successfully subscribed to notifications!', 'success');
         } catch (error) {
             console.error('Failed to subscribe:', error);
+            
+            // Dispatch error event for widget to reset
+            window.dispatchEvent(new CustomEvent('pushSubscriptionChanged', {
+                detail: { subscribed: false, error: error.message }
+            }));
+            
             this.showMessage('Failed to subscribe. Please try again.', 'error');
         }
     }

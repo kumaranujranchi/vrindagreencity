@@ -382,8 +382,56 @@
       bellTrigger.classList.remove('subscribed');
       bellBadge.style.display = 'flex';
       bellCheck.style.display = 'none';
+      // Reset subscribe button to original state
+      subscribeBtn.disabled = false;
+      subscribeBtn.innerHTML = `
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M12 22c1.1 0 2-.9 2-2h-4c0 1.1.89 2 2 2zm6-6v-5c0-3.07-1.64-5.64-4.5-6.32V4c0-.83-.67-1.5-1.5-1.5s-1.5.67-1.5 1.5v.68C7.63 5.36 6 7.92 6 11v5l-2 2v1h16v-1l-2-2z" />
+        </svg>
+        <span>Enable Notifications</span>
+      `;
       subscribeBtn.style.display = 'flex';
       unsubscribeBtn.style.display = 'none';
+      // Reset notification content
+      document.getElementById('notificationContent').innerHTML = `
+        <p class="popup-message">
+          📢 Get instant updates about new property listings, price changes, and exclusive offers at Vrinda Green City!
+        </p>
+        <button class="subscribe-button" id="subscribeBtn">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12 22c1.1 0 2-.9 2-2h-4c0 1.1.89 2 2 2zm6-6v-5c0-3.07-1.64-5.64-4.5-6.32V4c0-.83-.67-1.5-1.5-1.5s-1.5.67-1.5 1.5v.68C7.63 5.36 6 7.92 6 11v5l-2 2v1h16v-1l-2-2z" />
+          </svg>
+          <span>Enable Notifications</span>
+        </button>
+        <button class="subscribe-button unsubscribe-button" id="unsubscribeBtn" style="display: none;">
+          Unsubscribe
+        </button>
+      `;
+      // Re-bind event listeners for new buttons
+      bindButtonListeners();
+    }
+
+    function bindButtonListeners() {
+      const newSubscribeBtn = document.getElementById('subscribeBtn');
+      const newUnsubscribeBtn = document.getElementById('unsubscribeBtn');
+      
+      if (newSubscribeBtn) {
+        newSubscribeBtn.addEventListener('click', function () {
+          newSubscribeBtn.disabled = true;
+          newSubscribeBtn.innerHTML = '<div class="loading-spinner"></div><span>Subscribing...</span>';
+          if (window.subscribeToPushNotifications) {
+            window.subscribeToPushNotifications();
+          }
+        });
+      }
+      
+      if (newUnsubscribeBtn) {
+        newUnsubscribeBtn.addEventListener('click', function () {
+          if (window.unsubscribeFromPushNotifications) {
+            window.unsubscribeFromPushNotifications();
+          }
+        });
+      }
     }
 
     // Toggle popup
@@ -403,33 +451,22 @@
       }
     });
 
-    // Subscribe button click - will be handled by push-notifications.js
-    subscribeBtn.addEventListener('click', function () {
-      subscribeBtn.disabled = true;
-      subscribeBtn.innerHTML = '<div class="loading-spinner"></div><span>Subscribing...</span>';
-
-      // Trigger the global subscribe function from push-notifications.js
-      if (window.subscribeToPushNotifications) {
-        window.subscribeToPushNotifications();
-      }
-    });
-
-    // Unsubscribe button click
-    unsubscribeBtn.addEventListener('click', function () {
-      if (window.unsubscribeFromPushNotifications) {
-        window.unsubscribeFromPushNotifications();
-      }
-    });
-
     // Initial check
     checkSubscriptionStatus();
+    
+    // Initial bind
+    bindButtonListeners();
 
     // Listen for subscription changes from push-notifications.js
     window.addEventListener('pushSubscriptionChanged', function (e) {
+      console.log('Push subscription changed:', e.detail);
       if (e.detail.subscribed) {
         updateUIForSubscribed();
       } else {
         updateUIForUnsubscribed();
+        if (e.detail.error) {
+          console.error('Subscription error:', e.detail.error);
+        }
       }
     });
   });

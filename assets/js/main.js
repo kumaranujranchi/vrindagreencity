@@ -17,7 +17,31 @@ function updateHeaderPlaceholder() {
 
 
 // Ensure header placeholder is correct on load and resize
+// Also handle sticky menu logic here (outside IIFE for reliability)
 $(window).on("load resize scroll", function () {
+  var scroll = $(window).scrollTop();
+  var stickyThreshold = 10;
+  var $stickyHeader = $("#sticky-header");
+  
+  if ($stickyHeader.length) {
+    if (scroll < stickyThreshold) {
+      $stickyHeader.removeClass("sticky-menu");
+      $stickyHeader.css({ position: '', top: '', left: '', width: '', zIndex: '' });
+      $("#header-top-fixed").removeClass("header-fixed-position");
+    } else {
+      $stickyHeader.addClass("sticky-menu");
+      // Apply inline styles for maximum compatibility (iOS fix)
+      $stickyHeader.css({ 
+        position: 'fixed', 
+        top: '0', 
+        left: '0', 
+        width: '100%', 
+        zIndex: 2147483647 
+      });
+      $("#header-top-fixed").addClass("header-fixed-position");
+    }
+  }
+  
   updateHeaderPlaceholder();
 });
 // Trigger initial scroll handler to set initial sticky state
@@ -245,26 +269,17 @@ $(function () {
   /*=============================================
 	=     Menu sticky & Scroll to top      =
 =============================================*/
+  // Note: Main sticky-menu logic is handled in the outer scroll handler at the top of this file
+  // This handler just manages the scroll-to-top button visibility
   $(window).on("scroll", function () {
     var scroll = $(window).scrollTop();
-    // Make the header sticky once user scrolls more than a few pixels (restore visible menu behavior)
-    var stickyThreshold = 10; // keep the menu visible once user scrolls
-    if (scroll < stickyThreshold) {
-      $("#sticky-header").removeClass("sticky-menu");
-      // Cleanup inline sticky styles
-      $("#sticky-header").css({ position: '', top: '', left: '', width: '', zIndex: '' });
-      $(".scroll-to-target").removeClass("open");
-      $("#header-top-fixed").removeClass("header-fixed-position");
-      $("#header-fixed-height").removeClass("active-height");
-    } else {
-  $("#sticky-header").addClass("sticky-menu");
-  // As a fallback for any CSS that prevents position:fixed working (iOS stacking contexts), apply inline styles
-  $("#sticky-header").css({ position: 'fixed', top: '0', left: '0', width: '100%', zIndex: 2147483647 });
+    if (scroll >= 10) {
       $(".scroll-to-target").addClass("open");
-      $("#header-top-fixed").addClass("header-fixed-position");
       $("#header-fixed-height").addClass("active-height");
+    } else {
+      $(".scroll-to-target").removeClass("open");
+      $("#header-fixed-height").removeClass("active-height");
     }
-    updateHeaderPlaceholder(); // Call to update placeholder height on scroll
   });
 
   /*=============================================

@@ -86,8 +86,10 @@ $(function () {
     preloader();
     mainSlider();
     wowAnimation();
-    // ensure header is moved to body after load
-    ensureHeaderInBody();
+      // ensure header is moved to body after load
+      ensureHeaderInBody();
+      // Also run on DOMContentLoaded earlier in case other scripts run later
+      document.addEventListener('DOMContentLoaded', ensureHeaderInBody);
   });
 
   /*=============================================

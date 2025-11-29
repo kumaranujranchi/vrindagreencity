@@ -15,6 +15,22 @@ function updateHeaderPlaceholder() {
   }
 }
 
+// Ensure sticky header is placed as a direct child of body to avoid stacking context issues
+function ensureHeaderInBody() {
+  try {
+    var header = document.getElementById('sticky-header');
+    if (header && header.parentNode !== document.body) {
+      var placeholder = document.getElementById('header-top-fixed');
+      // Move header to body while keeping placeholder in original place
+      document.body.appendChild(header);
+      // Keep a reference in case other scripts need it
+      header.__movedToBody = true;
+    }
+  } catch (e) {
+    console.warn('ensureHeaderInBody failed', e);
+  }
+}
+
 // Ensure header placeholder is correct on load and resize
 $(window).on("load resize scroll", function () {
   updateHeaderPlaceholder();
@@ -70,6 +86,8 @@ $(function () {
     preloader();
     mainSlider();
     wowAnimation();
+    // ensure header is moved to body after load
+    ensureHeaderInBody();
   });
 
   /*=============================================
@@ -241,11 +259,15 @@ $(function () {
     var stickyThreshold = 10; // keep the menu visible once user scrolls
     if (scroll < stickyThreshold) {
       $("#sticky-header").removeClass("sticky-menu");
+      // Cleanup inline sticky styles
+      $("#sticky-header").css({ position: '', top: '', left: '', width: '', zIndex: '' });
       $(".scroll-to-target").removeClass("open");
       $("#header-top-fixed").removeClass("header-fixed-position");
       $("#header-fixed-height").removeClass("active-height");
     } else {
-      $("#sticky-header").addClass("sticky-menu");
+  $("#sticky-header").addClass("sticky-menu");
+  // As a fallback for any CSS that prevents position:fixed working (iOS stacking contexts), apply inline styles
+  $("#sticky-header").css({ position: 'fixed', top: '0', left: '0', width: '100%', zIndex: 2147483647 });
       $(".scroll-to-target").addClass("open");
       $("#header-top-fixed").addClass("header-fixed-position");
       $("#header-fixed-height").addClass("active-height");

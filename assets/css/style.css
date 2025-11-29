@@ -574,7 +574,7 @@ label {
   margin: auto;
   top: 0;
   width: 100%;
-  z-index: 99999;
+  z-index: 2147483647 !important;
   background: #fff;
   -webkit-animation: 1000ms ease-in-out 0s normal none 1 running fadeInDown;
   animation: 1000ms ease-in-out 0s normal none 1 running fadeInDown;

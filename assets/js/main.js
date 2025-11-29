@@ -15,21 +15,6 @@ function updateHeaderPlaceholder() {
   }
 }
 
-// Ensure sticky header is placed as a direct child of body to avoid stacking context issues
-function ensureHeaderInBody() {
-  try {
-    var header = document.getElementById('sticky-header');
-    if (header && header.parentNode !== document.body) {
-      var placeholder = document.getElementById('header-top-fixed');
-      // Move header to body while keeping placeholder in original place
-      document.body.appendChild(header);
-      // Keep a reference in case other scripts need it
-      header.__movedToBody = true;
-    }
-  } catch (e) {
-    console.warn('ensureHeaderInBody failed', e);
-  }
-}
 
 // Ensure header placeholder is correct on load and resize
 $(window).on("load resize scroll", function () {
@@ -86,10 +71,7 @@ $(function () {
     preloader();
     mainSlider();
     wowAnimation();
-      // ensure header is moved to body after load
-      ensureHeaderInBody();
-      // Also run on DOMContentLoaded earlier in case other scripts run later
-      document.addEventListener('DOMContentLoaded', ensureHeaderInBody);
+    // NOTE: ensureHeaderInBody removed — we rely on CSS position fixed and inline fallback instead.
   });
 
   /*=============================================
@@ -186,6 +168,14 @@ $(function () {
   if ($(".mobile-menu").length) {
     var mobileMenuContent = $(".menu-area .main-menu").html();
     $(".mobile-menu .menu-box .menu-outer").append(mobileMenuContent);
+
+    // If for any reason mobile menu content failed to populate (e.g., DOM load order), try alternate selectors
+    if ($(".mobile-menu .menu-box .menu-outer").children().length === 0) {
+      var fallbackMenuContent = $(".navbar-wrap .main-menu").html();
+      if (fallbackMenuContent) {
+        $(".mobile-menu .menu-box .menu-outer").append(fallbackMenuContent);
+      }
+    }
 
     //Dropdown Button
     $(".mobile-menu li.menu-item-has-children .dropdown-btn").on(

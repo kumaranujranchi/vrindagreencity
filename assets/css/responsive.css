@@ -666,6 +666,18 @@
   .custom-container {
     max-width: 720px;
   }
+  /* Sticky header height reduction for tablets */
+  .sticky-menu.menu-area {
+    padding: 8px 0;
+  }
+  .sticky-menu .logo img {
+    max-width: 60px !important;
+  }
+  .sticky-menu .mobile-nav-toggler {
+    width: 40px;
+    height: 40px;
+    font-size: 16px;
+  }
   .banner-images .bg-shape {
     max-width: 100%;
   }

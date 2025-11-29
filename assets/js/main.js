@@ -579,6 +579,28 @@ $(function () {
   /*============================================
 	=          Jarallax Active          =
 =============================================*/
+  // Ensure mobile menu/backdrop are direct children of <body> to avoid iOS stacking issues
+  (function () {
+    var moveMenuNodesToBody = function () {
+      try {
+        var mobileMenu = document.querySelector('.mobile-menu');
+        var menuBackdrop = document.querySelector('.menu-backdrop');
+        if (mobileMenu && mobileMenu.parentNode !== document.body) {
+          document.body.appendChild(mobileMenu);
+        }
+        if (menuBackdrop && menuBackdrop.parentNode !== document.body) {
+          document.body.appendChild(menuBackdrop);
+        }
+      } catch (e) {
+        // Fail silently; this shouldn't stop the rest of the script
+        console.warn('moveMenuNodesToBody failed', e);
+      }
+    };
+    // Run early and also on DOM changes because some pages register the menu later
+    document.addEventListener('DOMContentLoaded', moveMenuNodesToBody);
+    // run immediately in case this script executes after DOM loaded
+    moveMenuNodesToBody();
+  })();
   $(".jarallax").jarallax({
     speed: 0.2,
   });

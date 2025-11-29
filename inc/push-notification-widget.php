@@ -342,26 +342,61 @@
 
 <script>
   document.addEventListener('DOMContentLoaded', function () {
+    const VAPID_PUBLIC_KEY = 'BB9GI9J5-oRxxrvXlHsmLeJ53rPPBYkKUmX0XMzDT3xLnzv2MZglhMZlljMvF6pHEqws8OLjvM5XpWXGbHueUsI';
+    
     const bellTrigger = document.getElementById('bellTrigger');
     const notificationPopup = document.getElementById('notificationPopup');
     const popupClose = document.getElementById('popupClose');
-    const subscribeBtn = document.getElementById('subscribeBtn');
-    const unsubscribeBtn = document.getElementById('unsubscribeBtn');
     const bellBadge = document.getElementById('bellBadge');
     const bellCheck = document.getElementById('bellCheck');
+    
+    let swRegistration = null;
+
+    // Convert VAPID key
+    function urlBase64ToUint8Array(base64String) {
+      const padding = '='.repeat((4 - base64String.length % 4) % 4);
+      const base64 = (base64String + padding).replace(/\-/g, '+').replace(/_/g, '/');
+      const rawData = window.atob(base64);
+      const outputArray = new Uint8Array(rawData.length);
+      for (let i = 0; i < rawData.length; ++i) {
+        outputArray[i] = rawData.charCodeAt(i);
+      }
+      return outputArray;
+    }
+
+    // Initialize service worker
+    async function initServiceWorker() {
+      if (!('serviceWorker' in navigator) || !('PushManager' in window)) {
+        console.log('Push notifications not supported');
+        return false;
+      }
+      try {
+        swRegistration = await navigator.serviceWorker.register('/service-worker.js');
+        console.log('Service Worker registered');
+        return true;
+      } catch (error) {
+        console.error('Service Worker registration failed:', error);
+        return false;
+      }
+    }
 
     // Check subscription status
-    function checkSubscriptionStatus() {
-      if ('serviceWorker' in navigator && 'PushManager' in window) {
-        navigator.serviceWorker.ready.then(function (registration) {
-          registration.pushManager.getSubscription().then(function (subscription) {
-            if (subscription) {
-              updateUIForSubscribed();
-            } else {
-              updateUIForUnsubscribed();
-            }
-          });
-        });
+    async function checkSubscriptionStatus() {
+      if (!swRegistration) {
+        await initServiceWorker();
+      }
+      if (!swRegistration) return;
+      
+      try {
+        const subscription = await swRegistration.pushManager.getSubscription();
+        if (subscription) {
+          updateUIForSubscribed();
+        } else {
+          updateUIForUnsubscribed();
+        }
+      } catch (error) {
+        console.error('Error checking subscription:', error);
+        updateUIForUnsubscribed();
       }
     }
 
@@ -369,30 +404,21 @@
       bellTrigger.classList.add('subscribed');
       bellBadge.style.display = 'none';
       bellCheck.style.display = 'flex';
-      subscribeBtn.style.display = 'none';
-      unsubscribeBtn.style.display = 'flex';
       document.getElementById('notificationContent').innerHTML = `
-            <div class="subscribed-message">
-                ✓ You're subscribed to notifications!
-            </div>
-        `;
+        <div class="subscribed-message">
+          ✓ You're subscribed to notifications!
+        </div>
+        <button class="subscribe-button unsubscribe-button" id="unsubscribeBtn" style="margin-top: 15px;">
+          Unsubscribe
+        </button>
+      `;
+      document.getElementById('unsubscribeBtn').addEventListener('click', handleUnsubscribe);
     }
 
     function updateUIForUnsubscribed() {
       bellTrigger.classList.remove('subscribed');
       bellBadge.style.display = 'flex';
       bellCheck.style.display = 'none';
-      // Reset subscribe button to original state
-      subscribeBtn.disabled = false;
-      subscribeBtn.innerHTML = `
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-          <path d="M12 22c1.1 0 2-.9 2-2h-4c0 1.1.89 2 2 2zm6-6v-5c0-3.07-1.64-5.64-4.5-6.32V4c0-.83-.67-1.5-1.5-1.5s-1.5.67-1.5 1.5v.68C7.63 5.36 6 7.92 6 11v5l-2 2v1h16v-1l-2-2z" />
-        </svg>
-        <span>Enable Notifications</span>
-      `;
-      subscribeBtn.style.display = 'flex';
-      unsubscribeBtn.style.display = 'none';
-      // Reset notification content
       document.getElementById('notificationContent').innerHTML = `
         <p class="popup-message">
           📢 Get instant updates about new property listings, price changes, and exclusive offers at Vrinda Green City!
@@ -403,34 +429,84 @@
           </svg>
           <span>Enable Notifications</span>
         </button>
-        <button class="subscribe-button unsubscribe-button" id="unsubscribeBtn" style="display: none;">
-          Unsubscribe
-        </button>
       `;
-      // Re-bind event listeners for new buttons
-      bindButtonListeners();
+      document.getElementById('subscribeBtn').addEventListener('click', handleSubscribe);
     }
 
-    function bindButtonListeners() {
-      const newSubscribeBtn = document.getElementById('subscribeBtn');
-      const newUnsubscribeBtn = document.getElementById('unsubscribeBtn');
-      
-      if (newSubscribeBtn) {
-        newSubscribeBtn.addEventListener('click', function () {
-          newSubscribeBtn.disabled = true;
-          newSubscribeBtn.innerHTML = '<div class="loading-spinner"></div><span>Subscribing...</span>';
-          if (window.subscribeToPushNotifications) {
-            window.subscribeToPushNotifications();
+    async function handleSubscribe() {
+      const btn = document.getElementById('subscribeBtn');
+      btn.disabled = true;
+      btn.innerHTML = '<div class="loading-spinner"></div><span>Subscribing...</span>';
+
+      try {
+        // Make sure service worker is ready
+        if (!swRegistration) {
+          const success = await initServiceWorker();
+          if (!success) {
+            throw new Error('Service Worker not available');
           }
+        }
+
+        // Request permission
+        const permission = await Notification.requestPermission();
+        console.log('Permission result:', permission);
+        
+        if (permission !== 'granted') {
+          throw new Error('Notification permission denied');
+        }
+
+        // Subscribe to push
+        const applicationServerKey = urlBase64ToUint8Array(VAPID_PUBLIC_KEY);
+        const subscription = await swRegistration.pushManager.subscribe({
+          userVisibleOnly: true,
+          applicationServerKey: applicationServerKey
         });
+
+        console.log('Subscription created:', subscription);
+
+        // Send to server
+        const response = await fetch('/admin/api/push-subscribe.php', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(subscription)
+        });
+
+        const data = await response.json();
+        console.log('Server response:', data);
+
+        if (!data.success) {
+          throw new Error(data.message || 'Server error');
+        }
+
+        // Success!
+        updateUIForSubscribed();
+        alert('✅ Successfully subscribed to notifications!');
+
+      } catch (error) {
+        console.error('Subscribe error:', error);
+        alert('❌ Failed to subscribe: ' + error.message);
+        updateUIForUnsubscribed();
       }
-      
-      if (newUnsubscribeBtn) {
-        newUnsubscribeBtn.addEventListener('click', function () {
-          if (window.unsubscribeFromPushNotifications) {
-            window.unsubscribeFromPushNotifications();
-          }
-        });
+    }
+
+    async function handleUnsubscribe() {
+      try {
+        const subscription = await swRegistration.pushManager.getSubscription();
+        if (subscription) {
+          await subscription.unsubscribe();
+          
+          // Remove from server
+          await fetch('/admin/api/push-unsubscribe.php', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ endpoint: subscription.endpoint })
+          });
+        }
+        updateUIForUnsubscribed();
+        alert('Unsubscribed from notifications');
+      } catch (error) {
+        console.error('Unsubscribe error:', error);
+        alert('Failed to unsubscribe: ' + error.message);
       }
     }
 
@@ -451,23 +527,9 @@
       }
     });
 
-    // Initial check
-    checkSubscriptionStatus();
-    
-    // Initial bind
-    bindButtonListeners();
-
-    // Listen for subscription changes from push-notifications.js
-    window.addEventListener('pushSubscriptionChanged', function (e) {
-      console.log('Push subscription changed:', e.detail);
-      if (e.detail.subscribed) {
-        updateUIForSubscribed();
-      } else {
-        updateUIForUnsubscribed();
-        if (e.detail.error) {
-          console.error('Subscription error:', e.detail.error);
-        }
-      }
+    // Initialize
+    initServiceWorker().then(() => {
+      checkSubscriptionStatus();
     });
   });
 </script>

@@ -276,14 +276,16 @@
 
   @media (max-width: 768px) {
     .notification-popup {
-      width: 90vw;
+      width: calc(100vw - 40px);
       max-width: 340px;
-      left: 50%;
-      transform: translateX(-50%) translateY(20px);
+      left: 0;
+      right: auto;
+      bottom: 80px;
+      transform: translateY(20px);
     }
 
     .notification-popup.active {
-      transform: translateX(-50%) translateY(0);
+      transform: translateY(0);
     }
 
     .push-notification-bell {

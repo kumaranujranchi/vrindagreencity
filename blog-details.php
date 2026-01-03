@@ -779,7 +779,7 @@
                             <div class="footer-widget">
                                 <h4 class="fw-title">About Us</h4>
                                 <ul class="list-wrap">
-                                    <li><a href="#">About Company</a></li>
+                                    <li><a href="about-company.php">About Company</a></li>
                                     <li><a href="#">Affiliate Program</a></li>
                                     <li><a href="#">Customer Spotlight</a></li>
                                     <li><a href="#">Reseller Program</a></li>

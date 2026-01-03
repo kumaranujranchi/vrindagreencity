@@ -218,7 +218,10 @@ $(function () {
     $(
       ".menu-backdrop, .mobile-menu .close-btn, .mobile-menu .navigation li a"
     ).on("click", function () {
-      $("body").removeClass("mobile-menu-visible");
+      // Delay closing slightly to ensure click/tap registers fully
+      setTimeout(function() {
+        $("body").removeClass("mobile-menu-visible");
+      }, 100);
     });
   }
 

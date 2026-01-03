@@ -1,3 +1,8 @@
+/* Fix for touch delay on mobile */
+a, button, .btn, input, select, textarea {
+    touch-action: manipulation;
+}
+
 /*
   Theme Name: Suxnix - Health Supplement Landing Page
   Support: themegenix@gmail.com
@@ -6767,3 +6772,17 @@ body.search-visible {
     aspect-ratio: 1/1;
   }
 }
+
+/* Fix for footer links z-index and touch usability */
+.footer-widget a {
+    position: relative;
+    z-index: 5;
+}
+.footer-shape {
+    z-index: 0;
+    pointer-events: none;
+}
+a, button, .btn {
+    cursor: pointer;
+}
+

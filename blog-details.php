@@ -783,7 +783,7 @@
                                     <li><a href="#">Affiliate Program</a></li>
                                     <li><a href="#">Customer Spotlight</a></li>
                                     <li><a href="#">Reseller Program</a></li>
-                                    <li><a href="#">Price & Plans</a></li>
+                                    <li><a href="index.php#pricing">Price & Plans</a></li>
                                 </ul>
                             </div>
                         </div>

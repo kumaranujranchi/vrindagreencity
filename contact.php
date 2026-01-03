@@ -53,7 +53,7 @@
         !function (f, b, e, v, n, t, s) {
             if (f.fbq) return; n = f.fbq = function () {
                 n.callMethod ?
-                n.callMethod.apply(n, arguments) : n.queue.push(arguments)
+                    n.callMethod.apply(n, arguments) : n.queue.push(arguments)
             };
             if (!f._fbq) f._fbq = n; n.push = n; n.loaded = !0; n.version = '2.0';
             n.queue = []; t = b.createElement(e); t.async = !0;
@@ -518,7 +518,7 @@
                                     <li><a href="about-company.php">About Company</a></li>
                                     <li><a href="#">Customer Spotlight</a></li>
                                     <li><a href="#">Reseller Program</a></li>
-                                    <li><a href="#">Price & Plans</a></li>
+                                    <li><a href="index.php#pricing">Price & Plans</a></li>
                                 </ul>
                             </div>
                         </div>

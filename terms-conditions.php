@@ -57,8 +57,9 @@
                         <div class="menu-wrap">
                             <nav class="menu-nav">
                                 <div class="logo">
-                                    <a href="index.php"><img src="https://imagizer.imageshack.com/img922/234/kdlZy4.jpg"
-                                            alt="Vrinda Green City"></a>
+                                    <a href="index.php"><img
+                                            src="https://imagizer.imageshack.com/img922/9871/Gka2b7.png"
+                                            alt="Vrinda Green City" style="max-height: 60px;"></a>
                                 </div>
                                 <div class="navbar-wrap main-menu d-none d-lg-flex">
                                     <ul class="navigation">
@@ -73,7 +74,8 @@
                                 </div>
                                 <div class="header-action d-none d-md-block">
                                     <ul class="list-wrap">
-                                        <li class="header-btn"><a href="contact.php" class="btn">Book Site Visit</a>
+                                        <li class="header-btn"><a href="contact.php" class="btn"
+                                                style="padding: 12px 25px; font-size: 14px;">Book Site Visit</a>
                                         </li>
                                     </ul>
                                 </div>
@@ -86,7 +88,8 @@
                             <nav class="menu-box">
                                 <div class="close-btn"><i class="fas fa-times"></i></div>
                                 <div class="nav-logo">
-                                    <a href="index.php"><img src="https://imagizer.imageshack.com/img922/234/kdlZy4.jpg"
+                                    <a href="index.php"><img
+                                            src="https://imagizer.imageshack.com/img922/9871/Gka2b7.png"
                                             alt="Vrinda Green City"></a>
                                 </div>
                                 <div class="menu-outer">

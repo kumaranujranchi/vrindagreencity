@@ -231,8 +231,9 @@
                                     <i class="far fa-map"></i>
                                 </div>
                                 <div class="contact-content">
-                                    <h5 class="title">Project Address</h5>
-                                    <p class="contact-desc">Mauja – Barah, Patut, Near Shivam Vidya Mandir, Bihta, Bihar</p>
+                                    <h5 class="title">Office Address</h5>
+                                    <p class="contact-desc">L-3/9, SK Puri, Opp SK Puri Park Main Gate, Boring Road,
+                                        Patna - 800001</p>
                                 </div>
                             </div>
                         </div>
@@ -507,10 +508,18 @@
                                 <h4 class="fw-title">Support</h4>
                                 <ul class="list-wrap">
                                     <li><a href="#">Knowledge Base</a></li>
-                                    <li><a href="blog.html">Blog</a></li>
                                     <li><a href="#">FAQ</a></li>
                                     <li><a href="contact.php">Contact</a></li>
                                     <li><a href="admin/login.php" style="color: #FAA432;">Admin Login</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-lg-2 col-md-5 col-sm-6">
+                            <div class="footer-widget">
+                                <h4 class="fw-title">Legal</h4>
+                                <ul class="list-wrap">
+                                    <li><a href="privacy-policy.php">Privacy Policy</a></li>
+                                    <li><a href="terms-conditions.php">Terms & Conditions</a></li>
                                 </ul>
                             </div>
                         </div>
@@ -518,9 +527,11 @@
                             <div class="footer-widget">
                                 <h4 class="fw-title">CONTACT US</h4>
                                 <div class="footer-contact-wrap">
-                                    <p><strong>Dehliz Infratech Pvt Ltd</strong><br>Mauja – Barah, Patut, Near Shivam Vidya Mandir, Bihta, Bihar</p>
+                                    <p><strong>Dehliz Infratech Pvt Ltd</strong><br>L-3/9, SK Puri, Opp SK Puri Park
+                                        Main Gate, Boring Road, Patna - 800001</p>
                                     <ul class="list-wrap">
                                         <li class="phone"><i class="fas fa-phone"></i> +91 9200800600</li>
+                                        <li><i class="fas fa-envelope"></i> info@vrindagreencity.com</li>
                                     </ul>
                                 </div>
                             </div>
@@ -542,7 +553,7 @@
                 <div class="row align-items-center">
                     <div class="col-md-7">
                         <div class="copyright-text">
-                            <p>Copyright © 2025 Vrinda Green City All Rights Reserved.</p>
+                            <p>Copyright © 2025 Vrinda Green City - Dehliz Infratech Pvt Ltd. All Rights Reserved.</p>
                         </div>
                     </div>
                     <div class="col-md-5">

@@ -93,7 +93,7 @@
         !function (f, b, e, v, n, t, s) {
             if (f.fbq) return; n = f.fbq = function () {
                 n.callMethod ?
-                n.callMethod.apply(n, arguments) : n.queue.push(arguments)
+                    n.callMethod.apply(n, arguments) : n.queue.push(arguments)
             };
             if (!f._fbq) f._fbq = n; n.push = n; n.loaded = !0; n.version = '2.0';
             n.queue = []; t = b.createElement(e); t.async = !0;
@@ -1124,226 +1124,236 @@
         </section>
         <!-- formula-area-end -->
 
-        </div>
-
-        <!-- Flexi Plan A -->
-        <div class="row justify-content-center mb-5">
-            <div class="col-lg-10">
-                <div
-                    style="background: #fff; border-radius: 15px; padding: 30px; box-shadow: 0 5px 20px rgba(0,0,0,0.1);">
-                    <h3
-                        style="text-align: center; background: #f0f0f0; padding: 15px; border-radius: 10px; margin-bottom: 25px; font-size: 22px;">
-                        भुगतान दर - Flexi Plan - A</h3>
-
-                    <div class="table-responsive">
-                        <table style="width: 100%; border-collapse: collapse;">
-                            <thead>
-                                <tr style="background: #2d5016; color: #fff;">
-                                    <th style="padding: 15px; text-align: center; border: 1px solid #ddd;">क्रम
-                                        संख्या</th>
-                                    <th style="padding: 15px; text-align: center; border: 1px solid #ddd;">
-                                        सारणी (Schedule)</th>
-                                    <th style="padding: 15px; text-align: center; border: 1px solid #ddd;">शुल्क
-                                        (Charges)</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr style="background: #fff;">
-                                    <td
-                                        style="padding: 15px; text-align: center; border: 1px solid #ddd; font-weight: 600;">
-                                        1</td>
-                                    <td style="padding: 15px; text-align: center; border: 1px solid #ddd;">
-                                        पंजीकरण राशि (7 दिनों के भीतर)</td>
-                                    <td
-                                        style="padding: 15px; text-align: center; border: 1px solid #ddd; font-weight: 600;">
-                                        20% of BSP</td>
-                                </tr>
-                                <tr style="background: #2d5016; color: #fff;">
-                                    <td
-                                        style="padding: 15px; text-align: center; border: 1px solid #ddd; font-weight: 600;">
-                                        2</td>
-                                    <td style="padding: 15px; text-align: center; border: 1px solid #ddd;">
-                                        पंजीकरण से 2 महीने के भीतर</td>
-                                    <td
-                                        style="padding: 15px; text-align: center; border: 1px solid #ddd; font-weight: 600;">
-                                        20% of BSP</td>
-                                </tr>
-                                <tr style="background: #fff;">
-                                    <td
-                                        style="padding: 15px; text-align: center; border: 1px solid #ddd; font-weight: 600;">
-                                        3</td>
-                                    <td style="padding: 15px; text-align: center; border: 1px solid #ddd;">
-                                        पंजीकरण से 3 महीने के भीतर</td>
-                                    <td
-                                        style="padding: 15px; text-align: center; border: 1px solid #ddd; font-weight: 600;">
-                                        20% of BSP</td>
-                                </tr>
-                                <tr style="background: #2d5016; color: #fff;">
-                                    <td
-                                        style="padding: 15px; text-align: center; border: 1px solid #ddd; font-weight: 600;">
-                                        4</td>
-                                    <td style="padding: 15px; text-align: center; border: 1px solid #ddd;">
-                                        पंजीकरण से 4 महीने के भीतर</td>
-                                    <td
-                                        style="padding: 15px; text-align: center; border: 1px solid #ddd; font-weight: 600;">
-                                        20% of BSP</td>
-                                </tr>
-                                <tr style="background: #fff;">
-                                    <td
-                                        style="padding: 15px; text-align: center; border: 1px solid #ddd; font-weight: 600;">
-                                        5</td>
-                                    <td style="padding: 15px; text-align: center; border: 1px solid #ddd;">
-                                        पंजीकरण से 6 महीने के भीतर</td>
-                                    <td
-                                        style="padding: 15px; text-align: center; border: 1px solid #ddd; font-weight: 600;">
-                                        15% of BSP</td>
-                                </tr>
-                                <tr style="background: #2d5016; color: #fff;">
-                                    <td
-                                        style="padding: 15px; text-align: center; border: 1px solid #ddd; font-weight: 600;">
-                                        6</td>
-                                    <td style="padding: 15px; text-align: center; border: 1px solid #ddd;">
-                                        रजिस्ट्री के समय</td>
-                                    <td
-                                        style="padding: 15px; text-align: center; border: 1px solid #ddd; font-weight: 600;">
-                                        5% of BSP + PLC + Development Charges</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Flexi Plan B -->
-        <div class="row justify-content-center mb-5">
-            <div class="col-lg-10">
-                <div
-                    style="background: #fff; border-radius: 15px; padding: 30px; box-shadow: 0 5px 20px rgba(0,0,0,0.1);">
-                    <h3
-                        style="text-align: center; background: #f0f0f0; padding: 15px; border-radius: 10px; margin-bottom: 25px; font-size: 22px;">
-                        भुगतान दर - Flexi Plan - B</h3>
-
-                    <div class="table-responsive">
-                        <table style="width: 100%; border-collapse: collapse;">
-                            <thead>
-                                <tr style="background: #2d5016; color: #fff;">
-                                    <th style="padding: 15px; text-align: center; border: 1px solid #ddd;">क्रम
-                                        संख्या</th>
-                                    <th style="padding: 15px; text-align: center; border: 1px solid #ddd;">
-                                        सारणी (Schedule)</th>
-                                    <th style="padding: 15px; text-align: center; border: 1px solid #ddd;">शुल्क
-                                        (Charges)</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr style="background: #fff;">
-                                    <td
-                                        style="padding: 15px; text-align: center; border: 1px solid #ddd; font-weight: 600;">
-                                        1</td>
-                                    <td style="padding: 15px; text-align: center; border: 1px solid #ddd;">
-                                        पंजीकरण राशि (7 दिनों के भीतर)</td>
-                                    <td
-                                        style="padding: 15px; text-align: center; border: 1px solid #ddd; font-weight: 600;">
-                                        50% of BSP</td>
-                                </tr>
-                                <tr style="background: #2d5016; color: #fff;">
-                                    <td
-                                        style="padding: 15px; text-align: center; border: 1px solid #ddd; font-weight: 600;">
-                                        2</td>
-                                    <td style="padding: 15px; text-align: center; border: 1px solid #ddd;">
-                                        रजिस्ट्री के समय (45 दिनों के भीतर)</td>
-                                    <td
-                                        style="padding: 15px; text-align: center; border: 1px solid #ddd; font-weight: 600;">
-                                        50% of BSP + PLC + Development Charges</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Additional Terms -->
-        <div class="row justify-content-center">
-            <div class="col-lg-10">
-                <div
-                    style="background: #fff; border-radius: 15px; padding: 30px; box-shadow: 0 5px 20px rgba(0,0,0,0.1);">
-                    <!-- PLC -->
-                    <div
-                        style="margin-bottom: 20px; padding: 15px; background: #f9f9f9; border-left: 4px solid #2d5016; border-radius: 5px;">
-                        <div style="display: flex; align-items: start;">
-                            <div
-                                style="width: 20px; height: 20px; border-radius: 50%; background: #2d5016; margin-right: 15px; margin-top: 3px; flex-shrink: 0;">
-                            </div>
-                            <div>
-                                <strong style="font-size: 18px; color: #2d5016;">पसंदीदा स्थान शुल्क
-                                    (PLC)</strong>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Additional Charges -->
-                    <div
-                        style="margin-bottom: 20px; padding: 15px; background: #f9f9f9; border-left: 4px solid #2d5016; border-radius: 5px;">
-                        <div style="display: flex; align-items: start; margin-bottom: 15px;">
-                            <div
-                                style="width: 20px; height: 20px; background: #2d5016; margin-right: 15px; margin-top: 3px; flex-shrink: 0;">
-                            </div>
-                            <p style="margin: 0; font-size: 16px; line-height: 1.6;">दो तरफ से खुला / कोने वाला
-                                / पार्क के सामने / 30 फीट रोड पर - <strong>10% of BSP</strong></p>
-                        </div>
-                        <div style="display: flex; align-items: start;">
-                            <div
-                                style="width: 20px; height: 20px; background: #2d5016; margin-right: 15px; margin-top: 3px; flex-shrink: 0;">
-                            </div>
-                            <p style="margin: 0; font-size: 16px; line-height: 1.6;">तीन तरफ से खुला -
-                                <strong>15% ऑफ BSP</strong>
-                            </p>
-                        </div>
-                    </div>
-
-                    <!-- Note -->
-                    <div
-                        style="margin-bottom: 20px; padding: 15px; background: #fffbea; border-left: 4px solid #FAA432; border-radius: 5px;">
-                        <div style="display: flex; align-items: start;">
-                            <div
-                                style="width: 20px; height: 20px; border-radius: 50%; background: #FAA432; margin-right: 15px; margin-top: 3px; flex-shrink: 0; color: #fff; display: flex; align-items: center; justify-content: center; font-weight: bold; font-size: 12px;">
-                                !</div>
-                            <div>
-                                <strong style="font-size: 18px; color: #FAA432;">नोट</strong>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Terms -->
-                    <div style="padding: 15px; background: #f9f9f9; border-radius: 5px;">
-                        <div style="display: flex; align-items: start; margin-bottom: 15px;">
-                            <div
-                                style="width: 20px; height: 20px; background: #2d5016; margin-right: 15px; margin-top: 3px; flex-shrink: 0;">
-                            </div>
-                            <p style="margin: 0; font-size: 16px; line-height: 1.6;">रजिस्ट्री शुल्क और कानूनी
-                                दस्तावेज शुल्क खरीदार को देना होगा।</p>
-                        </div>
-                        <div style="display: flex; align-items: start; margin-bottom: 15px;">
-                            <div
-                                style="width: 20px; height: 20px; background: #2d5016; margin-right: 15px; margin-top: 3px; flex-shrink: 0;">
-                            </div>
-                            <p style="margin: 0; font-size: 16px; line-height: 1.6;">विकास शुल्क (Development
-                                Charges) ₹ 100/- प्रति वर्गफुट अतिरिक्त रूप से खरीदार को देना होगा।</p>
-                        </div>
-                        <div style="display: flex; align-items: start;">
-                            <div
-                                style="width: 20px; height: 20px; background: #2d5016; margin-right: 15px; margin-top: 3px; flex-shrink: 0;">
-                            </div>
-                            <p style="margin: 0; font-size: 16px; line-height: 1.6;">चेक/ड्राफ्ट "Dehliz
-                                Infratech Pvt. Ltd." के पक्ष में देय होगा।</p>
+        <!-- pricing-area -->
+        <section id="pricing" class="pricing-area" style="padding: 100px 0; background: #f9f9f9;">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-xl-6 col-lg-8">
+                        <div class="section-title text-center mb-60">
+                            <p class="sub-title">.. Payment Plans ..</p>
+                            <h2 class="title">Pricing & Packages</h2>
                         </div>
                     </div>
                 </div>
+                <!-- Flexi Plan A -->
+                <div class="row justify-content-center mb-5">
+                    <div class="col-lg-10">
+                        <div
+                            style="background: #fff; border-radius: 15px; padding: 30px; box-shadow: 0 5px 20px rgba(0,0,0,0.1);">
+                            <h3
+                                style="text-align: center; background: #f0f0f0; padding: 15px; border-radius: 10px; margin-bottom: 25px; font-size: 22px;">
+                                भुगतान दर - Flexi Plan - A</h3>
+
+                            <div class="table-responsive">
+                                <table style="width: 100%; border-collapse: collapse;">
+                                    <thead>
+                                        <tr style="background: #2d5016; color: #fff;">
+                                            <th style="padding: 15px; text-align: center; border: 1px solid #ddd;">क्रम
+                                                संख्या</th>
+                                            <th style="padding: 15px; text-align: center; border: 1px solid #ddd;">
+                                                सारणी (Schedule)</th>
+                                            <th style="padding: 15px; text-align: center; border: 1px solid #ddd;">शुल्क
+                                                (Charges)</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr style="background: #fff;">
+                                            <td
+                                                style="padding: 15px; text-align: center; border: 1px solid #ddd; font-weight: 600;">
+                                                1</td>
+                                            <td style="padding: 15px; text-align: center; border: 1px solid #ddd;">
+                                                पंजीकरण राशि (7 दिनों के भीतर)</td>
+                                            <td
+                                                style="padding: 15px; text-align: center; border: 1px solid #ddd; font-weight: 600;">
+                                                20% of BSP</td>
+                                        </tr>
+                                        <tr style="background: #2d5016; color: #fff;">
+                                            <td
+                                                style="padding: 15px; text-align: center; border: 1px solid #ddd; font-weight: 600;">
+                                                2</td>
+                                            <td style="padding: 15px; text-align: center; border: 1px solid #ddd;">
+                                                पंजीकरण से 2 महीने के भीतर</td>
+                                            <td
+                                                style="padding: 15px; text-align: center; border: 1px solid #ddd; font-weight: 600;">
+                                                20% of BSP</td>
+                                        </tr>
+                                        <tr style="background: #fff;">
+                                            <td
+                                                style="padding: 15px; text-align: center; border: 1px solid #ddd; font-weight: 600;">
+                                                3</td>
+                                            <td style="padding: 15px; text-align: center; border: 1px solid #ddd;">
+                                                पंजीकरण से 3 महीने के भीतर</td>
+                                            <td
+                                                style="padding: 15px; text-align: center; border: 1px solid #ddd; font-weight: 600;">
+                                                20% of BSP</td>
+                                        </tr>
+                                        <tr style="background: #2d5016; color: #fff;">
+                                            <td
+                                                style="padding: 15px; text-align: center; border: 1px solid #ddd; font-weight: 600;">
+                                                4</td>
+                                            <td style="padding: 15px; text-align: center; border: 1px solid #ddd;">
+                                                पंजीकरण से 4 महीने के भीतर</td>
+                                            <td
+                                                style="padding: 15px; text-align: center; border: 1px solid #ddd; font-weight: 600;">
+                                                20% of BSP</td>
+                                        </tr>
+                                        <tr style="background: #fff;">
+                                            <td
+                                                style="padding: 15px; text-align: center; border: 1px solid #ddd; font-weight: 600;">
+                                                5</td>
+                                            <td style="padding: 15px; text-align: center; border: 1px solid #ddd;">
+                                                पंजीकरण से 6 महीने के भीतर</td>
+                                            <td
+                                                style="padding: 15px; text-align: center; border: 1px solid #ddd; font-weight: 600;">
+                                                15% of BSP</td>
+                                        </tr>
+                                        <tr style="background: #2d5016; color: #fff;">
+                                            <td
+                                                style="padding: 15px; text-align: center; border: 1px solid #ddd; font-weight: 600;">
+                                                6</td>
+                                            <td style="padding: 15px; text-align: center; border: 1px solid #ddd;">
+                                                रजिस्ट्री के समय</td>
+                                            <td
+                                                style="padding: 15px; text-align: center; border: 1px solid #ddd; font-weight: 600;">
+                                                5% of BSP + PLC + Development Charges</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Flexi Plan B -->
+                <div class="row justify-content-center mb-5">
+                    <div class="col-lg-10">
+                        <div
+                            style="background: #fff; border-radius: 15px; padding: 30px; box-shadow: 0 5px 20px rgba(0,0,0,0.1);">
+                            <h3
+                                style="text-align: center; background: #f0f0f0; padding: 15px; border-radius: 10px; margin-bottom: 25px; font-size: 22px;">
+                                भुगतान दर - Flexi Plan - B</h3>
+
+                            <div class="table-responsive">
+                                <table style="width: 100%; border-collapse: collapse;">
+                                    <thead>
+                                        <tr style="background: #2d5016; color: #fff;">
+                                            <th style="padding: 15px; text-align: center; border: 1px solid #ddd;">क्रम
+                                                संख्या</th>
+                                            <th style="padding: 15px; text-align: center; border: 1px solid #ddd;">
+                                                सारणी (Schedule)</th>
+                                            <th style="padding: 15px; text-align: center; border: 1px solid #ddd;">शुल्क
+                                                (Charges)</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr style="background: #fff;">
+                                            <td
+                                                style="padding: 15px; text-align: center; border: 1px solid #ddd; font-weight: 600;">
+                                                1</td>
+                                            <td style="padding: 15px; text-align: center; border: 1px solid #ddd;">
+                                                पंजीकरण राशि (7 दिनों के भीतर)</td>
+                                            <td
+                                                style="padding: 15px; text-align: center; border: 1px solid #ddd; font-weight: 600;">
+                                                50% of BSP</td>
+                                        </tr>
+                                        <tr style="background: #2d5016; color: #fff;">
+                                            <td
+                                                style="padding: 15px; text-align: center; border: 1px solid #ddd; font-weight: 600;">
+                                                2</td>
+                                            <td style="padding: 15px; text-align: center; border: 1px solid #ddd;">
+                                                रजिस्ट्री के समय (45 दिनों के भीतर)</td>
+                                            <td
+                                                style="padding: 15px; text-align: center; border: 1px solid #ddd; font-weight: 600;">
+                                                50% of BSP + PLC + Development Charges</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Additional Terms -->
+                <div class="row justify-content-center">
+                    <div class="col-lg-10">
+                        <div
+                            style="background: #fff; border-radius: 15px; padding: 30px; box-shadow: 0 5px 20px rgba(0,0,0,0.1);">
+                            <!-- PLC -->
+                            <div
+                                style="margin-bottom: 20px; padding: 15px; background: #f9f9f9; border-left: 4px solid #2d5016; border-radius: 5px;">
+                                <div style="display: flex; align-items: start;">
+                                    <div
+                                        style="width: 20px; height: 20px; border-radius: 50%; background: #2d5016; margin-right: 15px; margin-top: 3px; flex-shrink: 0;">
+                                    </div>
+                                    <div>
+                                        <strong style="font-size: 18px; color: #2d5016;">पसंदीदा स्थान शुल्क
+                                            (PLC)</strong>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Additional Charges -->
+                            <div
+                                style="margin-bottom: 20px; padding: 15px; background: #f9f9f9; border-left: 4px solid #2d5016; border-radius: 5px;">
+                                <div style="display: flex; align-items: start; margin-bottom: 15px;">
+                                    <div
+                                        style="width: 20px; height: 20px; background: #2d5016; margin-right: 15px; margin-top: 3px; flex-shrink: 0;">
+                                    </div>
+                                    <p style="margin: 0; font-size: 16px; line-height: 1.6;">दो तरफ से खुला / कोने वाला
+                                        / पार्क के सामने / 30 फीट रोड पर - <strong>10% of BSP</strong></p>
+                                </div>
+                                <div style="display: flex; align-items: start;">
+                                    <div
+                                        style="width: 20px; height: 20px; background: #2d5016; margin-right: 15px; margin-top: 3px; flex-shrink: 0;">
+                                    </div>
+                                    <p style="margin: 0; font-size: 16px; line-height: 1.6;">तीन तरफ से खुला -
+                                        <strong>15% ऑफ BSP</strong>
+                                    </p>
+                                </div>
+                            </div>
+
+                            <!-- Note -->
+                            <div
+                                style="margin-bottom: 20px; padding: 15px; background: #fffbea; border-left: 4px solid #FAA432; border-radius: 5px;">
+                                <div style="display: flex; align-items: start;">
+                                    <div
+                                        style="width: 20px; height: 20px; border-radius: 50%; background: #FAA432; margin-right: 15px; margin-top: 3px; flex-shrink: 0; color: #fff; display: flex; align-items: center; justify-content: center; font-weight: bold; font-size: 12px;">
+                                        !</div>
+                                    <div>
+                                        <strong style="font-size: 18px; color: #FAA432;">नोट</strong>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Terms -->
+                            <div style="padding: 15px; background: #f9f9f9; border-radius: 5px;">
+                                <div style="display: flex; align-items: start; margin-bottom: 15px;">
+                                    <div
+                                        style="width: 20px; height: 20px; background: #2d5016; margin-right: 15px; margin-top: 3px; flex-shrink: 0;">
+                                    </div>
+                                    <p style="margin: 0; font-size: 16px; line-height: 1.6;">रजिस्ट्री शुल्क और कानूनी
+                                        दस्तावेज शुल्क खरीदार को देना होगा।</p>
+                                </div>
+                                <div style="display: flex; align-items: start; margin-bottom: 15px;">
+                                    <div
+                                        style="width: 20px; height: 20px; background: #2d5016; margin-right: 15px; margin-top: 3px; flex-shrink: 0;">
+                                    </div>
+                                    <p style="margin: 0; font-size: 16px; line-height: 1.6;">विकास शुल्क (Development
+                                        Charges) ₹ 100/- प्रति वर्गफुट अतिरिक्त रूप से खरीदार को देना होगा।</p>
+                                </div>
+                                <div style="display: flex; align-items: start;">
+                                    <div
+                                        style="width: 20px; height: 20px; background: #2d5016; margin-right: 15px; margin-top: 3px; flex-shrink: 0;">
+                                    </div>
+                                    <p style="margin: 0; font-size: 16px; line-height: 1.6;">चेक/ड्राफ्ट "Dehliz
+                                        Infratech Pvt. Ltd." के पक्ष में देय होगा।</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-        </div>
-        </div>
+            </div>
         </section>
         <!-- pricing-area-end -->
 

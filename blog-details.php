@@ -5,8 +5,10 @@
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <title>Vrinda Green City Blog - Real Estate News, Property Updates & Bihta Development</title>
-    <meta name="description" content="Stay updated with Vrinda Green City blog for latest real estate news, property market updates, Bihta development news, and residential plot investment tips.">
-    <meta name="keywords" content="Vrinda Green City blog, real estate news Bihta, property updates Patna, Bihta development, residential plots news, real estate investment tips">
+    <meta name="description"
+        content="Stay updated with Vrinda Green City blog for latest real estate news, property market updates, Bihta development news, and residential plot investment tips.">
+    <meta name="keywords"
+        content="Vrinda Green City blog, real estate news Bihta, property updates Patna, Bihta development, residential plots news, real estate investment tips">
     <meta name="author" content="Vrinda Green City">
     <meta name="robots" content="index, follow">
     <meta name="language" content="English">
@@ -17,14 +19,16 @@
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://vrindagreencity.com/blog-details.php">
     <meta property="og:title" content="Vrinda Green City Blog - Real Estate News & Property Updates">
-    <meta property="og:description" content="Latest real estate news, property market updates, and Bihta development news from Vrinda Green City.">
+    <meta property="og:description"
+        content="Latest real estate news, property market updates, and Bihta development news from Vrinda Green City.">
     <meta property="og:image" content="https://imagizer.imageshack.com/img922/9871/Gka2b7.png">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://vrindagreencity.com/blog-details.php">
     <meta property="twitter:title" content="Vrinda Green City Blog - Real Estate News & Property Updates">
-    <meta property="twitter:description" content="Latest real estate news, property market updates, and Bihta development news from Vrinda Green City.">
+    <meta property="twitter:description"
+        content="Latest real estate news, property market updates, and Bihta development news from Vrinda Green City.">
     <meta property="twitter:image" content="https://imagizer.imageshack.com/img922/9871/Gka2b7.png">
 
     <link rel="canonical" href="https://vrindagreencity.com/blog-details.php">
@@ -79,19 +83,19 @@
                         <div class="menu-wrap">
                             <nav class="menu-nav">
                                 <div class="logo">
-                                    <a href="index.html">
+                                    <a href="index.php">
                                         <img src="assets/img/logo/white_logo.png" alt="Logo" class="main-logo">
                                         <img src="assets/img/logo/logo.png" alt="Logo" class="secondary-logo">
                                     </a>
                                 </div>
                                 <div class="navbar-wrap main-menu d-none d-xl-flex">
                                     <ul class="navigation">
-                                        <li><a href="index.html#home">Home</a></li>
-                                        <li><a href="index.html#features">amenities</a></li>
-                                        <li><a href="index.html#paroller">Location Map</a></li>
-                                        <li><a href="index.html#inventory">Inventory</a></li>
-                                        <li><a href="index.html#pricing">Pricing</a></li>
-                                        <li class="menu-item-has-children"><a href="index.html#news">News</a>
+                                        <li><a href="index.php#home">Home</a></li>
+                                        <li><a href="index.php#features">amenities</a></li>
+                                        <li><a href="index.php#paroller">Location Map</a></li>
+                                        <li><a href="index.php#inventory">Inventory</a></li>
+                                        <li><a href="index.php#pricing">Pricing</a></li>
+                                        <li class="menu-item-has-children"><a href="index.php#news">News</a>
                                             <ul class="sub-menu">
                                                 <li><a href="blog.html">Our Blog</a></li>
                                                 <li class="active"><a href="blog-details.php">Blog Details</a></li>
@@ -115,7 +119,7 @@
                             <nav class="menu-box">
                                 <div class="close-btn"><i class="fas fa-times"></i></div>
                                 <div class="nav-logo">
-                                    <a href="index.html"><img src="assets/img/logo/logo.png" alt=""></a>
+                                    <a href="index.php"><img src="assets/img/logo/logo.png" alt=""></a>
                                 </div>
                                 <div class="menu-outer">
                                     <!--Here Menu Will Come Automatically Via Javascript / Same Menu as in Header-->
@@ -200,7 +204,7 @@
                             <nav aria-label="Breadcrumbs" class="breadcrumb-trail">
                                 <ul class="breadcrumb">
                                     <li class="breadcrumb-item trail-item trail-begin">
-                                        <a href="index.html"><span>Home</span></a>
+                                        <a href="index.php"><span>Home</span></a>
                                     </li>
                                     <li class="breadcrumb-item trail-item trail-end"><span>Blog Details</span></li>
                                 </ul>
@@ -756,7 +760,7 @@
                             <div class="footer-widget">
                                 <div class="footer-about">
                                     <div class="footer-logo logo">
-                                        <a href="index.html"><img src="assets/img/logo/white_logo.png" alt="Logo"></a>
+                                        <a href="index.php"><img src="assets/img/logo/white_logo.png" alt="Logo"></a>
                                     </div>
                                     <div class="footer-text">
                                         <p>Making beauty especially relating complot especial common questions tend to

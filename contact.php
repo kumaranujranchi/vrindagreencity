@@ -50,20 +50,22 @@
     <link rel="stylesheet" href="assets/css/chatbot.css">
     <!-- Meta Pixel Code -->
     <script>
-    !function(f,b,e,v,n,t,s)
-    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-    n.queue=[];t=b.createElement(e);t.async=!0;
-    t.src=v;s=b.getElementsByTagName(e)[0];
-    s.parentNode.insertBefore(t,s)}(window, document,'script',
-    'https://connect.facebook.net/en_US/fbevents.js');
-    fbq('init', '1407161354250821');
-    fbq('track', 'PageView');
+        !function (f, b, e, v, n, t, s) {
+            if (f.fbq) return; n = f.fbq = function () {
+                n.callMethod ?
+                n.callMethod.apply(n, arguments) : n.queue.push(arguments)
+            };
+            if (!f._fbq) f._fbq = n; n.push = n; n.loaded = !0; n.version = '2.0';
+            n.queue = []; t = b.createElement(e); t.async = !0;
+            t.src = v; s = b.getElementsByTagName(e)[0];
+            s.parentNode.insertBefore(t, s)
+        }(window, document, 'script',
+            'https://connect.facebook.net/en_US/fbevents.js');
+        fbq('init', '1407161354250821');
+        fbq('track', 'PageView');
     </script>
     <noscript><img height="1" width="1" style="display:none"
-    src="https://www.facebook.com/tr?id=1407161354250821&ev=PageView&noscript=1"
-    /></noscript>
+            src="https://www.facebook.com/tr?id=1407161354250821&ev=PageView&noscript=1" /></noscript>
     <!-- End Meta Pixel Code -->
 </head>
 
@@ -102,18 +104,18 @@
                         <div class="menu-wrap">
                             <nav class="menu-nav">
                                 <div class="logo">
-                                    <a href="index.html"><img
+                                    <a href="index.php"><img
                                             src="https://imagizer.imageshack.com/img922/9871/Gka2b7.png"
                                             alt="Vrinda Green City"></a>
                                 </div>
                                 <div class="navbar-wrap main-menu d-none d-xl-flex">
                                     <ul class="navigation">
-                                        <li><a href="index.html#home">Home</a></li>
-                                        <li><a href="index.html#features">amenities</a></li>
-                                        <li><a href="index.html#paroller">Location Map</a></li>
-                                        <li><a href="index.html#inventory">Inventory</a></li>
-                                        <li><a href="index.html#pricing">Pricing</a></li>
-                                        <li><a href="index.html#news">News</a></li>
+                                        <li><a href="index.php#home">Home</a></li>
+                                        <li><a href="index.php#features">amenities</a></li>
+                                        <li><a href="index.php#paroller">Location Map</a></li>
+                                        <li><a href="index.php#inventory">Inventory</a></li>
+                                        <li><a href="index.php#pricing">Pricing</a></li>
+                                        <li><a href="index.php#news">News</a></li>
                                         <li class="active"><a href="contact.php">contacts</a></li>
                                     </ul>
                                 </div>
@@ -132,7 +134,7 @@
                             <nav class="menu-box">
                                 <div class="close-btn"><i class="fas fa-times"></i></div>
                                 <div class="nav-logo">
-                                    <a href="index.html"><img
+                                    <a href="index.php"><img
                                             src="https://imagizer.imageshack.com/img922/9871/Gka2b7.png"
                                             alt="Vrinda Green City"></a>
                                 </div>
@@ -222,7 +224,7 @@
                             <nav aria-label="Breadcrumbs" class="breadcrumb-trail">
                                 <ul class="breadcrumb">
                                     <li class="breadcrumb-item trail-item trail-begin">
-                                        <a href="index.html"><span>Home</span></a>
+                                        <a href="index.php"><span>Home</span></a>
                                     </li>
                                     <li class="breadcrumb-item trail-item trail-end"><span>Contact Us</span></li>
                                 </ul>
@@ -478,7 +480,7 @@
                             <div class="footer-widget">
                                 <div class="footer-about">
                                     <div class="footer-logo logo">
-                                        <a href="index.html"><img
+                                        <a href="index.php"><img
                                                 src="https://imagizer.imageshack.com/img922/234/kdlZy4.jpg"
                                                 alt="Vrinda Green City"></a>
                                     </div>

@@ -1,3 +1,4 @@
+<?php require_once 'admin/config.php'; ?>
 <!doctype html>
 <html class="no-js" lang="en">
 
@@ -107,6 +108,7 @@
     <noscript><img height="1" width="1" style="display:none"
             src="https://www.facebook.com/tr?id=1407161354250821&ev=PageView&noscript=1" /></noscript>
     <!-- End Meta Pixel Code -->
+    <meta name="csrf-token" content="<?php echo Security::getCSRFToken(); ?>">
 </head>
 
 <body>
@@ -2079,6 +2081,7 @@
                                         <h5 style="color: #fff; margin-bottom: 15px; font-size: 18px;">Subscribe to
                                             Newsletter</h5>
                                         <form id="newsletter-form" style="display: flex; gap: 10px;">
+                                            <?php echo Security::renderSecurityFields(); ?>
                                             <input type="email" name="email" placeholder="Enter your email" required
                                                 style="flex: 1; padding: 12px; border: none; border-radius: 5px; font-size: 14px;">
                                             <button type="submit"

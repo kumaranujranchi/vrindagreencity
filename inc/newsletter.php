@@ -6,6 +6,20 @@ header('Content-Type: application/json');
 require_once '../admin/config.php';
 
 try {
+    // Security Checks
+    if (!Security::verifyCSRFToken()) {
+        echo json_encode(['success' => false, 'message' => 'Security validation failed: Invalid CSRF token']);
+        exit;
+    }
+    if (!Security::verifyHoneypot()) {
+        echo json_encode(['success' => false, 'message' => 'Security validation failed: Bot detected']);
+        exit;
+    }
+    if (!Security::checkRateLimit('newsletter_form')) {
+        echo json_encode(['success' => false, 'message' => 'Too many requests. Please try again later.']);
+        exit;
+    }
+
     // Check if email is provided
     if (!isset($_POST['email']) || empty($_POST['email'])) {
         echo json_encode([

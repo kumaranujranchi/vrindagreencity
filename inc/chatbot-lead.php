@@ -25,6 +25,17 @@ error_log("Method: " . $_SERVER['REQUEST_METHOD']);
 error_log("POST data: " . json_encode($_POST));
 
 try {
+    // Security Checks
+    if (!Security::verifyCSRFToken()) {
+        throw new Exception('Security validation failed: Invalid CSRF token');
+    }
+    if (!Security::verifyHoneypot()) {
+        throw new Exception('Security validation failed: Bot detected');
+    }
+    if (!Security::checkRateLimit('chatbot_form')) {
+        throw new Exception('Too many requests. Please try again after some time.');
+    }
+
     // Check if POST request
     if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
         throw new Exception('Invalid request method. Only POST allowed.');

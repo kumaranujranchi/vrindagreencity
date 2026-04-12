@@ -1,3 +1,4 @@
+<?php require_once 'admin/config.php'; ?>
 <!doctype html>
 <html class="no-js" lang="en">
 
@@ -67,6 +68,7 @@
     <noscript><img height="1" width="1" style="display:none"
             src="https://www.facebook.com/tr?id=1407161354250821&ev=PageView&noscript=1" /></noscript>
     <!-- End Meta Pixel Code -->
+    <meta name="csrf-token" content="<?php echo Security::getCSRFToken(); ?>">
 </head>
 
 <body>
@@ -305,6 +307,7 @@
                             </div>
                             <form id="contact-form" action="inc/contact.php" method="POST" class="contact-form"
                                 data-toggle="validator">
+                                <?php echo Security::renderSecurityFields(); ?>
                                 <div class="row">
                                     <div class="col-md-6">
                                         <div class="form-grp">

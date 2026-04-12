@@ -41,6 +41,16 @@ error_log("POST data: " . print_r($_POST, true));
 error_log("Request method: " . $_SERVER['REQUEST_METHOD']);
 
 try {
+    // Security Checks
+    if (!Security::verifyCSRFToken()) {
+        throw new \Exception('Security validation failed: Invalid CSRF token');
+    }
+    if (!Security::verifyHoneypot()) {
+        throw new \Exception('Security validation failed: Bot detected');
+    }
+    if (!Security::checkRateLimit('contact_form')) {
+        throw new \Exception('Too many requests. Please try again after some time.');
+    }
 
     if (count($_POST) == 0)
         throw new \Exception('Form is empty');

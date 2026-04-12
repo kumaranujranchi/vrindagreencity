@@ -1,3 +1,4 @@
+<?php require_once 'admin/config.php'; ?>
 <!doctype html>
 <html class="no-js" lang="zxx">
 
@@ -46,6 +47,7 @@
     <link rel="stylesheet" href="assets/css/default.css">
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="assets/css/responsive.css">
+    <meta name="csrf-token" content="<?php echo Security::getCSRFToken(); ?>">
 </head>
 
 <body>
@@ -487,6 +489,7 @@
                                     </div>
                                     <div class="comment-box">
                                         <form action="#" class="comment-form">
+                                            <?php echo Security::renderSecurityFields(); ?>
                                             <div class="comment-field text-area mb-20">
                                                 <i class="fas fa-pencil-alt"></i>
                                                 <textarea name="message" id="message" cols="30" rows="10"

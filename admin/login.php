@@ -14,7 +14,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $username = sanitize($_POST['username'] ?? '');
     $password = $_POST['password'] ?? '';
     
-    if (empty($username) || empty($password)) {
+    // Security Checks
+    if (!Security::verifyCSRFToken($_POST['csrf_token'] ?? '')) {
+        $error = 'Security validation failed (CSRF).';
+    } elseif (!Security::verifyHoneypot($_POST)) {
+        $error = 'Bot detected.';
+    } elseif (!Security::checkRateLimit('admin_login', 5)) { // 5 attempts per hour
+        $error = 'Too many login attempts. Please try again later.';
+    } elseif (empty($username) || empty($password)) {
         $error = 'Please enter both username and password';
     } else {
         $conn = getDBConnection();
@@ -246,6 +253,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <?php endif; ?>
         
         <form method="POST" action="">
+            <?php echo Security::renderSecurityFields(); ?>
             <div class="form-group">
                 <label for="username">Username</label>
                 <input type="text" id="username" name="username" required autofocus placeholder="Enter your username">

@@ -32,3 +32,8 @@ index_backup.html
 contact.html
 blog-details.html
 *.bak
+
+# Security hardening data
+/admin/security/rl_*.json
+/admin/security/*.log
+/admin/security/blacklist.txt

@@ -418,13 +418,22 @@
       conversation.userData.message || "Inquiry via chatbot"
     );
 
+    // Security: Get CSRF token from meta tag
+    const csrfToken = document.querySelector('meta[name="csrf-token"]')?.getAttribute('content');
+    if (csrfToken) {
+      formData.append("csrf_token", csrfToken);
+    }
+    // Security: Honeypot field (must be empty)
+    formData.append("website_url", "");
+
     // Log the data being sent
-    console.log("Lead data to submit:", {
-      name: conversation.userData.name,
+    console.log("Lead data to submit (including security tokens):", {
+      name: nameToSend,
       email: conversation.userData.email,
       phone: conversation.userData.phone,
       subject: conversation.userData.subject,
       message: conversation.userData.message,
+      csrf: csrfToken ? "present" : "MISSING"
     });
 
     // Use robust chatbot endpoint that uses site config

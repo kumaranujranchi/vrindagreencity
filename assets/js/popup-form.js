@@ -123,6 +123,14 @@
     // Get form data
     const formData = new FormData(form);
 
+    // Security: Get CSRF token from meta tag
+    const csrfToken = document.querySelector('meta[name="csrf-token"]')?.getAttribute('content');
+    if (csrfToken) {
+      formData.append("csrf_token", csrfToken);
+    }
+    // Security: Honeypot field (must be empty)
+    formData.append("website_url", "");
+
     // Disable submit button
     submitBtn.disabled = true;
     submitBtn.textContent = "Submitting...";

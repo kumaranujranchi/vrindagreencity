@@ -8,6 +8,9 @@ define('DB_USER', 'u743570205_vindagreen');  // Fixed: removed 'r' from vrindagr
 define('DB_PASS', 'Anuj@2025@2026');
 define('DB_NAME', 'u743570205_vrindagreen');  // Database name remains same
 
+require_once __DIR__ . '/../inc/security.php';
+Security::init();
+
 // Create database connection
 function getDBConnection() {
     try {

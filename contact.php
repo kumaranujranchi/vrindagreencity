@@ -504,6 +504,7 @@
                                         <h5 style="color: #fff; margin-bottom: 15px; font-size: 18px;">Subscribe to
                                             Newsletter</h5>
                                         <form id="newsletter-form" style="display: flex; gap: 10px;">
+                                            <?php echo Security::renderSecurityFields(); ?>
                                             <input type="email" name="email" placeholder="Enter your email" required
                                                 style="flex: 1; padding: 12px; border: none; border-radius: 5px; font-size: 14px;">
                                             <button type="submit"
@@ -638,7 +639,7 @@
                 $.ajax({
                     url: 'inc/newsletter.php',
                     type: 'POST',
-                    data: { email: email },
+                    data: $(this).serialize(),
                     dataType: 'json',
                     beforeSend: function () {
                         messageDiv.html('<span style="color: #FFD700;">Subscribing...</span>');

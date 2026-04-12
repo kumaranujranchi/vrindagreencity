@@ -2201,7 +2201,7 @@
                 $.ajax({
                     url: 'inc/newsletter.php',
                     type: 'POST',
-                    data: { email: email },
+                    data: $(this).serialize(),
                     dataType: 'json',
                     beforeSend: function () {
                         messageDiv.html('<span style="color: #FFD700;">Subscribing...</span>');

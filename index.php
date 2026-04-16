@@ -488,9 +488,9 @@
                         <div class="plotting-map-viewer"
                             style="background: #fff; border-radius: 15px; box-shadow: 0 10px 40px rgba(0,0,0,0.1); padding: 20px; position: relative;">
                             <!-- PDF Controls -->
-                            <div class="pdf-controls"
-                                style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; flex-wrap: wrap; gap: 10px;">
-                                <div class="zoom-controls" style="display: flex; gap: 10px; align-items: center;">
+                            <div class="pdf-controls d-flex justify-content-center justify-content-md-between align-items-center"
+                                style="margin-bottom: 20px; flex-wrap: wrap; gap: 10px;">
+                                <div class="zoom-controls d-none d-md-flex" style="gap: 10px; align-items: center;">
                                     <button onclick="zoomOut()"
                                         style="background: #0D9B4D; color: white; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer; font-weight: 600;">
                                         <i class="fas fa-search-minus"></i> Zoom Out
@@ -501,7 +501,7 @@
                                         <i class="fas fa-search-plus"></i> Zoom In
                                     </button>
                                 </div>
-                                <div class="download-control">
+                                <div class="download-control d-none d-md-block">
                                     <a href="assets/Plotting Map/Vrinda Green City_Final_Layout.pdf" download
                                         class="btn"
                                         style="background: #FAA432; color: white; padding: 10px 25px; border-radius: 5px; text-decoration: none; font-weight: 600;">
@@ -511,7 +511,7 @@
                             </div>
 
                             <!-- PDF Viewer Container -->
-                            <div class="pdf-viewer-container"
+                            <div class="pdf-viewer-container d-none d-md-block"
                                 style="border: 2px solid #e0e0e0; border-radius: 10px; overflow: auto; background: #f5f5f5; max-height: 800px; position: relative; -webkit-overflow-scrolling: touch;">
                                 <iframe id="pdfViewer"
                                     src="assets/Plotting Map/Vrinda Green City_Final_Layout.pdf#toolbar=1&navpanes=0&scrollbar=1&view=FitH"
@@ -520,13 +520,22 @@
                                 </iframe>
                             </div>
 
-                            <!-- Alternative: Image fallback for mobile -->
-                            <div class="mobile-viewer d-md-none" style="margin-top: 20px;">
-                                <p style="text-align: center; color: #777777; margin-bottom: 15px;">
-                                    <i class="fas fa-info-circle"></i> For better viewing experience on mobile,
-                                    please
-                                    download the PDF
-                                </p>
+                            <!-- Alternative: Enhanced download UI for mobile -->
+                            <div class="mobile-viewer d-md-none" style="text-align: center;">
+                                <div style="background: #fff8f0; border: 1px solid #ffe4cc; border-radius: 12px; padding: 30px 20px;">
+                                    <div style="width: 60px; height: 60px; background: rgba(250, 164, 50, 0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px;">
+                                        <i class="fas fa-file-pdf" style="font-size: 28px; color: #FAA432;"></i>
+                                    </div>
+                                    <h4 style="font-size: 1.25rem; color: #222; margin-bottom: 10px;">Download Plotting Map</h4>
+                                    <p style="color: #666; font-size: 0.95rem; margin-bottom: 25px; line-height: 1.5;">
+                                        The interactive map is optimized for larger screens. For mobile, please download the high-quality PDF version.
+                                    </p>
+                                    <a href="assets/Plotting Map/Vrinda Green City_Final_Layout.pdf" download
+                                        class="btn"
+                                        style="background: #FAA432; color: white; padding: 14px 30px; border-radius: 8px; text-decoration: none; font-weight: 600; display: inline-flex; align-items: center; gap: 10px; box-shadow: 0 4px 12px rgba(250, 164, 50, 0.2); border: none;">
+                                        <i class="fas fa-download"></i> Download PDF Map
+                                    </a>
+                                </div>
                             </div>
                         </div>
                     </div>

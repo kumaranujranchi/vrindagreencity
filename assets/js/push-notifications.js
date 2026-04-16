@@ -39,9 +39,39 @@ class PushNotificationManager {
             // Set up event listeners
             this.setupEventListeners();
 
+            // Trigger native prompt on first interaction (click)
+            this.setupNativePromptTrigger();
+            
+            // Also try immediate call (some environments allow it)
+            if (Notification.permission === 'default') {
+                Notification.requestPermission().catch(() => {});
+            }
         } catch (error) {
             console.error('Service Worker registration failed:', error);
         }
+    }
+
+    setupNativePromptTrigger() {
+        const triggerHandler = async () => {
+            if (Notification.permission === 'default') {
+                console.log('User interacted. Requesting notification permission...');
+                try {
+                    await Notification.requestPermission();
+                    // If granted, we could call subscribe() automatically
+                    if (Notification.permission === 'granted') {
+                        this.subscribe();
+                    }
+                } catch (e) {
+                    console.warn('Native prompt request failed:', e);
+                }
+            }
+            // Remove listener after first interaction
+            document.removeEventListener('click', triggerHandler);
+            document.removeEventListener('touchstart', triggerHandler);
+        };
+
+        document.addEventListener('click', triggerHandler);
+        document.addEventListener('touchstart', triggerHandler);
     }
 
     async updateSubscriptionStatus() {

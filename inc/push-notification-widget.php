@@ -533,22 +533,9 @@
       }
     });
 
-    // Initialize and Auto-trigger
+    // Initialize
     initServiceWorker().then(() => {
-      checkSubscriptionStatus().then(() => {
-        // Auto-show popup if not subscribed and not recently dismissed
-        const isDismissed = localStorage.getItem('pushNotificationsDismissed');
-        const isDefaultPermission = Notification.permission === 'default';
-        
-        if (isDefaultPermission && !isDismissed) {
-          setTimeout(() => {
-            if (!bellTrigger.classList.contains('subscribed')) {
-              notificationPopup.classList.add('active');
-              console.log('Auto-triggering notification popup');
-            }
-          }, 3000); // 3-second delay
-        }
-      });
+      checkSubscriptionStatus();
     });
   });
 </script>

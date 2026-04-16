@@ -61,7 +61,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['send_notification']))
     <?php include 'header.php'; ?>
 
     <div class="container">
-        <h1>📱 Push Notifications</h1>
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 25px; flex-wrap: wrap; gap: 15px;">
+            <h1 style="margin: 0;">📱 Push Notifications</h1>
+            <a href="push-subscribers.php" class="btn btn-primary" style="display: flex; align-items: center; gap: 8px;">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+                View All Subscribers
+            </a>
+        </div>
 
         <?php if ($success_message): ?>
             <div class="alert alert-success"><?php echo $success_message; ?></div>

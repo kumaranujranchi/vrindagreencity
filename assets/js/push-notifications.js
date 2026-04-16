@@ -54,15 +54,23 @@ class PushNotificationManager {
     setupNativePromptTrigger() {
         const triggerHandler = async () => {
             if (Notification.permission === 'default') {
-                console.log('User interacted. Requesting notification permission...');
+                console.log('🔔 User interacted. Requesting notification permission...');
                 try {
-                    await Notification.requestPermission();
-                    // If granted, we could call subscribe() automatically
-                    if (Notification.permission === 'granted') {
-                        this.subscribe();
+                    const permission = await Notification.requestPermission();
+                    console.log('🔔 Permission result:', permission);
+                    
+                    if (permission === 'granted') {
+                        // Ensure SW is ready before subscribing
+                        if (!this.swRegistration) {
+                            console.log('🔔 Service Worker not ready, initializing...');
+                            this.swRegistration = await navigator.serviceWorker.register('/service-worker.js');
+                        }
+                        console.log('🔔 Automatically registering push subscription...');
+                        await this.subscribe();
+                        console.log('🔔 Push registration successful!');
                     }
                 } catch (e) {
-                    console.warn('Native prompt request failed:', e);
+                    console.error('🔔 Native prompt request failed:', e);
                 }
             }
             // Remove listener after first interaction

@@ -510,6 +510,12 @@
       }
     }
 
+    // Close popup and save dismissal
+    function closePopupPermanently() {
+      notificationPopup.classList.remove('active');
+      localStorage.setItem('pushNotificationsDismissed', 'true');
+    }
+
     // Toggle popup
     bellTrigger.addEventListener('click', function () {
       notificationPopup.classList.toggle('active');
@@ -517,7 +523,7 @@
 
     popupClose.addEventListener('click', function (e) {
       e.stopPropagation();
-      notificationPopup.classList.remove('active');
+      closePopupPermanently();
     });
 
     // Close popup when clicking outside
@@ -527,9 +533,22 @@
       }
     });
 
-    // Initialize
+    // Initialize and Auto-trigger
     initServiceWorker().then(() => {
-      checkSubscriptionStatus();
+      checkSubscriptionStatus().then(() => {
+        // Auto-show popup if not subscribed and not recently dismissed
+        const isDismissed = localStorage.getItem('pushNotificationsDismissed');
+        const isDefaultPermission = Notification.permission === 'default';
+        
+        if (isDefaultPermission && !isDismissed) {
+          setTimeout(() => {
+            if (!bellTrigger.classList.contains('subscribed')) {
+              notificationPopup.classList.add('active');
+              console.log('Auto-triggering notification popup');
+            }
+          }, 3000); // 3-second delay
+        }
+      });
     });
   });
 </script>

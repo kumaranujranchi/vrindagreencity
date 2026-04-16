@@ -39,15 +39,6 @@ class PushNotificationManager {
             // Set up event listeners
             this.setupEventListeners();
 
-            // Auto-request permission if not already decided
-            // This shows the browser's native permission popup automatically
-            if (Notification.permission === 'default') {
-                console.log('Auto-requesting notification permission...');
-                // Small delay to ensure page is fully loaded
-                setTimeout(() => {
-                    this.subscribe();
-                }, 1000); // 1 second delay after page load
-            }
         } catch (error) {
             console.error('Service Worker registration failed:', error);
         }

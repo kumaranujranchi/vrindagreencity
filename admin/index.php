@@ -249,106 +249,12 @@ closeDBConnection($conn);
             </div>
         </div>
     </div>
-</body>
-
-</html>
-
 <script>
-    // Small UX improvement: show a quick skeleton for the leads table for 400ms to avoid 'flat' load effect
-    (function(){
-        try{
-            var wrapper = document.getElementById('leadsTableWrapper');
-            var table = document.getElementById('leadsTable');
-            if(!wrapper || !table) return;
-
-            // Create skeleton rows only if table has content (to avoid replacing empty state)
-            var tbody = table.querySelector('tbody');
-            if(!tbody) return;
-
-            // Clone current content and hide it
-            var realContent = tbody.innerHTML;
-            var skeletonRows = '';
-            for(var i=0;i<3;i++){
-                skeletonRows += '<tr>' +
-                    '<td><div class="skeleton" style="height:14px;width:40px;border-radius:6px;"></div></td>' +
-                    '<td><div class="skeleton" style="height:14px;width:120px;border-radius:6px;"></div></td>' +
-                    '<td><div class="skeleton" style="height:14px;width:160px;border-radius:6px;"></div></td>' +
-                    '<td><div class="skeleton" style="height:14px;width:100px;border-radius:6px;"></div></td>' +
-                    '<td><div class="skeleton" style="height:14px;width:80px;border-radius:6px;"></div></td>' +
-                    '<td><div class="skeleton" style="height:14px;width:90px;border-radius:6px;"></div></td>' +
-                '</tr>';
-            }
-
-            tbody.setAttribute('data-original', '1');
-            tbody.innerHTML = skeletonRows;
-
-            // Replace with real content after short delay
-            setTimeout(function(){
-                tbody.innerHTML = realContent;
-            }, 400);
-        }catch(e){ console && console.warn(e); }
-    })();
-
-    // Sidebar toggle functionality with mobile support
-    (function(){
-        var sidebarToggle = document.getElementById('sidebarToggle');
-        var sidebar = document.getElementById('sidebar');
-        if(!sidebarToggle || !sidebar) return;
-
-        function toggleSidebar() {
-            var isMobile = window.innerWidth <= 768;
-            if (isMobile) {
-                // On mobile, toggle between hidden and visible
-                sidebar.classList.toggle('collapsed');
-            } else {
-                // On desktop, toggle collapsed state
-                sidebar.classList.toggle('collapsed');
-            }
+    document.addEventListener('DOMContentLoaded', () => {
+        if (window.showSkeletons) {
+            window.showSkeletons('leadsTable', 6);
         }
-
-        function closeSidebarOnMobile() {
-            if (window.innerWidth <= 768) {
-                sidebar.classList.add('collapsed');
-            }
-        }
-
-        sidebarToggle.addEventListener('click', function(e) {
-            e.stopPropagation();
-            toggleSidebar();
-        });
-
-        // Close sidebar when clicking on overlay (mobile only)
-        sidebar.addEventListener('click', function(e) {
-            // Only close if clicking on the overlay area (not on nav content)
-            if (window.innerWidth <= 768 && e.target === sidebar) {
-                closeSidebarOnMobile();
-            }
-        });
-
-        // Close sidebar on mobile when clicking outside
-        document.addEventListener('click', function(e) {
-            if (window.innerWidth <= 768 &&
-                !sidebar.contains(e.target) &&
-                !sidebarToggle.contains(e.target) &&
-                !sidebar.classList.contains('collapsed')) {
-                closeSidebarOnMobile();
-            }
-        });
-
-        // Handle window resize
-        window.addEventListener('resize', function() {
-            if (window.innerWidth > 768) {
-                // On desktop, ensure sidebar is not collapsed by default
-                sidebar.classList.remove('collapsed');
-            } else {
-                // On mobile, ensure sidebar starts collapsed
-                sidebar.classList.add('collapsed');
-            }
-        });
-
-        // Initialize on load
-        if (window.innerWidth <= 768) {
-            sidebar.classList.add('collapsed');
-        }
-    })();
+    });
 </script>
+</body>
+</html>

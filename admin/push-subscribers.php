@@ -134,23 +134,12 @@ $subscribers = $pushService->getAllSubscribers();
     </div>
   </div>
 
-  <script>
-    // Sidebar toggle
-    (function () {
-      var sidebarToggle = document.getElementById('sidebarToggle');
-      var sidebar = document.getElementById('sidebar');
-      if (!sidebarToggle || !sidebar) return;
-
-      sidebarToggle.addEventListener('click', function (e) {
-        e.stopPropagation();
-        sidebar.classList.toggle('collapsed');
-      });
-
-      if (window.innerWidth <= 768) {
-        sidebar.classList.add('collapsed');
-      }
-    })();
-  </script>
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        if (window.showSkeletons) {
+            window.showSkeletons('subscribersTable', 7);
+        }
+    });
+</script>
 </body>
-
 </html>

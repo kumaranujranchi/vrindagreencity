@@ -50,292 +50,159 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['send_notification']))
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Push Notifications - Vrinda Green City Admin</title>
-  <link rel="shortcut icon" type="image/x-icon" href="https://imagizer.imageshack.com/img923/9404/A1ADwj.png">
-  <link rel="stylesheet" href="styles.css">
-  <style>
-    .stats-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 20px;
-      margin-bottom: 30px;
-    }
-
-    .stat-card {
-      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-      color: white;
-      padding: 20px;
-      border-radius: 10px;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    }
-
-    .stat-card:nth-child(2) {
-      background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
-    }
-
-    .stat-card:nth-child(3) {
-      background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
-    }
-
-    .stat-card h3 {
-      margin: 0 0 10px 0;
-      font-size: 14px;
-      opacity: 0.9;
-    }
-
-    .stat-card .number {
-      font-size: 36px;
-      font-weight: bold;
-      margin: 0;
-    }
-
-    .notification-form {
-      background: #f8f9fa;
-      padding: 25px;
-      border-radius: 10px;
-      margin-bottom: 30px;
-    }
-
-    .form-group {
-      margin-bottom: 20px;
-    }
-
-    .form-group label {
-      display: block;
-      margin-bottom: 8px;
-      font-weight: 600;
-      color: #333;
-    }
-
-    .form-control {
-      width: 100%;
-      padding: 10px;
-      border: 1px solid #ddd;
-      border-radius: 5px;
-      font-size: 14px;
-    }
-
-    textarea.form-control {
-      min-height: 100px;
-      resize: vertical;
-    }
-
-    .btn-send {
-      background: #28a745;
-      color: white;
-      padding: 12px 30px;
-      border: none;
-      border-radius: 5px;
-      font-size: 16px;
-      cursor: pointer;
-      transition: background 0.3s;
-    }
-
-    .btn-send:hover {
-      background: #218838;
-    }
-
-    .history-table {
-      background: white;
-      border-radius: 10px;
-      overflow: hidden;
-      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    }
-
-    .history-table table {
-      width: 100%;
-      border-collapse: collapse;
-    }
-
-    .history-table th {
-      background: #f8f9fa;
-      padding: 12px;
-      text-align: left;
-      font-weight: 600;
-      border-bottom: 2px solid #dee2e6;
-    }
-
-    .history-table td {
-      padding: 12px;
-      border-bottom: 1px solid #dee2e6;
-    }
-
-    .status-badge {
-      padding: 4px 12px;
-      border-radius: 12px;
-      font-size: 12px;
-      font-weight: 600;
-    }
-
-    .status-sent {
-      background: #d4edda;
-      color: #155724;
-    }
-
-    .status-failed {
-      background: #f8d7da;
-      color: #721c24;
-    }
-
-    .status-draft {
-      background: #fff3cd;
-      color: #856404;
-    }
-
-    .helper-text {
-      font-size: 12px;
-      color: #666;
-      margin-top: 5px;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Push Notifications - Vrinda Green City Admin</title>
+    <link rel="shortcut icon" type="image/x-icon" href="https://imagizer.imageshack.com/img923/9404/A1ADwj.png">
+    <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
-  <?php include 'header.php'; ?>
+    <?php include 'header.php'; ?>
 
-  <div class="container">
-    <h1>📱 Push Notifications</h1>
+    <div class="container">
+        <h1>📱 Push Notifications</h1>
 
-    <?php if ($success_message): ?>
-      <div class="alert alert-success"><?php echo $success_message; ?></div>
-    <?php endif; ?>
+        <?php if ($success_message): ?>
+            <div class="alert alert-success"><?php echo $success_message; ?></div>
+        <?php endif; ?>
 
-    <?php if ($error_message): ?>
-      <div class="alert alert-danger"><?php echo $error_message; ?></div>
-    <?php endif; ?>
+        <?php if ($error_message): ?>
+            <div class="alert alert-danger"><?php echo $error_message; ?></div>
+        <?php endif; ?>
 
-    <!-- Statistics -->
-    <div class="stats-grid">
-      <div class="stat-card">
-        <h3>Total Subscribers</h3>
-        <div class="number"><?php echo $stats['subscribers']; ?></div>
-      </div>
-      <div class="stat-card">
-        <h3>Notifications Sent</h3>
-        <div class="number"><?php echo $stats['notifications_sent']; ?></div>
-      </div>
-      <div class="stat-card">
-        <h3>Total Delivered</h3>
-        <div class="number"><?php echo $stats['total_delivered']; ?></div>
-      </div>
+        <!-- Statistics -->
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-icon" style="background: #e0f2fe; color: #0284c7;">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                        <circle cx="9" cy="7" r="4"></circle>
+                        <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                        <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                    </svg>
+                </div>
+                <div class="stat-content">
+                    <h3><?php echo $stats['subscribers']; ?></h3>
+                    <p>Subscribers</p>
+                </div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon" style="background: #ecfdf5; color: #059669;">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M22 2L11 13"></path>
+                        <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+                    </svg>
+                </div>
+                <div class="stat-content">
+                    <h3><?php echo $stats['notifications_sent']; ?></h3>
+                    <p>Sent</p>
+                </div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon" style="background: #fff7ed; color: #ea580c;">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                        <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                    </svg>
+                </div>
+                <div class="stat-content">
+                    <h3><?php echo $stats['total_delivered']; ?></h3>
+                    <p>Delivered</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Send New Notification -->
+        <div class="card">
+            <div class="card-header">
+                <div class="card-title">Send New Notification</div>
+            </div>
+            <div class="card-body">
+                <form method="POST" action="">
+                    <div class="form-group" style="margin-bottom: 20px;">
+                        <label style="display: block; margin-bottom: 8px; font-weight: 600;">Notification Title *</label>
+                        <input type="text" name="title" class="form-control" required maxlength="100"
+                            placeholder="e.g., New Property Launch!" style="width: 100%; padding: 12px; border: 1px solid var(--border); border-radius: 8px;">
+                    </div>
+
+                    <div class="form-group" style="margin-bottom: 20px;">
+                        <label style="display: block; margin-bottom: 8px; font-weight: 600;">Message Body *</label>
+                        <textarea name="body" class="form-control" required maxlength="500"
+                            placeholder="e.g., Check our latest premium properties!" style="width: 100%; padding: 12px; border: 1px solid var(--border); border-radius: 8px; min-height: 100px;"></textarea>
+                    </div>
+
+                    <div class="form-group" style="margin-bottom: 20px;">
+                        <label style="display: block; margin-bottom: 8px; font-weight: 600;">Click URL (Optional)</label>
+                        <input type="url" name="url" class="form-control" placeholder="https://vrindagreencity.com/properties" style="width: 100%; padding: 12px; border: 1px solid var(--border); border-radius: 8px;">
+                    </div>
+
+                    <button type="submit" name="send_notification" class="btn btn-primary">
+                        🚀 Send to All Subscribers
+                    </button>
+                </form>
+            </div>
+        </div>
+
+        <!-- Notification History -->
+        <div class="card">
+            <div class="card-header">
+                <div class="card-title">Recent Notifications</div>
+            </div>
+            <div class="table-responsive">
+                <table id="notificationHistoryTable">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Title</th>
+                            <th>Message</th>
+                            <th>Status</th>
+                            <th>Sent</th>
+                            <th>Success</th>
+                            <th>Failed</th>
+                            <th>Date</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <?php if (empty($notificationHistory)): ?>
+                            <tr>
+                                <td colspan="8" class="text-center">No notifications sent yet</td>
+                            </tr>
+                        <?php else: ?>
+                            <?php foreach ($notificationHistory as $notification): ?>
+                                <tr>
+                                    <td><?php echo $notification['id']; ?></td>
+                                    <td style="font-weight: 600;"><?php echo htmlspecialchars($notification['title']); ?></td>
+                                    <td>
+                                        <?php echo htmlspecialchars(substr($notification['body'], 0, 50)) . (strlen($notification['body']) > 50 ? '...' : ''); ?>
+                                    </td>
+                                    <td>
+                                        <span class="badge badge-<?php echo $notification['status']; ?>">
+                                            <?php echo ucfirst($notification['status']); ?>
+                                        </span>
+                                    </td>
+                                    <td><?php echo $notification['total_sent']; ?></td>
+                                    <td style="color: var(--primary); font-weight: 600;"><?php echo $notification['total_success']; ?></td>
+                                    <td style="color: #ef4444; font-weight: 600;"><?php echo $notification['total_failed']; ?></td>
+                                    <td><?php echo $notification['sent_at'] ? date('d M Y H:i', strtotime($notification['sent_at'])) : '-'; ?></td>
+                                </tr>
+                            <?php endforeach; ?>
+                        <?php endif; ?>
+                    </tbody>
+                </table>
+            </div>
+        </div>
     </div>
 
-    <!-- Send New Notification -->
-    <div class="card">
-      <div class="card-header">
-        <h2>Send New Notification</h2>
-      </div>
-      <div class="notification-form">
-        <form method="POST" action="">
-          <div class="form-group">
-            <label for="title">Notification Title *</label>
-            <input type="text" id="title" name="title" class="form-control" required maxlength="100"
-              placeholder="e.g., New Property Launch!">
-            <div class="helper-text">Keep it short and attention-grabbing (max 100 characters)</div>
-          </div>
-
-          <div class="form-group">
-            <label for="body">Message Body *</label>
-            <textarea id="body" name="body" class="form-control" required maxlength="500"
-              placeholder="e.g., Check out our latest premium properties in Vrinda Green City. Limited units available!"></textarea>
-            <div class="helper-text">Provide clear and concise information (max 500 characters)</div>
-          </div>
-
-          <div class="form-group">
-            <label for="url">Click URL (Optional)</label>
-            <input type="url" id="url" name="url" class="form-control"
-              placeholder="https://vrindagreencity.com/properties">
-            <div class="helper-text">Where should users go when they click the notification?</div>
-          </div>
-
-          <div class="form-group">
-            <label for="icon">Icon URL (Optional)</label>
-            <input type="url" id="icon" name="icon" class="form-control"
-              placeholder="/assets/img/notification-icon.png">
-            <div class="helper-text">Image to display in the notification (leave blank for default logo)</div>
-          </div>
-
-          <button type="submit" name="send_notification" class="btn-send">
-            🚀 Send to All Subscribers
-          </button>
-        </form>
-      </div>
-    </div>
-
-    <!-- Notification History -->
-    <div class="card">
-      <div class="card-header">
-        <h2>Recent Notifications</h2>
-      </div>
-      <div class="history-table">
-        <table>
-          <thead>
-            <tr>
-              <th>ID</th>
-              <th>Title</th>
-              <th>Message</th>
-              <th>Status</th>
-              <th>Sent</th>
-              <th>Success</th>
-              <th>Failed</th>
-              <th>Date</th>
-            </tr>
-          </thead>
-          <tbody>
-            <?php if (empty($notificationHistory)): ?>
-              <tr>
-                <td colspan="8" class="text-center">No notifications sent yet</td>
-              </tr>
-            <?php else: ?>
-              <?php foreach ($notificationHistory as $notification): ?>
-                <tr>
-                  <td><?php echo $notification['id']; ?></td>
-                  <td><strong><?php echo htmlspecialchars($notification['title']); ?></strong></td>
-                  <td>
-                    <?php echo htmlspecialchars(substr($notification['body'], 0, 50)) . (strlen($notification['body']) > 50 ? '...' : ''); ?>
-                  </td>
-                  <td>
-                    <span class="status-badge status-<?php echo $notification['status']; ?>">
-                      <?php echo ucfirst($notification['status']); ?>
-                    </span>
-                  </td>
-                  <td><?php echo $notification['total_sent']; ?></td>
-                  <td style="color: #28a745; font-weight: 600;"><?php echo $notification['total_success']; ?></td>
-                  <td style="color: #dc3545; font-weight: 600;"><?php echo $notification['total_failed']; ?></td>
-                  <td><?php echo $notification['sent_at'] ? date('d M Y H:i', strtotime($notification['sent_at'])) : '-'; ?>
-                  </td>
-                </tr>
-              <?php endforeach; ?>
-            <?php endif; ?>
-          </tbody>
-        </table>
-      </div>
-    </div>
-  </div>
-
-  <script>
-    // Sidebar toggle functionality
-    (function () {
-      var sidebarToggle = document.getElementById('sidebarToggle');
-      var sidebar = document.getElementById('sidebar');
-      if (!sidebarToggle || !sidebar) return;
-
-      function toggleSidebar() {
-        sidebar.classList.toggle('collapsed');
-      }
-
-      sidebarToggle.addEventListener('click', function (e) {
-        e.stopPropagation();
-        toggleSidebar();
-      });
-
-      if (window.innerWidth <= 768) {
-        sidebar.classList.add('collapsed');
-      }
-    })();
-  </script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            if (window.showSkeletons) {
+                window.showSkeletons('notificationHistoryTable', 8);
+            }
+        });
+    </script>
 </body>
-
 </html>

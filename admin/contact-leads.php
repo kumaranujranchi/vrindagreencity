@@ -169,103 +169,13 @@ closeDBConnection($conn);
             </div>
         </div>
     </div>
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        if (window.showSkeletons) {
+            window.showSkeletons('leadsTable', 9);
+        }
+    });
+</script>
 </body>
 </html>
 
-<script>
-    // Sidebar toggle functionality with mobile support
-    (function(){
-        var sidebarToggle = document.getElementById('sidebarToggle');
-        var sidebar = document.getElementById('sidebar');
-        if(!sidebarToggle || !sidebar) return;
-
-        function toggleSidebar() {
-            var isMobile = window.innerWidth <= 768;
-            if (isMobile) {
-                // On mobile, toggle between hidden and visible
-                sidebar.classList.toggle('collapsed');
-            } else {
-                // On desktop, toggle collapsed state
-                sidebar.classList.toggle('collapsed');
-            }
-        }
-
-        function closeSidebarOnMobile() {
-            if (window.innerWidth <= 768) {
-                sidebar.classList.add('collapsed');
-            }
-        }
-
-        sidebarToggle.addEventListener('click', function(e) {
-            e.stopPropagation();
-            toggleSidebar();
-        });
-
-        // Close sidebar when clicking on overlay (mobile only)
-        sidebar.addEventListener('click', function(e) {
-            // Only close if clicking on the overlay area (not on nav content)
-            if (window.innerWidth <= 768 && e.target === sidebar) {
-                closeSidebarOnMobile();
-            }
-        });
-
-        // Close sidebar on mobile when clicking outside
-        document.addEventListener('click', function(e) {
-            if (window.innerWidth <= 768 &&
-                !sidebar.contains(e.target) &&
-                !sidebarToggle.contains(e.target) &&
-                !sidebar.classList.contains('collapsed')) {
-                closeSidebarOnMobile();
-            }
-        });
-
-        // Handle window resize
-        window.addEventListener('resize', function() {
-            if (window.innerWidth > 768) {
-                // On desktop, ensure sidebar is not collapsed by default
-                sidebar.classList.remove('collapsed');
-            } else {
-                // On mobile, ensure sidebar starts collapsed
-                sidebar.classList.add('collapsed');
-            }
-        });
-
-        // Initialize on load
-        if (window.innerWidth <= 768) {
-            sidebar.classList.add('collapsed');
-        }
-    })();
-
-    // Skeleton loading for leads table
-    (function(){
-        try{
-            var table = document.getElementById('leadsTable');
-            if(!table) return;
-
-            var tbody = table.querySelector('tbody');
-            if(!tbody || tbody.querySelector('.text-center')) return; // Skip if empty state
-
-            var realContent = tbody.innerHTML;
-            var skeletonRows = '';
-            for(var i=0;i<5;i++){
-                skeletonRows += '<tr>' +
-                    '<td><div class="skeleton" style="height:14px;width:30px;border-radius:6px;"></div></td>' +
-                    '<td><div class="skeleton" style="height:14px;width:100px;border-radius:6px;"></div></td>' +
-                    '<td><div class="skeleton" style="height:14px;width:140px;border-radius:6px;"></div></td>' +
-                    '<td><div class="skeleton" style="height:14px;width:90px;border-radius:6px;"></div></td>' +
-                    '<td><div class="skeleton" style="height:14px;width:80px;border-radius:6px;"></div></td>' +
-                    '<td><div class="skeleton" style="height:14px;width:120px;border-radius:6px;"></div></td>' +
-                    '<td><div class="skeleton" style="height:14px;width:70px;border-radius:6px;"></div></td>' +
-                    '<td><div class="skeleton" style="height:14px;width:100px;border-radius:6px;"></div></td>' +
-                    '<td><div class="skeleton" style="height:14px;width:120px;border-radius:6px;"></div></td>' +
-                '</tr>';
-            }
-
-            tbody.innerHTML = skeletonRows;
-
-            setTimeout(function(){
-                tbody.innerHTML = realContent;
-            }, 400);
-        }catch(e){ console && console.warn(e); }
-    })();
-</script>

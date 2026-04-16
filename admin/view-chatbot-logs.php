@@ -17,8 +17,7 @@ foreach ($files as $file) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Chatbot Logs - Admin</title>
     <link rel="stylesheet" href="styles.css">
-    <style> pre { background: #f8fafb; padding: 12px; border-radius: 8px; box-shadow: var(--shadow-sm); } </style>
-    </head>
+</head>
 <body>
 <?php include 'header.php'; ?>
 <div class="container">

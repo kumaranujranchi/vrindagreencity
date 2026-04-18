@@ -38,18 +38,37 @@ class PushNotificationService
   public function saveSubscription($endpoint, $p256dh, $auth, $userAgent = null, $ipAddress = null)
   {
     $stmt = $this->conn->prepare("INSERT INTO push_subscribers (endpoint, p256dh_key, auth_token, user_agent, ip_address) VALUES (?, ?, ?, ?, ?) ON DUPLICATE KEY UPDATE last_active = CURRENT_TIMESTAMP, user_agent = ?, ip_address = ?");
+    
+    // Auto-fix schema if missing columns
+    if (!$stmt) {
+        $this->conn->query("ALTER TABLE push_subscribers ADD COLUMN user_agent text DEFAULT NULL, ADD COLUMN ip_address varchar(45) DEFAULT NULL");
+        $stmt = $this->conn->prepare("INSERT INTO push_subscribers (endpoint, p256dh_key, auth_token, user_agent, ip_address) VALUES (?, ?, ?, ?, ?) ON DUPLICATE KEY UPDATE last_active = CURRENT_TIMESTAMP, user_agent = ?, ip_address = ?");
+    }
+
+    if (!$stmt) {
+      return [
+        'success' => false,
+        'message' => 'Failed to prepare statement: ' . (method_exists($this->conn, 'error') ? $this->conn->error : 'Database error')
+      ];
+    }
+
     $stmt->bind_param("sssssss", $endpoint, $p256dh, $auth, $userAgent, $ipAddress, $userAgent, $ipAddress);
 
     if ($stmt->execute()) {
+      $insertId = $this->conn->insert_id;
+      // Close statement
+      $stmt->close();
       return [
         'success' => true,
         'message' => 'Subscription saved successfully',
-        'subscriber_id' => $this->conn->insert_id ?: $this->getSubscriberIdByEndpoint($endpoint)
+        'subscriber_id' => $insertId ?: $this->getSubscriberIdByEndpoint($endpoint)
       ];
     } else {
+      $error = $stmt->error;
+      $stmt->close();
       return [
         'success' => false,
-        'message' => 'Failed to save subscription: ' . $stmt->error
+        'message' => 'Failed to save subscription: ' . $error
       ];
     }
   }

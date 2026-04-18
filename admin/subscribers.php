@@ -67,8 +67,13 @@ closeDBConnection($conn);
     <?php include 'header.php'; ?>
     
     <div class="container">
-        <h1>Newsletter Subscribers</h1>
+        <h1>📧 Email Newsletter Subscribers</h1>
         
+        <div class="alert alert-warning" style="background-color: #fff3cd; color: #856404; border: 1px solid #ffeeba; padding: 15px; border-radius: 5px; margin-bottom: 20px;">
+            <strong>⚠️ Note: This is NOT the Push Notification list!</strong><br>
+            This page ONLY lists people who typed their email address on your website.<br>
+            To see the people who clicked "Allow" on the browser popup, you must click on <strong>Push Notifications</strong> in the left menu!
+        </div>
         <?php if (isset($success_message)): ?>
             <div class="alert alert-success"><?php echo $success_message; ?></div>
         <?php endif; ?>

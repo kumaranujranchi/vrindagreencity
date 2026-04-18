@@ -42,14 +42,17 @@ try {
     http_response_code(201);
   } else {
     http_response_code(500);
+    file_put_contents(__DIR__ . '/push_debug.txt', date('Y-m-d H:i:s') . " - Save Failed: " . json_encode($result) . "\n", FILE_APPEND);
   }
 
   echo json_encode($result);
-} catch (Exception $e) {
+} catch (Throwable $e) {
   http_response_code(500);
+  $errorMsg = 'Server error: ' . $e->getMessage() . ' in ' . $e->getFile() . ':' . $e->getLine();
+  file_put_contents(__DIR__ . '/push_debug.txt', date('Y-m-d H:i:s') . " - Exception: " . $errorMsg . "\n", FILE_APPEND);
   echo json_encode([
     'success' => false,
-    'message' => 'Server error: ' . $e->getMessage()
+    'message' => $errorMsg
   ]);
 }
 ?>

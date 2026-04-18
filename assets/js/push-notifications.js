@@ -4,7 +4,20 @@
  */
 
 const VAPID_PUBLIC_KEY = 'BB9GI9J5-oRxxrvXlHsmLeJ53rPPBYkKUmX0XMzDT3xLnzv2MZglhMZlljMvF6pHEqws8OLjvM5XpWXGbHueUsI';
-const API_BASE_URL = '/admin/api';
+let API_BASE_URL = '/admin/api';
+try {
+    // Determine base URL dynamically depending on whether it's in a subfolder or root
+    const scriptSrc = document.currentScript ? document.currentScript.src : window.location.href;
+    const url = new URL(scriptSrc);
+    if (url.pathname.includes('/assets/js/')) {
+        const basePath = url.pathname.substring(0, url.pathname.indexOf('/assets/js/'));
+        API_BASE_URL = basePath + '/admin/api';
+    } else if (window.location.pathname.includes('/vrindagreencity/')) {
+        API_BASE_URL = '/vrindagreencity/admin/api'; // Local fallback
+    }
+} catch (e) {
+    console.error('Error determining base URL', e);
+}
 
 class PushNotificationManager {
     constructor() {

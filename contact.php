@@ -128,7 +128,7 @@
                                         <li><a href="index.php#paroller">Location Map</a></li>
                                         <li><a href="index.php#inventory">Inventory</a></li>
                                         <li><a href="index.php#pricing">Pricing</a></li>
-                                        <li><a href="index.php#news">News</a></li>
+
                                         <li class="active"><a href="contact.php">contacts</a></li>
                                     </ul>
                                 </div>
@@ -384,113 +384,11 @@
 
     <!-- Footer-area -->
     <footer class="footer-area">
-        <div class="footer-instagram">
-            <div class="container">
-                <div class="row g-0 instagram-active">
-                    <div class="col-2">
-                        <div class="footer-insta-item">
-                            <a href="https://imagizer.imageshack.com/img923/9128/MqpuIH.jpg" class="popup-image"><img
-                                    src="https://imagizer.imageshack.com/img923/9128/MqpuIH.jpg" alt="img"></a>
-                        </div>
-                    </div>
-                    <div class="col-2">
-                        <div class="footer-insta-item">
-                            <a href="https://imagizer.imageshack.com/img923/6213/PTHkII.jpg" class="popup-image"><img
-                                    src="https://imagizer.imageshack.com/img923/6213/PTHkII.jpg" alt="img"></a>
-                        </div>
-                    </div>
-                    <div class="col-2">
-                        <div class="footer-insta-item">
-                            <a href="https://imagizer.imageshack.com/img922/620/1hPDsp.jpg" class="popup-image"><img
-                                    src="https://imagizer.imageshack.com/img922/620/1hPDsp.jpg" alt="img"></a>
-                        </div>
-                    </div>
-                    <div class="col-2">
-                        <div class="footer-insta-item">
-                            <a href="https://imagizer.imageshack.com/img922/8564/kAYwe2.jpg" class="popup-image"><img
-                                    src="https://imagizer.imageshack.com/img922/8564/kAYwe2.jpg" alt="img"></a>
-                        </div>
-                    </div>
-                    <div class="col-2">
-                        <div class="footer-insta-item">
-                            <a href="https://imagizer.imageshack.com/img922/4026/NV5fH6.jpg" class="popup-image"><img
-                                    src="https://imagizer.imageshack.com/img922/4026/NV5fH6.jpg" alt="img"></a>
-                        </div>
-                    </div>
-                    <div class="col-2">
-                        <div class="footer-insta-item">
-                            <a href="https://imagizer.imageshack.com/img923/6183/hVfaxg.jpg" class="popup-image"><img
-                                    src="https://imagizer.imageshack.com/img923/6183/hVfaxg.jpg" alt="img"></a>
-                        </div>
-                    </div>
-                    <div class="col-2">
-                        <div class="footer-insta-item">
-                            <a href="https://imagizer.imageshack.com/img923/8715/WjbsBP.jpg" class="popup-image"><img
-                                    src="https://imagizer.imageshack.com/img923/8715/WjbsBP.jpg" alt="img"></a>
-                        </div>
-                    </div>
-                    <div class="col-2">
-                        <div class="footer-insta-item">
-                            <a href="https://imagizer.imageshack.com/img922/5358/3zacdv.jpg" class="popup-image"><img
-                                    src="https://imagizer.imageshack.com/img922/5358/3zacdv.jpg" alt="img"></a>
-                        </div>
-                    </div>
-                    <div class="col-2">
-                        <div class="footer-insta-item">
-                            <a href="https://imagizer.imageshack.com/img923/2229/0m1ytS.jpg" class="popup-image"><img
-                                    src="https://imagizer.imageshack.com/img923/2229/0m1ytS.jpg" alt="img"></a>
-                        </div>
-                    </div>
-                    <div class="col-2">
-                        <div class="footer-insta-item">
-                            <a href="https://imagizer.imageshack.com/img922/2166/cJ22HP.jpg" class="popup-image"><img
-                                    src="https://imagizer.imageshack.com/img922/2166/cJ22HP.jpg" alt="img"></a>
-                        </div>
-                    </div>
-                    <div class="col-2">
-                        <div class="footer-insta-item">
-                            <a href="https://imagizer.imageshack.com/img924/4903/gzmQiw.jpg" class="popup-image"><img
-                                    src="https://imagizer.imageshack.com/img924/4903/gzmQiw.jpg" alt="img"></a>
-                        </div>
-                    </div>
-                    <div class="col-2">
-                        <div class="footer-insta-item">
-                            <a href="https://imagizer.imageshack.com/img924/6798/xzgMJp.jpg" class="popup-image"><img
-                                    src="https://imagizer.imageshack.com/img924/6798/xzgMJp.jpg" alt="img"></a>
-                        </div>
-                    </div>
-                    <div class="col-2">
-                        <div class="footer-insta-item">
-                            <a href="https://imagizer.imageshack.com/img922/5088/dtRKut.jpg" class="popup-image"><img
-                                    src="https://imagizer.imageshack.com/img922/5088/dtRKut.jpg" alt="img"></a>
-                        </div>
-                    </div>
-                    <div class="col-2">
-                        <div class="footer-insta-item">
-                            <a href="https://imagizer.imageshack.com/img924/7933/YysGOo.jpg" class="popup-image"><img
-                                    src="https://imagizer.imageshack.com/img924/7933/YysGOo.jpg" alt="img"></a>
-                        </div>
-                    </div>
-                    <div class="col-2">
-                        <div class="footer-insta-item">
-                            <a href="https://imagizer.imageshack.com/img924/6742/Ew0mzs.jpg" class="popup-image"><img
-                                    src="https://imagizer.imageshack.com/img924/6742/Ew0mzs.jpg" alt="img"></a>
-                        </div>
-                    </div>
-                    <div class="col-2">
-                        <div class="footer-insta-item">
-                            <a href="https://imagizer.imageshack.com/img924/8982/znPW0a.jpg" class="popup-image"><img
-                                    src="https://imagizer.imageshack.com/img924/8982/znPW0a.jpg" alt="img"></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
         <div class="footer-top-wrap">
             <div class="container">
                 <div class="footer-widgets-wrap">
                     <div class="row">
-                        <div class="col-lg-4 col-md-7">
+                        <div class="col-lg-3 col-md-7">
                             <div class="footer-widget">
                                 <div class="footer-about">
                                     <div class="footer-logo logo">
@@ -526,7 +424,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-lg-3 col-md-5 col-sm-6">
+                        <div class="col-lg-2 col-md-5 col-sm-6">
                             <div class="footer-widget">
                                 <h4 class="fw-title">About Us</h4>
                                 <ul class="list-wrap">
@@ -587,7 +485,7 @@
                 <div class="row align-items-center">
                     <div class="col-md-7">
                         <div class="copyright-text">
-                            <p>Copyright © 2025 Vrinda Green City - Dehliz Infratech Pvt Ltd. All Rights Reserved.</p>
+                            <p>Copyright © 2026 Vrinda Green City - Dehliz Infratech Pvt Ltd. All Rights Reserved.</p>
                         </div>
                     </div>
                     <div class="col-md-5">

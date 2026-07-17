@@ -1668,7 +1668,7 @@
             <div class="container">
                 <div class="footer-widgets-wrap">
                     <div class="row">
-                        <div class="col-lg-4 col-md-7">
+                        <div class="col-lg-3 col-md-7">
                             <div class="footer-widget">
                                 <div class="footer-about">
                                     <div class="footer-logo logo">
@@ -1704,7 +1704,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-lg-3 col-md-5 col-sm-6">
+                        <div class="col-lg-2 col-md-5 col-sm-6">
                             <div class="footer-widget">
                                 <h4 class="fw-title">About Us</h4>
                                 <ul class="list-wrap">

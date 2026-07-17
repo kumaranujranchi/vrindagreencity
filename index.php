@@ -1765,7 +1765,7 @@
                 <div class="row align-items-center">
                     <div class="col-md-7">
                         <div class="copyright-text">
-                            <p>Copyright © 2025 Vrinda Green City - Dehliz Infratech Pvt Ltd. All Rights Reserved.</p>
+                            <p>Copyright © 2026 Vrinda Green City - Dehliz Infratech Pvt Ltd. All Rights Reserved.</p>
                         </div>
                     </div>
                     <div class="col-md-5">

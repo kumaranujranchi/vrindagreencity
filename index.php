@@ -809,7 +809,7 @@
                     <div class="col-lg-4 col-md-6">
                         <div class="gallery-item wow fadeInUp" data-wow-delay=".3s">
                             <div class="gallery-image">
-                                <img src="https://imagizer.imageshack.com/img924/832/kiNiwW.jpg"
+                                <img src="https://imagizer.imageshack.com/img922/7199/dwI3I0.jpg"
                                     alt="Development Gallery 2" loading="lazy">
                             </div>
                         </div>
@@ -817,7 +817,7 @@
                     <div class="col-lg-4 col-md-6">
                         <div class="gallery-item wow fadeInUp" data-wow-delay=".4s">
                             <div class="gallery-image">
-                                <img src="https://imagizer.imageshack.com/img922/7199/dwI3I0.jpg"
+                                <img src="https://imagizer.imageshack.com/img923/4889/zAqg0P.jpg"
                                     alt="Development Gallery 3" loading="lazy">
                             </div>
                         </div>
@@ -825,7 +825,7 @@
                     <div class="col-lg-4 col-md-6">
                         <div class="gallery-item wow fadeInUp" data-wow-delay=".5s">
                             <div class="gallery-image">
-                                <img src="https://imagizer.imageshack.com/img923/4889/zAqg0P.jpg"
+                                <img src="https://imagizer.imageshack.com/img923/1543/Uf7n2D.jpg"
                                     alt="Development Gallery 4" loading="lazy">
                             </div>
                         </div>
@@ -833,7 +833,7 @@
                     <div class="col-lg-4 col-md-6">
                         <div class="gallery-item wow fadeInUp" data-wow-delay=".6s">
                             <div class="gallery-image">
-                                <img src="https://imagizer.imageshack.com/img923/1543/Uf7n2D.jpg"
+                                <img src="https://imagizer.imageshack.com/img923/5595/39WtnU.png"
                                     alt="Development Gallery 5" loading="lazy">
                             </div>
                         </div>
@@ -841,32 +841,8 @@
                     <div class="col-lg-4 col-md-6">
                         <div class="gallery-item wow fadeInUp" data-wow-delay=".7s">
                             <div class="gallery-image">
-                                <img src="https://imagizer.imageshack.com/img923/5595/39WtnU.png"
-                                    alt="Development Gallery 6" loading="lazy">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6">
-                        <div class="gallery-item wow fadeInUp" data-wow-delay=".8s">
-                            <div class="gallery-image">
                                 <img src="https://imagizer.imageshack.com/img923/6522/6EZZDG.jpg"
-                                    alt="Development Gallery 7" loading="lazy">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6">
-                        <div class="gallery-item wow fadeInUp" data-wow-delay=".9s">
-                            <div class="gallery-image">
-                                <img src="https://imagizer.imageshack.com/img923/7653/XnCJWk.jpg"
-                                    alt="Development Gallery 8" loading="lazy">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6">
-                        <div class="gallery-item wow fadeInUp" data-wow-delay="1s">
-                            <div class="gallery-image">
-                                <img src="https://imagizer.imageshack.com/img922/6594/nAVBrq.jpg"
-                                    alt="Development Gallery 9" loading="lazy">
+                                    alt="Development Gallery 6" loading="lazy">
                             </div>
                         </div>
                     </div>
